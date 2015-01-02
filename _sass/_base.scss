@@ -6,13 +6,13 @@ html, body {
 }
 
 .wrapper {
-    width: 50%;
+    width: 40%;
     margin: auto;
 }
 
 .posts {
     list-style: none;
-    padding: 0;
+    padding: 5em 0 0 0;
 }
 
 .post-meta {
@@ -24,7 +24,9 @@ html, body {
 .header {
     opacity: .5;
     letter-spacing: 2px;
-    margin-top: 2em;
+    position: absolute;
+    top: 8.9em;
+    right: 75%;
 }
 
 .footer {
@@ -39,4 +41,18 @@ html, body {
     width: 25%;
     border-top: 2px solid #20232E;
     margin: 5em 0;
+}
+
+article {
+    ul {
+        list-style-type: disc;
+        li {
+            em {
+                opacity: .6;
+            }
+        }
+        li:not(:last-of-type) {
+            margin-bottom: .3em;
+        }
+    }
 }

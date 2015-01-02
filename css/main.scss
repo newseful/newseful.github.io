@@ -3,9 +3,16 @@
 ---
 @charset "utf-8";
 
+// Globals
+
+$black: #20232E;
+$white: #FAFAFA;
+$gray: darken($white, 5%);
+
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base"
+        "base",
+        "colophon"
 ;
