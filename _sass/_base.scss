@@ -1,7 +1,7 @@
 html, body {
     font-family: "ff-spinoza-web-pro", times, serif;
-    color: #20232E;
-    background: #FAFAFA;
+    color: $black;
+    background: $white;
     font-size: 18px;
 }
 
@@ -22,7 +22,7 @@ html, body {
 }
 
 .header {
-    opacity: .5;
+    color: $mid-gray;
     letter-spacing: 2px;
     position: absolute;
     top: 8.9em;
@@ -30,7 +30,7 @@ html, body {
 }
 
 .footer {
-    opacity: .5;
+    color: $mid-gray;
     font-family: "inconsolata", monospace;
     text-transform: uppercase;
     font-size: 11px;
@@ -39,7 +39,7 @@ html, body {
 
 .line {
     width: 25%;
-    border-top: 2px solid #20232E;
+    border-top: 2px solid $mid-gray;
     margin: 5em 0;
 }
 
@@ -48,7 +48,7 @@ article {
         list-style-type: disc;
         li {
             em {
-                opacity: .6;
+                color: $mid-gray;
             }
         }
         li:not(:last-of-type) {
