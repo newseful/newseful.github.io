@@ -15,5 +15,6 @@ $mid-gray: mix($black, $white, 50%);
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-        "colophon"
+        "colophon",
+        "responds"
 ;
