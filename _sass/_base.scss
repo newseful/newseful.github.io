@@ -56,4 +56,15 @@ article {
             margin-bottom: .3em;
         }
     }
+
+    ol {
+        ul, ol {
+            margin-top: 1em;
+        }
+
+        padding:0;
+        li:not(:last-of-type) {
+            margin-bottom: .3em;
+        }
+    }
 }
