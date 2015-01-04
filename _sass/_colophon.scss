@@ -7,9 +7,11 @@
 
 	.kevin-button {
 		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 
 		-webkit-transition: border .15s ease, background 0s ease;
+		-moz-transition: border .15s ease, background 0s ease;
 		transition: border .15s ease, background 0s ease;
 		display: inline-block;
 		width: 2em;
@@ -22,6 +24,7 @@
 
 		&:hover {
 			-webkit-transition: border .15s ease, background 0s ease .15s;
+			-moz-transition: border .15s ease, background 0s ease .15s;
 			transition: border .15s ease, background 0s ease .15s;
 			border: 1em solid $black;
 			background: $black;
@@ -35,6 +38,7 @@
 
 	span {
 		-webkit-transition: left .15s ease, opacity .15s ease;
+		-moz-transition: left .15s ease, opacity .15s ease;
 		transition: left .15s ease, opacity .15s ease;
 		display: inline-block;
 		vertical-align: middle;
@@ -50,6 +54,7 @@
 
 		&::before {
 			-webkit-box-sizing: content-box;
+			-moz-box-sizing: content-box;
 			box-sizing: content-box;
 			display: inline-block;
 			content: "";
