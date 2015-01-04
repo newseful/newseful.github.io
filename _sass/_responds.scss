@@ -8,6 +8,10 @@
 		right: 85%;
 	}
 
+	.archive {
+		display: none;
+	}
+
 }
 
 @media (max-width: 800px) {
@@ -20,6 +24,10 @@
 
 	.wrapper {
 		width: 70%;
+	}
+
+	.archive {
+		display: none;
 	}
 }
 
@@ -36,5 +44,9 @@
 
 	.wrapper {
 		width: 90%;
+	}
+
+	.archive {
+		display: none;
 	}
 }

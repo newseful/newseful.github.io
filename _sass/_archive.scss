@@ -1,0 +1,19 @@
+.archive {
+	position: absolute;
+	top: 8.7em;
+	left: 75%;
+	width: 20%;
+	color: $mid-gray;
+
+	li:not(:last-of-type) {
+		margin-bottom: .5em;
+	}
+
+	a {
+		color: $mid-gray;
+
+		&:hover {
+			color: $black;
+		}
+	}
+}
