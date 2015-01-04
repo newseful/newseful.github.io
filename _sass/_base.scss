@@ -24,10 +24,11 @@ html, body {
 
 .header {
     color: $mid-gray;
-    letter-spacing: 2px;
+    //letter-spacing: 2px;
     position: absolute;
-    top: 8.9em;
+    top: 8.65em;
     right: 75%;
+    font-weight: 600;
 }
 
 .footer {
