@@ -2,13 +2,14 @@ var categories = [
 	"Terms",
 	"Visual References",
 	"Influences",
-]
+];
 
 var terms = [
 	{
 		term: "news",
 		definition: "The medium by which we are informed of current events.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -16,6 +17,7 @@ var terms = [
 		term: "breaking news",
 		definition: "News which is reported while still developing.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -23,6 +25,7 @@ var terms = [
 		term: "report",
 		definition: "To relay information regarding current events.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -30,6 +33,7 @@ var terms = [
 		term: "current events",
 		definition: "Occurrences which are worthy of some level of local, regional, national, or international attention.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -37,6 +41,7 @@ var terms = [
 		term: "bias",
 		definition: "A tendency to perceive and report current events in a certain way due to subconscious tendencies and assumptions about morality, mechanics, physics, metaphysics, politics, etc. inherent to one's default mode of existence.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -44,6 +49,7 @@ var terms = [
 		term: "perception",
 		definition: "Reality as filtered by personal biases.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -51,6 +57,7 @@ var terms = [
 		term: "subjectivity",
 		definition: "The experience of living as an individual with no means of escaping one's personal biases.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -58,6 +65,7 @@ var terms = [
 		term: "objectivity",
 		definition: "The hypothetical reality of a series of events. Existence questionable.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -65,6 +73,7 @@ var terms = [
 		term: "misreport",
 		definition: "To accidentally or intentionally relate incorrect or inaccurate facts about a given news event.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -72,6 +81,7 @@ var terms = [
 		term: "fact",
 		definition: "A point upon which the vast majority of rational subjective witnesses agree.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -79,6 +89,7 @@ var terms = [
 		term: "story",
 		definition: "A coherent relation of a series of events such that a viewer or listener is able to understand causal relationships between them.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -86,6 +97,7 @@ var terms = [
 		term: "accuracy",
 		definition: "The measure of how closely a given point or statement agrees with fact.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -93,6 +105,7 @@ var terms = [
 		term: "emotional appeal",
 		definition: "A statement made with the intent of forcing agreement based upon agreed societal values.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -100,6 +113,7 @@ var terms = [
 		term: "values",
 		definition: "An unwritten set of rules used to weigh objects of perception for moral content and character.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -107,6 +121,7 @@ var terms = [
 		term: "morality",
 		definition: "A system of right and wrong by which decisions are made and judgements reached.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -114,6 +129,7 @@ var terms = [
 		term: "verify",
 		definition: "A state for a fact, event, statement, etc. which communicates that it has indeed passed a certain threshold of subjective agreement regarding its accuracy such that it can be assumed to be objectively true.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -121,6 +137,7 @@ var terms = [
 		term: "simultaneous perspective",
 		definition: "the perception of objective reality from multiple points of view at the same moment.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -128,6 +145,7 @@ var terms = [
 		term: "perspective",
 		definition: "The unique skewing of objective facts according to an individual's particular set of biases.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -135,6 +153,7 @@ var terms = [
 		term: "feed",
 		definition: "A linear format by which discrete pieces of information are organized to be consumed in a particular order.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -142,6 +161,7 @@ var terms = [
 		term: "article",
 		definition: "An unstructured written explanation of a story.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -149,6 +169,7 @@ var terms = [
 		term: "chart",
 		definition: "A graphical representation of information which is specifically suited to that information.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -156,6 +177,7 @@ var terms = [
 		term: "brief",
 		definition: "A condensed version of an article which explains a story using a series of short, point-by-point statements.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -169,6 +191,7 @@ var terms = [
 		term: "figure",
 		definition: "An individual with far greater influence and reach than is normal.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
@@ -176,7 +199,16 @@ var terms = [
 		term: "figurehead",
 		definition: "An institution acting through an individual.",
 		cat: 0,
+		media: [],
 		owner: 0,
 		tags: []
 	},
-]
+];
+
+var index = [];
+var i;
+
+for (term in terms) {
+	index[i].push(term.term);
+	i++;
+}
