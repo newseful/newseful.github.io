@@ -55,6 +55,11 @@ force.on('tick', function() {
 });
 
 node.on('mouseover', function(d) {
+	d3.select(this)
+		.transition()
+		.ease('elastic')
+		.attr('r',10);
+
 	tip.style({
 		'left' : d.x + 20 + 'px',
 		'top' : d.y + 'px',
@@ -66,6 +71,11 @@ node.on('mouseover', function(d) {
 });
 
 node.on('mouseout', function() {
+	d3.select(this)
+		.transition()
+		.ease('elastic')
+		.attr('r',5);
+
 	tip.style({
 		'top' : 0,
 		'left' : 0,

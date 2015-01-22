@@ -52,8 +52,6 @@ table {
 
 .node {
 	fill : #000;
-	stroke: #FFF;
-	stroke-width: 20px;
 }
 
 .link {
