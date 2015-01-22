@@ -1,17 +1,20 @@
-var categories = [
+window.dictionary = {};
+
+dictionary.categories = [
 	"Terms",
 	"Visual References",
 	"Influences",
 ];
 
-var terms = [
+dictionary.terms = [
 	{
 		term: "news",
 		definition: "The medium by which we are informed of current events.",
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "breaking news",
@@ -19,7 +22,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "report",
@@ -27,7 +31,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "current events",
@@ -35,7 +40,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "bias",
@@ -43,7 +49,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "perception",
@@ -51,7 +58,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "subjectivity",
@@ -59,7 +67,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "objectivity",
@@ -67,7 +76,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "misreport",
@@ -75,7 +85,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "fact",
@@ -83,7 +94,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "story",
@@ -91,7 +103,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "accuracy",
@@ -99,7 +112,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "emotional appeal",
@@ -107,7 +121,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "values",
@@ -115,7 +130,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "morality",
@@ -123,7 +139,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "verify",
@@ -131,7 +148,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "simultaneous perspective",
@@ -139,7 +157,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "perspective",
@@ -147,7 +166,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "feed",
@@ -155,7 +175,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "article",
@@ -163,7 +184,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "chart",
@@ -171,7 +193,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "brief",
@@ -179,13 +202,17 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "institution",
-		definition: "A powerful organization that has the ability to dictate societal norms."
+		definition: "A powerful organization that has the ability to dictate societal norms.",
+		cat: 0,
+		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "figure",
@@ -193,7 +220,8 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 	{
 		term: "figurehead",
@@ -201,14 +229,10 @@ var terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: []
+		tags: [],
+		connections: [] 
 	},
 ];
 
-var index = [];
-var i;
-
-for (term in terms) {
-	index[i].push(term.term);
-	i++;
-}
+dictionary.index = [];
+dictionary.tags = [];
