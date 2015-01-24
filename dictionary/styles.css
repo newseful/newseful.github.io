@@ -50,22 +50,89 @@ table {
 
 /************** GRAPH STYLES ***************/
 
+body, html {
+	font-family: "aktiv-grotesk-std";
+}
+
+* {
+	box-sizing: border-box;
+}
+
+svg {
+	background : #212121;
+	position: fixed;
+}
+
 .node {
-	fill : #000;
+	fill : #FFF;
+}
+
+.node.selected {
+	fill : #212121;
+	stroke-width: 2px;
+	stroke: #FFF;
+}
+
+.node:hover {
+	cursor:pointer;
 }
 
 .link {
 	stroke-width: 1px;
-	stroke: #000;
+	stroke: #FFF;
 }
 
 #tooltip {
-	font-family: "Akkurat";
+	padding: .6em 1em .7em;
+	color: #212121;
+	background: #FFF;
+	text-transform: capitalize;
 }
 
-.tip-title {
-	text-transform: uppercase;
-	border-bottom: 1px solid #FFF;
-	margin-bottom: 1em;
-	padding-bottom: 20px;
+/************** DEFINITION STYLES ***************/
+
+.template {
+	display: none;
+}
+
+#terms {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	width: 350px;
+	height : 100vh;
+	padding: 1.5em;
+	background: #F2F5F3;
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: #212121;
+	overflow: scroll;
+}
+
+.term-title {
+	text-transform:capitalize;
+	font-weight: 700;
+	margin-bottom : 2em
+}
+
+.term-body {
+	line-height: 1.4;
+	margin-bottom : 2em;
+}
+
+hr {
+	border: none;
+	border-bottom: 1px solid #212121;
+	margin-bottom: 2em;
+}
+
+.full-term-list ul {
+	line-height: 1.6;
+}
+
+.full-term-list li {
+	text-transform: capitalize;
+	margin-bottom: .25em;
+	cursor: pointer;
 }

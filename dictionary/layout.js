@@ -1,4 +1,4 @@
-var width = window.innerWidth,
+var width = window.innerWidth - 350,
 		height = window.innerHeight;
 
 var stage = d3.select('#dictionary')
@@ -14,35 +14,30 @@ var force = d3.layout.force()
 	.links(dictionary.links)
 	.start();
 
-var node = stage.selectAll('.node')
-	.data(dictionary.terms)
-	.enter()
-		.append('circle')
-		.attr('class','node')
-		.attr('r', 5)
-		.call(force.drag);
-
 var link = stage.selectAll('.link')
 	.data(dictionary.links)
 	.enter()
 		.append('line')
 		.attr('class', 'link');
 
+var node = stage.selectAll('.node')
+	.data(dictionary.terms)
+	.enter()
+		.append('circle')
+		.attr('class','node')
+		.attr('r', 5)
+		.attr('data-index', function(d) { return d.index })
+		.call(force.drag);
+
 var tip = d3.select('#dictionary').append('div')
 	.attr('id','tooltip')
 	.style({
 		'position' : 'absolute',
-		'background' : 'rgba(0,0,0,0.8)',
-		'padding' : '20px',
-		'width' : '350px',
-		'color' : '#FFF',
-		'opacity' : 0
+		'opacity' : '0'
 	});
 
 var tipTitle = tip.append('h2')
-	.attr('class', 'tip-title')
-
-var tipText = tip.append('p')
+	.attr('class', 'tip-title');
 
 force.on('tick', function() {
   node.attr('cx', function(d) { return d.x; })
@@ -55,30 +50,13 @@ force.on('tick', function() {
 });
 
 node.on('mouseover', function(d) {
-	d3.select(this)
-		.transition()
-		.ease('elastic')
-		.attr('r',10);
-
-	tip.style({
-		'left' : d.x + 20 + 'px',
-		'top' : d.y + 'px',
-		'opacity' : 1
-	});
-
-	tipTitle.text(d.term);
-	tipText.text(d.definition);
+	behaviors.hoverNode(this, d);
 });
 
-node.on('mouseout', function() {
-	d3.select(this)
-		.transition()
-		.ease('elastic')
-		.attr('r',5);
+node.on('mouseout', function(d) {
+	behaviors.unHoverNode(this, d);
+});
 
-	tip.style({
-		'top' : 0,
-		'left' : 0,
-		'opacity' : 0
-	});
+node.on('click', function(d) {
+	behaviors.selectNode(this, d);
 })

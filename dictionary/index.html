@@ -2,19 +2,40 @@
 <html>
 <head>
 <title>Dictionary</title>
+<script src="//use.typekit.net/hkl1skn.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
 <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
 
 	<div id="dictionary"></div>
+	<div id="terms">
+	</div>
 
 </body>
+
+<div class="simple-term template">
+		
+	<h2 class="term-title"></h2>
+	<p class="term-body"></p>
+
+</div>
+
+<div class="full-term-list template">
+	<ul>
+
+	</ul>
+</div>
+
+<li class="term-list-item template"></li>
 
 <script src="nlp.js"></script>
 <script src="d3.min.js"></script>
 <script src="contents.js"></script>
 <script src="generators.js"></script>
+<script src="reader.js"></script>
+<script src="chart-behavior-manager.js"></script>
 <script src="layout.js"></script>
 
 </html>
