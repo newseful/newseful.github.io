@@ -9,6 +9,32 @@ var Reader = function(dict) {
 			tmp.querySelector(".term-body").innerHTML = term.definition;
 			tmp.classList.remove("template");
 
+			var tagList = tmp.querySelector(".term-tags");
+			var tag = tagList.querySelector(".term-tag");
+
+			if (term.tags.length) {
+				for ( var i = 0; i < term.tags.length; i++ ) {
+					var curTag = i ? tag.cloneNode(true) : tag;
+					curTag.innerHTML = term.tags[i];
+					curTag.setAttribute('data-tag-name', term.tags[i]);
+					if (i) {
+						tagList.appendChild(curTag);
+					}
+
+					curTag.addEventListener("mouseenter", function() {
+						behaviors.hoverNodesForTag(this.dataset.tagName);
+					});
+
+					curTag.addEventListener("mouseout", function() {
+						behaviors.unHoverNodesForTag(this.dataset.tagName);
+					})
+				}
+			} else {
+				while (tagList.hasChildNodes()) {
+					tagList.removeChild(tagList.lastChild);
+				}
+			}
+
 			return tmp;
 		},
 

@@ -6,6 +6,12 @@ dictionary.categories = [
 	"Influences",
 ];
 
+dictionary.palette = {
+	blue : "#256EF5",
+	red : "#F55925",
+	yellow : "#CFB521"
+}
+
 dictionary.terms = [
 	{
 		term: "news",
@@ -13,7 +19,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["media"],
 		connections: [] 
 	},
 	{
@@ -22,7 +28,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["media", "time"],
 		connections: [] 
 	},
 	{
@@ -31,7 +37,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["media"],
 		connections: [] 
 	},
 	{
@@ -49,7 +55,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["ethics", "media", "cognitive science"],
 		connections: [] 
 	},
 	{
@@ -58,7 +64,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["cognitive science"],
 		connections: [] 
 	},
 	{
@@ -67,7 +73,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["cognitive science", "ethics"],
 		connections: [] 
 	},
 	{
@@ -76,7 +82,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["cognitive science", "ethics"],
 		connections: [] 
 	},
 	{
@@ -85,7 +91,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["media", "ethics"],
 		connections: [] 
 	},
 	{
@@ -94,7 +100,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["ethics", "media"],
 		connections: [] 
 	},
 	{
@@ -103,7 +109,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["media"],
 		connections: [] 
 	},
 	{
@@ -112,7 +118,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["media"],
 		connections: [] 
 	},
 	{
@@ -121,7 +127,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["media", "ethics", "cognitive science"],
 		connections: [] 
 	},
 	{
@@ -130,7 +136,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["ethics", "cognitive science"],
 		connections: [] 
 	},
 	{
@@ -139,7 +145,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["ethics", "cognitive science"],
 		connections: [] 
 	},
 	{
@@ -148,7 +154,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["ethics", "media"],
 		connections: [] 
 	},
 	{
@@ -157,7 +163,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["cognitive science"],
 		connections: [] 
 	},
 	{
@@ -166,7 +172,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["cognitive science"],
 		connections: [] 
 	},
 	{
@@ -175,7 +181,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["design"],
 		connections: [] 
 	},
 	{
@@ -184,7 +190,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["design"],
 		connections: [] 
 	},
 	{
@@ -193,7 +199,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["design"],
 		connections: [] 
 	},
 	{
@@ -202,7 +208,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["design", "media"],
 		connections: [] 
 	},
 	{
@@ -211,7 +217,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["power structures"],
 		connections: [] 
 	},
 	{
@@ -220,7 +226,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["power structures"],
 		connections: [] 
 	},
 	{
@@ -229,9 +235,48 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: [],
+		tags: ["power structures"],
 		connections: [] 
 	},
+
+	// Ex. of recursive explanation
+	// {
+	// 	term: "alpha",
+	// 	definition: "beta.",
+	// 	cat: 2,
+	// 	media: [],
+	// 	owner: 0,
+	// 	tags: ["power structures"],
+	// 	connections: [] 
+	// },
+	// {
+	// 	term: "beta",
+	// 	definition: "omega.",
+	// 	cat: 2,
+	// 	media: [],
+	// 	owner: 0,
+	// 	tags: ["power structures"],
+	// 	connections: [] 
+	// },
+	// {
+	// 	term: "omega",
+	// 	definition: "lambda.",
+	// 	cat: 2,
+	// 	media: [],
+	// 	owner: 0,
+	// 	tags: ["power structures"],
+	// 	connections: [] 
+	// },
+	// {
+	// 	term: "lambda",
+	// 	definition: "alpha.",
+	// 	cat: 2,
+	// 	media: [],
+	// 	owner: 0,
+	// 	tags: ["power structures"],
+	// 	connections: [] 
+	// },
+
 ];
 
 dictionary.index = [];
