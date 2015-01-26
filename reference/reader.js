@@ -41,16 +41,19 @@ var Reader = function(dict) {
 			return tmp;
 		},
 
-		constructTermList : function() {
-			var tmpContainer = document.querySelector(".full-term-list").cloneNode(true);
-			var list = tmpContainer.querySelector("ul");
+		// Returns a bunch of lis
+		renderTermListContents : function(termList) {
+			var list = document.createElement("ul");
 			var li = document.querySelector(".term-list-item");
 
-			for (var i = 0; i < this.dictionary.length; i++) {
+			var terms = termList ? termList : this.dictionary;
+
+			for (var i = 0; i < terms.length; i++) {
 				var tmpli = li.cloneNode("true");
-				tmpli.innerHTML = this.dictionary[i].term;
+				tmpli.innerHTML = terms[i].term;
 				tmpli.classList.remove("template");
 				tmpli.setAttribute('data-index', i);
+				tmpli.classList.add('category-' + terms[i].cat);
 
 				tmpli.addEventListener("mouseenter", function() {
 					var node = ".node[data-index='" + this.dataset.index + "']";
@@ -70,9 +73,47 @@ var Reader = function(dict) {
 				list.appendChild(tmpli);
 			}
 
+			return list;
+		},
+
+		constructTermList : function(termList) {
+			var tmpContainer = document.querySelector(".full-term-list").cloneNode(true);
+			
+			tmpContainer.appendChild(this.renderTermListContents(termList));
+
+			var _this = this;
+
+			tmpContainer.querySelector(".search-terms").addEventListener("keyup", function() {
+				var terms = this.value;
+
+				_this.clearTermList();
+
+				if (terms) {
+					_this.updateTermList(dictionary.search(terms));
+				} else {
+					_this.updateTermList();
+				}
+			});
+
 			tmpContainer.classList.remove("template");
 
 			return tmpContainer;
+		},
+
+		updateTermList : function(termList) {
+			var container = document.querySelector("#terms .full-term-list");
+			container.appendChild(this.renderTermListContents(termList));
+			
+		},
+
+		clearTermList : function() {
+			var container = document.querySelector("#terms .full-term-list ul");
+
+			while (container.hasChildNodes()) {
+				container.removeChild(container.lastChild);
+			}
+
+			container.parentNode.removeChild(container);
 		},
 
 		dictionary : dict,
@@ -104,10 +145,14 @@ var Reader = function(dict) {
 				this.container.appendChild(this.constructTermList());
 			}
 
+		},
+
+		init : function() {
+			this.render();
 		}
 
 	}
 }
 
 var reader = new Reader(window.dictionary.terms);
-reader.render();
+reader.init();

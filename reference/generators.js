@@ -61,6 +61,18 @@ window.dictionary.termsByTagName = function(tagName) {
 	return terms;
 }
 
+window.dictionary.search = function(term) {
+	var termsReturned = [];
+
+	for (x in this.terms) {
+		if (this.terms[x].term.match( new RegExp(term, "gi") ) ) {
+			termsReturned.push(this.terms[x]);
+		}
+	}
+
+	return termsReturned;
+}
+
 // // Generate links object for d3 layout
 
 // for (x in dictionary.terms) {

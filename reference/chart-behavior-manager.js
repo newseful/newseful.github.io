@@ -19,7 +19,6 @@ var ChartBehaviorManager = function() {
 		},
 
 		unHoverNode : function(node, d) {
-			console.log("unhover");
 			if (node) {
 				var isCurrentlySelected = false;
 
