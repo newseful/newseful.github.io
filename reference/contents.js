@@ -15,6 +15,8 @@ dictionary.palette = {
 	green : "#3EB571"
 }
 
+dictionary.mediaPath = "media/"
+
 dictionary.terms = [
 	{
 		term: "news",
@@ -248,6 +250,24 @@ dictionary.terms = [
 		media: [],
 		owner: 0,
 		tags: ["design"],
+		connections: []
+	},
+	{
+		term: "guardian next",
+		definition: "Recent iteration of the Guardian's website. Touted mostly as responsive update, but breaking news stories have received a facelift as well.",
+		cat: 1,
+		media: ["guardian-01.jpg", "guardian-02.jpg"],
+		owner: 0,
+		tags: ["media", "design"],
+		connections: []
+	},
+	{
+		term: "breaking news (website)",
+		definition: "Digital platform focusing on breaking news aggregation. Reddit-style lists of current events curated by staff editors. Weird full-screen map background.",
+		cat: 1,
+		media: ["breaking-news-01.jpg", "breaking-news-02.jpg", "breaking-news-03.jpg"],
+		owner: 0,
+		tags: ["media", "design"],
 		connections: []
 	}
 

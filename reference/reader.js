@@ -12,6 +12,8 @@ var Reader = function(dict) {
 			var tagList = tmp.querySelector(".term-tags");
 			var tag = tagList.querySelector(".term-tag");
 
+			var media = tmp.querySelector(".term-media");
+
 			tmp.querySelector(".term-category").innerHTML = dictionary.categories[term.cat];
 			tmp.querySelector(".term-category").classList.add("category-" + term.cat);
 
@@ -36,6 +38,16 @@ var Reader = function(dict) {
 				while (tagList.hasChildNodes()) {
 					tagList.removeChild(tagList.lastChild);
 				}
+			}
+
+			if (term.media.length) {
+				for (var i = 0; i < term.media.length; i++) {
+					var img = document.createElement("img");
+					img.setAttribute("src", dictionary.mediaPath + term.media[i]);
+					media.appendChild(img);
+				}
+			} else {
+				media.parentNode.removeChild(media);
 			}
 
 			return tmp;
@@ -144,6 +156,9 @@ var Reader = function(dict) {
 			} else {
 				this.container.appendChild(this.constructTermList());
 			}
+
+			// Reset scroll position
+			this.container.scrollTop = 0;
 
 		},
 

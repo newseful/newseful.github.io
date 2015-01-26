@@ -155,9 +155,14 @@ svg {
 	margin-bottom : 2em;
 }
 
+.term-media > * {
+	max-width: 100%;
+	margin-bottom: 1.5em;
+}
+
 hr {
 	border: none;
-	border-bottom: 1px solid #212121;
+	border-bottom: 1px solid #4D4D4D;
 	margin-bottom: 2em;
 }
 
@@ -212,25 +217,25 @@ h3 {
 }
 
 ::-webkit-input-placeholder {
-   color: #212121;
+   color: #4D4D4D;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #212121;  
+   color: #4D4D4D;  
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #212121;  
+   color: #4D4D4D;  
 }
 
 :-ms-input-placeholder {  
-   color: #212121;  
+   color: #4D4D4D;  
 }
 
 .search-terms {
 	width: 100%;
 	background: none;
-	color: #212121;
+	color: #4D4D4D;
 	border: 1px solid;
 	border-radius: 4px;
 	font-family: "aktiv-grotesk-std";
