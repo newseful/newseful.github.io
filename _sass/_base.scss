@@ -46,6 +46,14 @@ html, body {
 }
 
 article {
+    a {
+        color: $mid-gray;
+
+        &:hover {
+            color: $black;
+        }
+    }
+
     ul {
         list-style-type: disc;
         li {
