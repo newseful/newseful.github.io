@@ -12,6 +12,9 @@ var Reader = function(dict) {
 			var tagList = tmp.querySelector(".term-tags");
 			var tag = tagList.querySelector(".term-tag");
 
+			tmp.querySelector(".term-category").innerHTML = dictionary.categories[term.cat];
+			tmp.querySelector(".term-category").classList.add("category-" + term.cat);
+
 			if (term.tags.length) {
 				for ( var i = 0; i < term.tags.length; i++ ) {
 					var curTag = i ? tag.cloneNode(true) : tag;

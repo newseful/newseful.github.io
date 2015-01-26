@@ -73,12 +73,17 @@ svg {
 }
 
 .node[data-category="1"] {
-	fill : #F55925;
+	fill : #3EB571;
 }
 
 .node[data-category="2"] {
 	fill : #CFB521;
 }
+
+.node[data-category="3"] {
+	fill : #F55925;
+}
+
 
 .node.selected {
 	fill : #212121;
@@ -109,24 +114,59 @@ svg {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	display: block;
-	width: 350px;
+	width: 325px;
 	height : 100vh;
 	padding: 1.5em;
-	background: #F2F5F3;
+	background: #292929;
 	position: fixed;
 	top: 0;
 	right: 0;
-	color: #212121;
+	color: #FFF;
 	overflow: scroll;
 }
 
 .term-title {
 	text-transform:capitalize;
 	font-weight: 700;
-	margin-bottom : 2em
+}
+
+.term-category {
+	font-size: .8em;
+	color: #949494;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: .8em;
+	font-weight: 500;
+}
+
+.term-category::before {
+	content: "";
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	background: black;
+	border-radius: .5em;
+	margin-right: .5em;
+}
+
+.term-category.category-0::before {
+	background: #256EF5;
+}
+
+.term-category.category-1::before {
+	background: #3EB571;
+}
+
+.term-category.category-2::before {
+	background: #CFB521;
+}
+
+.term-category.category-3::before {
+	background: #F55925;
 }
 
 .term-body {
+	margin-top: 2em;
 	line-height: 1.4;
 	margin-bottom : 2em;
 }
@@ -157,7 +197,7 @@ h3 {
 
 .term-tags li {
 	cursor: pointer;
-	color: #256EF5;
+	color: #3EB571;
 	display: inline-block;
 	line-height: 1;
 	font-size: .7em;

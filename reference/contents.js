@@ -1,15 +1,18 @@
 window.dictionary = {};
 
 dictionary.categories = [
-	"Terms",
-	"Visual References",
-	"Influences",
+	"Term",
+	"Visual Reference",
+	"Influence",
+	"Resource"
 ];
 
 dictionary.palette = {
 	blue : "#256EF5",
 	red : "#F55925",
-	yellow : "#CFB521"
+	yellow : "#CFB521",
+	orange : "#44C968",
+	green : "#3EB571"
 }
 
 dictionary.terms = [
@@ -238,6 +241,15 @@ dictionary.terms = [
 		tags: ["power structures"],
 		connections: [] 
 	},
+	{
+		term: "designing news",
+		definition: "Book by Francesco Franchi/Gestalten on the future of news and media industries in our digital age",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["design"],
+		connections: []
+	}
 
 	// Ex. of recursive explanation
 	// {

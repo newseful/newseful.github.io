@@ -1,4 +1,4 @@
-var width = window.innerWidth - 350,
+var width = window.innerWidth - 325,
 		height = window.innerHeight;
 
 var stage = d3.select('#dictionary')
