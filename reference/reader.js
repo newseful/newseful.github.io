@@ -52,7 +52,7 @@ var Reader = function(dict) {
 				var tmpli = li.cloneNode("true");
 				tmpli.innerHTML = terms[i].term;
 				tmpli.classList.remove("template");
-				tmpli.setAttribute('data-index', i);
+				tmpli.setAttribute('data-index', terms[i].index);
 				tmpli.classList.add('category-' + terms[i].cat);
 
 				tmpli.addEventListener("mouseenter", function() {
