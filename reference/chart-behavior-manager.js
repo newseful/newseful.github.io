@@ -11,6 +11,7 @@ var ChartBehaviorManager = function() {
 
 			selection
 				.transition()
+				.duration(350)
 				.ease('elastic')
 				.attr('r',10);
 
@@ -35,6 +36,7 @@ var ChartBehaviorManager = function() {
 
 					selection
 						.transition()
+						.duration(350)
 						.ease('elastic')
 						.attr('r',5);
 
