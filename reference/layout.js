@@ -57,7 +57,7 @@ var nodeLabel = stage.selectAll('.node-label')
 		.append('text')
 		.attr('class','node-label')
 		.text(function(d) { return d.term })
-		.attr('transform', 'translate(20,8)')
+		.attr('transform', 'translate(20,6)')
 		.style('opacity', '0')
 		.attr('data-index', function(d, i) { return i })
 		.call(force.drag);
