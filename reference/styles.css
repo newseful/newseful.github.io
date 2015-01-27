@@ -158,6 +158,13 @@ svg {
 	margin-top: 2em;
 	line-height: 1.4;
 	margin-bottom : 2em;
+	font-weight: 300;
+}
+
+.term-body span.term-inline {
+	text-decoration: underline;
+	cursor: pointer;
+	font-weight: 400;
 }
 
 .term-media {

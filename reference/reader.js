@@ -6,7 +6,7 @@ var Reader = function(dict) {
 		constructSimpleTerm : function(term) {
 			var tmp = document.querySelector(".simple-term").cloneNode(true);
 			tmp.querySelector(".term-title").innerHTML = term.term;
-			tmp.querySelector(".term-body").innerHTML = term.definition;
+			tmp.querySelector(".term-body").innerHTML = this.highlight(term.definition, term.connections);
 			tmp.classList.remove("template");
 
 			var tagList = tmp.querySelector(".term-tags");
@@ -57,7 +57,63 @@ var Reader = function(dict) {
 				media.parentNode.removeChild(media);
 			}
 
+			this.registerDescriptionListeners(tmp);
+
 			return tmp;
+		},
+
+		// Returns parsed term description with connections marked up
+		// Expects term def + term connection list (array of index, name objects)
+		highlight : function(t, connections) {
+			if (connections.length) { 
+				var html = t;
+				for (var i = 0; i < connections.length; i++) {
+					var name = connections[i].name;
+					var exp = new RegExp(name, 'i');
+					if (exp.exec(t)) {
+						var res = exp.exec(t);
+						
+						var openingTag = "<span class='term-inline' data-index='" + connections[i].index + "'>";
+						var closingTag = "</span>";
+
+						var endPoint = res.index + name.length;
+
+						while(t.charAt(endPoint).match(/[a-zA-Z]/)) {
+							endPoint++;
+						}
+
+						t = t.insert(endPoint, closingTag);
+						t = t.insert(res.index, openingTag);
+					}
+				}
+			}
+
+			return t;
+		},
+
+		registerDescriptionListeners : function(element) {
+			if (element.querySelectorAll(".term-inline")) {
+				terms = element.querySelectorAll(".term-inline");
+
+				for (var i = 0; i < terms.length; i++) {
+					var t = terms[i];
+					t.addEventListener("mouseenter", function() {
+						var i = this.dataset.index;
+						var node = ".node[data-index='" + i + "']";
+						behaviors.hoverNode(node);
+					});
+					t.addEventListener("mouseout", function() {
+						var i = this.dataset.index;
+						var node = ".node[data-index='" + i + "']";
+						behaviors.unHoverNode(node);
+					});
+					t.addEventListener("click", function() {
+						var i = this.dataset.index;
+						var node = ".node[data-index='" + i + "']";
+						behaviors.selectNode(node);
+					});
+				}
+			}
 		},
 
 		// Returns a bunch of lis
