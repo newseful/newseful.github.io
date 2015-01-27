@@ -52,6 +52,7 @@ table {
 
 body, html {
 	font-family: "aktiv-grotesk-std";
+	position: relative;
 }
 
 * {
@@ -61,6 +62,7 @@ body, html {
 svg {
 	background : #212121;
 	position: fixed;
+	z-index: 0;
 }
 
 .node {
@@ -117,12 +119,15 @@ svg {
 	width: 325px;
 	height : 100vh;
 	padding: 1.5em;
-	background: #292929;
+	background: #212121;
+	border-left: 1px solid #292929;
 	position: fixed;
 	top: 0;
 	right: 0;
-	color: #FFF;
-	overflow: scroll;
+	color: #E6E6E6;
+	overflow-y: scroll;
+	overflow-x: visible;
+	z-index: 1;
 }
 
 .term-title {
@@ -155,14 +160,55 @@ svg {
 	margin-bottom : 2em;
 }
 
+.term-media {
+	position: relative;
+}
+
 .term-media > * {
 	max-width: 100%;
 	margin-bottom: 1.5em;
 }
 
+.term-media img {
+	cursor: zoom-in;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 3;
+	cursor: zoom-out;
+}
+
+.overlay > .bg {
+	-webkit-transition: opacity .25s ease;
+	transition: opacity .25s ease;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	opacity: 0;
+	background: #212121;
+}
+
+.term-media img.expanded {
+	opacity: 0;
+}
+
+.overlay img.expander {
+	-webkit-transition: top .25s ease, left .25s ease, transform .25s ease, width .25s ease;
+	transition: top .25s ease, left .25s ease, transform .25s ease, width .25s ease;
+	position: fixed;
+	z-index: 200;
+}
+
 hr {
 	border: none;
-	border-bottom: 1px solid #4D4D4D;
+	border-bottom: 1px solid #292929;
 	margin-bottom: 2em;
 }
 
@@ -246,7 +292,7 @@ h3 {
 
 .search-terms:focus {
 	outline: none;
-	color: #FFF;
+	color: #E6E6E6;
 }
 
 .category-0::before {
