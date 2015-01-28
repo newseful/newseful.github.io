@@ -47,6 +47,35 @@ table {
 	border-spacing: 0;
 }
 
+/************** NAVIGATOR STYLES ***************/
+
+#navigator {
+	background: #212121;
+	border-right: 1px solid #292929;
+	width: 70px;
+	height : 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+#navigator #logo {
+	height: 10vh;
+	color: #4F4C48;
+	text-align: center;
+	border-bottom: 1px solid #292929;
+	font-family: "ff-spinoza-web-pro";
+	font-size: 2.25em;
+	position: relative;
+}
+
+#navigator #logo span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 
 /************** GRAPH STYLES ***************/
 

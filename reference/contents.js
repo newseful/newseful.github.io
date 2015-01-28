@@ -2,7 +2,7 @@ window.dictionary = {};
 
 dictionary.categories = [
 	"Term",
-	"Visual Reference",
+	"Outlet",
 	"Influence",
 	"Resource"
 ];
@@ -258,7 +258,7 @@ dictionary.terms = [
 		cat: 1,
 		media: ["guardian-01.jpg", "guardian-02.jpg"],
 		owner: 0,
-		tags: ["media", "design"],
+		tags: ["media", "design", "precedent"],
 		connections: []
 	},
 	{
@@ -267,9 +267,72 @@ dictionary.terms = [
 		cat: 1,
 		media: ["breaking-news-01.jpg", "breaking-news-02.jpg", "breaking-news-03.jpg"],
 		owner: 0,
-		tags: ["media", "design"],
+		tags: ["media", "design", "precedent"],
 		connections: []
-	}
+	},
+	{
+		term: "the upshot",
+		definition: "New York Times blog devoted to visualizing news.",
+		cat: 1,
+		media: ["upshot-01.jpg", "upshot-02.jpg"],
+		owner: 0,
+		tags: ["media", "design", "precedent"],
+		connections: []
+	},
+	{
+		term: "24-hour News Network",
+		definition: "TV news networks which broadcast 24 hours a day. This demanding schedule leads to a high demand for content, which leads to speculation.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["media", "outlet"],
+		connections: []
+	},
+	{
+		term: "twitter",
+		definition: "Emotional and measured responses from global network. Mixed relevance and reliability.",
+		cat: 1,
+		media: [],
+		owner: 0,
+		tags: ["social", "outlet"],
+		connections: []
+	},
+	{
+		term: "facebook",
+		definition: "Emotional responses from sheltered network. Limited relevance.",
+		cat: 1,
+		media: [],
+		owner: 0,
+		tags: ["social", "outlet"],
+		connections: []
+	},
+	{
+		term: "clickbait journalism",
+		definition: "Stories shared via social media written to drive advertising revenue rather than to inform about current events.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["media", "social"],
+		connections: []
+	},
+	{
+		term: "trusted sources",
+		definition: "Professional journalism from established and reliable news sources.",
+		cat: 1,
+		media: [],
+		owner: 0,
+		tags: ["outlet", "media"],
+		connections: []
+	},
+	{
+		term: "journalism",
+		definition: "The practice of collecting facts and reporting them to the general public.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["media"],
+		connections: []
+	},
 
 	// Ex. of recursive explanation
 	// {
@@ -313,3 +376,181 @@ dictionary.terms = [
 
 dictionary.index = [];
 dictionary.tags = [];
+
+window.calendar = {};
+
+calendar.weeks = [
+	"January 20",
+	"January 20 &ndash; January 27",
+	"January 27 &ndash; February 3",
+	"February 3 &ndash; February 10",
+	"February 10 &ndash; February 17",
+	"February 17 &ndash; February 24",
+	"February 24 &ndash; March 3",
+	"March 3 &ndash; March 10",
+	"March 10 &ndash; March 17",
+	"March 17 &ndash; March 24",
+	"March 24 &ndash; March 31",
+	"March 31 &ndash; April 7",
+	"April 7 &ndash; April 14",
+	"April 14 &ndash; April 21",
+	"April 21 &ndash; April 28",
+	"April 28 &ndash; May 5",
+]
+
+calendar.events = [
+	{
+		name : "Design dictionary",
+		weeks : {
+			wip : [0],
+			due : []
+		}
+	},
+	{
+		name : "Build dictionary",
+		weeks : {
+			wip : [0,1,2],
+			due : [3]
+		}
+	},
+	{
+		name : "Write final project description",
+		weeks : {
+			wip : [],
+			due : [2]
+		}
+	},
+	{
+		name : "Write final project schedule",
+		weeks : {
+			wip : [],
+			due : [2]
+		}
+	},
+	{
+		name : "Research 3&ndash;5 major news events from the past two years for use in prototype",
+		weeks : {
+			wip : [],
+			due : [2]
+		}
+	},
+	{
+		name : "Write case studies on major news events researched last week",
+		weeks : {
+			wip : [],
+			due : [3]
+		}
+	},
+	{
+		name : "Decide final name",
+		weeks : {
+			wip : [],
+			due : [4]
+		}
+	},
+	{
+		name : "Design branding ideas",
+		weeks : {
+			wip : [],
+			due : [4]
+		}
+	},
+	{
+		name : "Design initial ideas for final form",
+		weeks : {
+			wip : [5,6],
+			due : [7]
+		}
+	},
+	{
+		name : "Build prototypes if it helps",
+		weeks : {
+			wip : [5,6],
+			due : [7]
+		}
+	},
+	{
+		name : "Design panel presentation",
+		weeks : {
+			wip : [],
+			due : [7]
+		}
+	},
+	{
+		name : "Consider options before beginning final design process",
+		weeks : {
+			wip : [8],
+			due : []
+		}
+	},
+	{
+		name : "Decide final form",
+		weeks : {
+			wip : [],
+			due : [9]
+		}
+	},
+	{
+		name : "Design product architecture",
+		weeks : {
+			wip : [],
+			due : [9]
+		}
+	},
+	{
+		name : "Research technical requirements",
+		weeks : {
+			wip : [],
+			due : [9]
+		}
+	},
+	{
+		name : "Design final form",
+		weeks : {
+			wip : [10,11,12],
+			due : [13]
+		}
+	},
+	{
+		name : "Build final form",
+		weeks : {
+			wip : [10,11,12],
+			due : [13]
+		}
+	},
+	{
+		name : "Write project abstract",
+		weeks : {
+			wip : [],
+			due : [11]
+		}
+	},
+	{
+		name : "Write exhibition proposal",
+		weeks : {
+			wip : [11,12],
+			due : [13]
+		}
+	},
+	{
+		name : "Produce exhibition stuff",
+		weeks : {
+			wip : [],
+			due : [14]
+		}
+	},
+	{
+		name : "Tweak final form",
+		weeks : {
+			wip : [14],
+			due : [15]
+		}
+	},
+	{
+		name : "Install exhibition",
+		weeks : {
+			wip : [],
+			due : [15]
+		}
+	},
+]

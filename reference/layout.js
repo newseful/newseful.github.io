@@ -1,14 +1,14 @@
-var width = window.innerWidth - 325,
+var width = window.innerWidth - 325 - 70,
 		height = window.innerHeight;
 
 var stage = d3.select('#dictionary')
 	.append('svg')
 	.attr('width', width)
-	.attr('height', height);
+	.attr('height', height)
+	.style('left', "70px");
 
 var force = d3.layout.force()
-	.charge(-500)
-	.linkDistance(50)
+	.charge(-300)
 	.size([width, height])
 	.nodes(dictionary.terms)
 	.links(dictionary.links)
@@ -47,7 +47,7 @@ var node = stage.selectAll('.node')
 		.append('circle')
 		.classed('node', true)
 		.attr('data-category', function(d) { return d.cat })
-		.attr('r', 5)
+		.attr('r', 4)
 		.attr('data-index', function(d) { return d.index })
 		.call(force.drag);
 
