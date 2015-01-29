@@ -31,6 +31,14 @@ var timeScale = d3.time.scale()
 	.domain([firstDay, lastDay])
 	.range([0, height]);
 
+var currentWeekSelector = schedule.append("rect")
+	.classed("current-week", true)
+	.attr("width", 69)
+	.attr("height", function() { return scale.range()[1] - scale.range()[0] })
+	.attr("x", 0)
+	.attr("y", 0)
+	.style("opacity", "0")
+
 var guide = schedule.append("g")
 	.classed("guide", true)
 	.style('opacity', '0')
@@ -183,11 +191,22 @@ schedule.on("mousemove", function(event) {
 
 	var currentWeek = Math.ceil(reverseScale(d3.mouse(this)[1]));
 
+	currentWeekSelector
+		.style("opacity", "1")
+		.transition()
+		.duration(50)
+		.attr("transform", function() { return "translate(0,"+ scale(currentWeek - 1) +")" })
+
 	srData[0] = data[currentWeek];
 	updateScheduleReader(false, d3.event.y);
 });
 
 schedule.on("mouseout", function() {
+
 	guide.style('opacity', '0');
+
+	currentWeekSelector
+		.style("opacity", 0)
+
 	updateScheduleReader(true);
 })

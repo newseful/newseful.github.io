@@ -119,6 +119,10 @@ table {
 	stroke-width: 1px;
 }
 
+.current-week {
+	fill:#242424;
+}
+
 #schedule-reader {
 	width: 350px;
 	position: fixed;
