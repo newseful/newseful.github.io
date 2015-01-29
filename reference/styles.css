@@ -113,6 +113,10 @@ table {
 	fill: #256EF5;
 }
 
+.pres {
+	fill: #3EB571;
+}
+
 .schedule-connector {
 	fill: #212121;
 	stroke: #292929;
@@ -133,6 +137,20 @@ table {
 	transform: translate(0, -50%);
 	color: #E6E6E6;
 	padding: 1em;
+}
+
+#schedule-reader.panel-review::before {
+	content: "Panel Review";
+	border: 1px solid #3EB571;
+	color: #3EB571;
+	position: absolute;
+	padding: .2rem .5rem;
+	right: 1rem;
+	border-radius: 5rem;
+	text-align: center;
+	font-size: .7rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 #schedule-reader h2 {
@@ -203,7 +221,7 @@ body, html {
 }
 
 .node {
-	stroke-width: 2px;
+	stroke-width: 1px;
 	stroke : #FFF;
 }
 
@@ -368,14 +386,14 @@ hr {
 
 .full-term-list li::before {
 	content: "";
-	width: .7em;
-	height: .7em;
+	width: .5em;
+	height: .5em;
 	display: inline-block;
 	border-radius: .35em;
 	margin-right: .35em;
 	float: right;
 	position: relative;
-	top: .4em;
+	top: .6em;
 }
 
 h3 {

@@ -14,6 +14,8 @@ var schedule = d3.select('#schedule').append('svg')
 
 var data = calendar.cal;
 
+var presDates = [7,12];
+
 var scale = d3.scale.ordinal()
 	.domain(d3.range(data.length))
 	.rangePoints([0, height]);
@@ -72,10 +74,19 @@ var progress = schedule.append("path")
 
 var eventContainer = schedule.selectAll(".events")
 	.data(data)
-	.enter()
+
+eventContainer.enter()
 		.append("g")
 		.classed("events", true)
 		.attr('transform', function(d, i) { return "translate(20," + scale.range()[i] + ")" });
+
+eventContainer
+	.append("path")
+	.classed({ "pres" : true, "remove" : function(d,i) { return !(presDates.indexOf(i) > -1) } })
+	.attr("d", d3.svg.symbol().type("square").size(20))
+	.attr("transform", function(d,i) {  return "translate(" + ( Array.prototype.indexOf.call( this.parentNode.childNodes, this ) * 8 ) +", 0) rotate(45)" });
+
+eventContainer.selectAll(".remove").remove();
 
 eventContainer.selectAll(".due")
 	.data(function(d, i) { return d.tasks.due })
@@ -95,7 +106,7 @@ eventContainer.selectAll(".wip")
 
 var srData = [data[0]];
 
-var updateScheduleReader = function( hidden, y ) {
+var updateScheduleReader = function( hidden, y, currentWeek ) {
 
 	// Big parent data bind
 	var scheduleReader = d3.select("#navigator").selectAll("#schedule-reader")
@@ -108,7 +119,7 @@ var updateScheduleReader = function( hidden, y ) {
 
 	// Update
 	scheduleReader
-		.classed("hidden", hidden)
+		.classed({"hidden" : hidden, "panel-review" : function(d,i) { return presDates.indexOf(currentWeek) > -1 } })
 		.style('top', y + 'px')
 
 	// Exit
@@ -198,7 +209,7 @@ schedule.on("mousemove", function(event) {
 		.attr("transform", function() { return "translate(0,"+ scale(currentWeek - 1) +")" })
 
 	srData[0] = data[currentWeek];
-	updateScheduleReader(false, d3.event.y);
+	updateScheduleReader(false, d3.event.y, currentWeek);
 });
 
 schedule.on("mouseout", function() {
