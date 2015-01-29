@@ -89,67 +89,88 @@ var srData = [data[0]];
 
 var updateScheduleReader = function( hidden, y ) {
 
+	// Big parent data bind
 	var scheduleReader = d3.select("#navigator").selectAll("#schedule-reader")
 		.data(srData)
-		.classed("hidden", hidden)
-		.style('top', y + 'px')
-		
+	
+	// Enter	
 	scheduleReader.enter()
 		.append("div")
 		.attr("id", "schedule-reader")
-		.classed("hidden", hidden)
-		.style('top', y + 'px');
 
+	// Update
+	scheduleReader
+		.classed("hidden", hidden)
+		.style('top', y + 'px')
+
+	// Exit
 	scheduleReader.exit().remove();
 
+	// Data bind again
 	var selection = scheduleReader.selectAll(".week-title")
 		.data(srData)
-		.text(function(d) { return d.week });
 	
+	// Enter
 	selection.enter()
 		.append("h2")
 		.classed("week-title", true)
-		.text(function(d) { return d.week });
+	
+	// Update
+	selection.text(function(d) { return d.week });
 
+	// Exit
 	selection.exit().remove();
 
-
+	// Data bind
 	var dueList = scheduleReader.selectAll(".due-list")
 		.data(srData);
 
+	// Enter
 	dueList.enter()
 			.append("ul")
 			.classed("due-list", true);
 
+	// Exit
 	dueList.exit().remove();
 
+	// Data bind
 	var wipList = scheduleReader.selectAll(".wip-list")
 		.data(srData);
 
+	// Enter
 	wipList.enter()
 			.append("ul")
 			.classed("wip-list", true);
 
+	// Exit
 	wipList.exit().remove();
 
+	// Data bind
 	var dlSelection = dueList.selectAll("li")
 		.data(function(d) { return d.tasks.due })
-		.text(function(d) { return d })
 	
+	// Enter
 	dlSelection.enter()
 		.append("li")
-		.text(function(d) { return d })
 
+	// Update
+	dlSelection.text(function(d) { return d })
+
+	// Exit
 	dlSelection.exit().remove();
 
+	// Data bind
 	var wipSelection = wipList.selectAll("li")
 		.data(function(d) { return d.tasks.wip })
-		.text(function(d) { return d });
-	
+		
+	// Enter
 	wipSelection.enter()
 			.append("li")
-			.text(function(d) { return d });
+
+	// Update
+	wipSelection.text(function(d) { return d });
 	
+	// Exit
 	wipSelection.exit().remove();
 
 }
