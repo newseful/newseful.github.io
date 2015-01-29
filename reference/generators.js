@@ -38,6 +38,31 @@ for (x in dictionary.terms) {
 	}
 }
 
+calendar.cal = [];
+
+for (week in calendar.weeks) {
+	var w = calendar.weeks[week];
+	var data = {}
+	var weekIndex = parseInt(week);
+
+	data.week = w;
+	data.tasks = {};
+	data.tasks.wip = [];
+	data.tasks.due = [];
+
+	for (task in calendar.events) {
+		var t = calendar.events[task];
+
+		if (t.weeks.wip.indexOf(weekIndex) != -1) {
+			data.tasks.wip.push(t.name);
+		} else if ( t.weeks.due.indexOf(weekIndex) != -1) {
+			data.tasks.due.push(t.name);
+		}
+	}
+
+	calendar.cal.push(data);
+}
+
 // Get terms by tag name
 // Returns array of term objects
 window.dictionary.termsByTagName = function(tagName) {

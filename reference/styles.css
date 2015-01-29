@@ -57,6 +57,7 @@ table {
 	position: fixed;
 	top: 0;
 	left: 0;
+	overflow: visible;
 }
 
 #navigator #logo {
@@ -76,6 +77,108 @@ table {
 	transform: translate(-50%, -50%);
 }
 
+#schedule {
+	height: 90vh;
+	width: 100%;
+}
+
+#schedule svg {
+	overflow: visible;
+}
+
+#schedule svg:hover {
+	cursor: row-resize;
+}
+
+#schedule .tick {
+	stroke: #4D4D4D;
+	stroke-width: 1px;
+}
+
+.progress {
+	fill: #F55925;
+}
+
+.guide line{
+	stroke : #292929;
+	stroke-width: 2px;
+}
+
+.wip {
+	fill : #4D4D4D;
+}
+
+.due {
+	fill: #256EF5;
+}
+
+.schedule-connector {
+	fill: #212121;
+	stroke: #292929;
+	stroke-width: 1px;
+}
+
+#schedule-reader {
+	width: 350px;
+	position: fixed;
+	background:#212121;
+	border: 1px solid #292929;
+	border-left: none;
+	left: 70px;
+	transform: translate(0, -50%);
+	color: #E6E6E6;
+	padding: 1em;
+}
+
+#schedule-reader h2 {
+	font-size: 1em;
+	font-weight: 500;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #292929;
+}
+
+#schedule-reader ul {
+	padding-left: 3em;
+	margin-top: 1em;
+	vertical-align: middle;
+}
+
+#schedule-reader ul li {
+	margin-bottom: .5em;
+	line-height: 1.4;
+	position: relative;
+}
+
+#schedule-reader ul li::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	padding: .2rem .5rem;
+	left: -3rem;
+	border-radius: 5rem;
+	text-align: center;
+	font-size: .7rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+#schedule-reader ul.wip-list li::before {
+	content: "WIP";
+	background: #292929;
+}
+
+#schedule-reader ul.due-list li::before {
+	content: "DUE";
+	background: #256EF5;
+}
+
+.wip-list {
+
+}
+
+.hidden {
+	display: none;
+}
 
 /************** GRAPH STYLES ***************/
 
@@ -88,10 +191,10 @@ body, html {
 	box-sizing: border-box;
 }
 
-svg {
+#dictionary svg {
 	background : #212121;
 	position: fixed;
-	z-index: 0;
+	z-index: -1;
 }
 
 .node {

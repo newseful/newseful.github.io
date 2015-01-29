@@ -15,4 +15,14 @@ String.prototype.insert = function (index, string) {
     return this.substring(0, index) + string + this.substring(index, this.length);
   else
     return string + this;
-};
+}
+
+Converter.vhToPx = function(vh) {
+	var scalar = window.innerHeight / 100;
+	return vh * scalar;
+}
+
+Converter.vwToPx = function(vw) {
+	var scalar = window.innerWidth / 100;
+	return vw * scalar;
+}

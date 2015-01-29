@@ -381,21 +381,21 @@ window.calendar = {};
 
 calendar.weeks = [
 	"January 20",
-	"January 20 &ndash; January 27",
-	"January 27 &ndash; February 3",
-	"February 3 &ndash; February 10",
-	"February 10 &ndash; February 17",
-	"February 17 &ndash; February 24",
-	"February 24 &ndash; March 3",
-	"March 3 &ndash; March 10",
-	"March 10 &ndash; March 17",
-	"March 17 &ndash; March 24",
-	"March 24 &ndash; March 31",
-	"March 31 &ndash; April 7",
-	"April 7 &ndash; April 14",
-	"April 14 &ndash; April 21",
-	"April 21 &ndash; April 28",
-	"April 28 &ndash; May 5",
+	"January 20 \u2013 January 27",
+	"January 27 \u2013 February 3",
+	"February 3 \u2013 February 10",
+	"February 10 \u2013 February 17",
+	"February 17 \u2013 February 24",
+	"February 24 \u2013 March 3",
+	"March 3 \u2013 March 10",
+	"March 10 \u2013 March 17",
+	"March 17 \u2013 March 24",
+	"March 24 \u2013 March 31",
+	"March 31 \u2013 April 7",
+	"April 7 \u2013 April 14",
+	"April 14 \u2013 April 21",
+	"April 21 \u2013 April 28",
+	"April 28 \u2013 May 5",
 ]
 
 calendar.events = [
@@ -428,7 +428,7 @@ calendar.events = [
 		}
 	},
 	{
-		name : "Research 3&ndash;5 major news events from the past two years for use in prototype",
+		name : "Research 3\u20135 major news events from the past two years for use in prototype",
 		weeks : {
 			wip : [],
 			due : [2]
