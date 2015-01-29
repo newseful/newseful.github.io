@@ -53,7 +53,7 @@ var ticks = schedule.selectAll(".tick")
 		.append("line")
 		.classed("tick", true)
 		.attr('x1', 0)
-		.attr('x2', 12)
+		.attr('x2', 10)
 		.attr('y1', function(d,i) { return scale.range()[i] })
 		.attr('y2', function(d,i) { return scale.range()[i] });
 

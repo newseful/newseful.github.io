@@ -61,6 +61,7 @@ table {
 }
 
 #navigator #logo {
+	display: block;
 	height: 10vh;
 	color: #4F4C48;
 	text-align: center;
