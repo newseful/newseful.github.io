@@ -7,4 +7,4 @@ layout: Post
 
 1. Reduce the spread of misreported facts and speculation, 
 2. Make it easier to keep track of a developing story across multiple device contexts, and 
-3. Leverages the inherent qualities of digital media to enhance understanding
+3. Leverage the inherent qualities of digital media to enhance understanding
