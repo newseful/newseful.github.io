@@ -333,7 +333,6 @@ dictionary.terms = [
 		tags: ["media"],
 		connections: []
 	},
-
 	// Ex. of recursive explanation
 	// {
 	// 	term: "alpha",

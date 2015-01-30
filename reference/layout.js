@@ -7,6 +7,34 @@ var stage = d3.select('#dictionary')
 	.attr('height', height)
 	.style('left', "70px");
 
+var categoryData = [];
+
+for (var i = 0; i < dictionary.categories.length; i++) {
+	categoryData.push({ cat : dictionary.categories[i] });
+}
+
+var categoryFociDistributor = d3.layout.force()
+	.charge(-2000)
+	.size([width, height])
+	.nodes(categoryData)
+
+categoryFociDistributor.start()
+
+var categoricalNodes = stage.selectAll('.categorical-node')
+	.data(categoryData)
+	.enter()
+		.append('circle')
+		.classed('categorical-node', true)
+		.attr('r', '20')
+		.style('opacity', 0);
+
+
+categoryFociDistributor.on('tick', function(e) {
+	categoricalNodes
+		.attr('cx', function(d) { return d.x })
+		.attr('cy', function(d) { return d.y })
+});
+
 var force = d3.layout.force()
 	.charge(-300)
 	.size([width, height])
@@ -62,7 +90,17 @@ var nodeLabel = stage.selectAll('.node-label')
 		.attr('data-index', function(d, i) { return i })
 		.call(force.drag);
 
-force.on('tick', function() {
+force.on('tick', function(e) {
+
+	var k = e.alpha * .1;
+
+	for (var i = 0; i < dictionary.terms.length; i++) {
+		o = dictionary.terms[i];
+		if (o.fixed) continue;
+		c = categoryData[o.cat];
+		o.x += (c.x - o.x) * k;
+		o.y += (c.y - o.y) * k;
+	}
 
   gradient.attr('x1', function(d) { return d.source.x })
   	.attr('y1', function(d) { return d.source.y })
@@ -91,4 +129,4 @@ node.on('mouseout', function(d) {
 
 node.on('click', function(d) {
 	behaviors.selectNode(this, d);
-})
+});
