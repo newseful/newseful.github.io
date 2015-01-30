@@ -78,7 +78,7 @@ force.on('tick', function() {
       .attr('cy', function(d) { return d.y; });
 
   nodeLabel.attr('x', function(d) { return d.x })
-  	.attr('y', function(d) { return d.y });
+  	.attr('y', function(d) { return d.y });t
 });
 
 node.on('mouseover', function(d) {
