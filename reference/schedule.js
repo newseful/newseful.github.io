@@ -63,7 +63,7 @@ var ticks = schedule.selectAll(".tick")
 		.append("line")
 		.classed("tick", true)
 		.attr('x1', 0)
-		.attr('x2', 10)
+		.attr('x2', 8)
 		.attr('y1', function(d,i) { return scale.range()[i] })
 		.attr('y2', function(d,i) { return scale.range()[i] });
 
@@ -84,7 +84,7 @@ eventContainer
 	.append("path")
 	.classed({ "pres" : true, "remove" : function(d,i) { return !(presDates.indexOf(i) > -1) } })
 	.attr("d", d3.svg.symbol().type("square").size(20))
-	.attr("transform", function(d,i) {  return "translate(" + ( Array.prototype.indexOf.call( this.parentNode.childNodes, this ) * 8 ) +", 0) rotate(45)" });
+	.attr("transform", function(d,i) {  return "translate(" + ( Array.prototype.indexOf.call( this.parentNode.childNodes, this ) * 10 ) +", 0) rotate(45)" });
 
 eventContainer.selectAll(".remove").remove();
 
@@ -94,7 +94,7 @@ eventContainer.selectAll(".due")
 		.append("path")
 		.classed("due", true)
 		.attr("d", d3.svg.symbol().type("square").size(20))
-		.attr("transform", function(d,i) {  return "translate(" + (Array.prototype.indexOf.call(this.parentNode.childNodes, this) * 8) +", 0) rotate(45)" })
+		.attr("transform", function(d,i) {  return "translate(" + (Array.prototype.indexOf.call(this.parentNode.childNodes, this) * 10) +", 0) rotate(45)" })
 
 eventContainer.selectAll(".wip")
 	.data(function(d, i) { return d.tasks.wip })
@@ -102,7 +102,7 @@ eventContainer.selectAll(".wip")
 		.append("path")
 		.classed("wip", true)
 		.attr("d", d3.svg.symbol().type("square").size(20))
-		.attr("transform", function(d,i) {  return "translate(" + (Array.prototype.indexOf.call(this.parentNode.childNodes, this) * 8) +", 0) rotate(45)" })
+		.attr("transform", function(d,i) {  return "translate(" + (Array.prototype.indexOf.call(this.parentNode.childNodes, this) * 10) +", 0) rotate(45)" })
 
 var srData = [data[0]];
 

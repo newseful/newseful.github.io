@@ -88,7 +88,7 @@ table {
 }
 
 #schedule svg:hover {
-	cursor: row-resize;
+	cursor: crosshair;
 }
 
 #schedule .tick {
@@ -114,7 +114,7 @@ table {
 }
 
 .pres {
-	fill: #3EB571;
+	fill: #EDCC37;
 }
 
 .schedule-connector {
@@ -141,8 +141,8 @@ table {
 
 #schedule-reader.panel-review::before {
 	content: "Panel Review";
-	border: 1px solid #3EB571;
-	color: #3EB571;
+	background: #EDCC37;
+	color: #212121;
 	position: absolute;
 	padding: .2rem .5rem;
 	right: 1rem;
@@ -161,7 +161,7 @@ table {
 }
 
 #schedule-reader ul {
-	padding-left: 3em;
+	padding-left: 3.5em;
 	margin-top: 1em;
 	vertical-align: middle;
 }
@@ -174,10 +174,11 @@ table {
 
 #schedule-reader ul li::before {
 	content: "";
+	color: #212121;
 	display: inline-block;
 	position: absolute;
 	padding: .2rem .5rem;
-	left: -3rem;
+	left: -3.5rem;
 	border-radius: 5rem;
 	text-align: center;
 	font-size: .7rem;
@@ -187,7 +188,7 @@ table {
 
 #schedule-reader ul.wip-list li::before {
 	content: "WIP";
-	background: #292929;
+	background: #4D4D4D;
 }
 
 #schedule-reader ul.due-list li::before {
@@ -221,24 +222,27 @@ body, html {
 }
 
 .node {
-	stroke-width: 1px;
-	stroke : #FFF;
+	stroke-width: 0px;
 }
 
 .node[data-category="0"] {
 	fill : #256EF5;
+	stroke : #256EF5;
 }
 
 .node[data-category="1"] {
 	fill : #3EB571;
+	stroke : #3EB571;
 }
 
 .node[data-category="2"] {
 	fill : #CFB521;
+	stroke : #CFB521;
 }
 
 .node[data-category="3"] {
 	fill : #F55925;
+	stroke : #F55925;
 }
 
 
@@ -390,7 +394,6 @@ hr {
 	height: .5em;
 	display: inline-block;
 	border-radius: .35em;
-	margin-right: .35em;
 	float: right;
 	position: relative;
 	top: .6em;
@@ -405,8 +408,8 @@ h3 {
 }
 
 .term-tags li {
-	cursor: pointer;
-	color: #3EB571;
+	cursor: crosshair;
+	color: #498764;
 	display: inline-block;
 	line-height: 1;
 	font-size: .7em;

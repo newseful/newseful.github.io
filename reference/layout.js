@@ -27,7 +27,7 @@ var gradient = stage.append('defs').selectAll('linearGradient')
 
 gradient.append("svg:stop")
 	.attr("offset", "0%")
-	.attr("stop-color", "#FFF");
+	.attr("stop-color", "#4D4D4D");
 
 gradient.append("svg:stop")
 	.attr("offset", "100%")
@@ -63,11 +63,6 @@ var nodeLabel = stage.selectAll('.node-label')
 		.call(force.drag);
 
 force.on('tick', function() {
-  node.attr('cx', function(d) { return d.x; })
-      .attr('cy', function(d) { return d.y; });
-
-  nodeLabel.attr('x', function(d) { return d.x })
-  	.attr('y', function(d) { return d.y });
 
   gradient.attr('x1', function(d) { return d.source.x })
   	.attr('y1', function(d) { return d.source.y })
@@ -78,6 +73,12 @@ force.on('tick', function() {
 			.attr('y1', function(d) { return d.source.y })
 			.attr('x2', function(d) { return d.target.x })
 			.attr('y2', function(d) { return d.target.y })
+
+	node.attr('cx', function(d) { return d.x; })
+      .attr('cy', function(d) { return d.y; });
+
+  nodeLabel.attr('x', function(d) { return d.x })
+  	.attr('y', function(d) { return d.y });
 });
 
 node.on('mouseover', function(d) {
