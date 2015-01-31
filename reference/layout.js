@@ -145,7 +145,7 @@ force.on('tick', function(e) {
 	}
 
 	if (behaviors.tagGravity) {
-		force.links([]).gravity(0).charge(-50);
+		force.links([]).gravity(0.1).charge(-50);
 		link.style('opacity', '0');
 
 		for (var i = 0; i < dictionary.terms.length; i++) {
