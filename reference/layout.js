@@ -7,10 +7,22 @@ var stage = d3.select('#dictionary')
 	.attr('height', height)
 	.style('left', "70px");
 
+var categoricalGravity = false;
+
 var categoryData = [];
 
 for (var i = 0; i < dictionary.categories.length; i++) {
 	categoryData.push({ cat : dictionary.categories[i] });
+}
+
+var tagData = [];
+
+var tagGravity = false;
+
+for (var i = 0; i < dictionary.tags.length; i++) {
+	tagData.push({
+		tag : dictionary.tags[i]
+	})
 }
 
 var categoryFociDistributor = d3.layout.force()
@@ -35,11 +47,31 @@ categoryFociDistributor.on('tick', function(e) {
 		.attr('cy', function(d) { return d.y })
 });
 
+var tagFociDistributor = d3.layout.force()
+	.charge(-2000)
+	.size([width, height])
+	.nodes(tagData)
+	.start()
+
+var tagFoci = stage.selectAll('.tag-node')
+	.data(tagData)
+	.enter()
+		.append('circle')
+		.classed('tag-node', true)
+		.attr('r', '20')
+		.attr('opacity', '0');
+
+tagFociDistributor.on('tick', function(e) {
+	tagFoci.attr('cx', function(d) { return d.x })
+		.attr('cy', function(d) { return d.y });
+})
+
 var force = d3.layout.force()
 	.charge(-300)
 	.size([width, height])
 	.nodes(dictionary.terms)
 	.links(dictionary.links)
+	.linkStrength(0.5)
 	.start();
 
 var gradient = stage.append('defs').selectAll('linearGradient')
@@ -92,14 +124,29 @@ var nodeLabel = stage.selectAll('.node-label')
 
 force.on('tick', function(e) {
 
-	var k = e.alpha * .1;
+	var k = e.alpha * .3;
 
-	for (var i = 0; i < dictionary.terms.length; i++) {
-		o = dictionary.terms[i];
-		if (o.fixed) continue;
-		c = categoryData[o.cat];
-		o.x += (c.x - o.x) * k;
-		o.y += (c.y - o.y) * k;
+	if (behaviors.categoricalGravity) {
+		for (var i = 0; i < dictionary.terms.length; i++) {
+			o = dictionary.terms[i];
+			var c = categoryData[o.cat];
+			o.x += (c.x - o.x) * k;
+			o.y += (c.y - o.y) * k;
+		}
+
+	}
+
+	if (behaviors.tagGravity) {
+		for (var i = 0; i < dictionary.terms.length; i++) {
+
+			o = dictionary.terms[i];
+
+			for (var j = 0; j < o.tags.length; j++) {
+				var c = tagData[dictionary.tags.indexOf(o.tags[j])];
+				o.x += (c.x - o.x) * k;
+				o.y += (c.y - o.y) * k;
+			}
+		}
 	}
 
   gradient.attr('x1', function(d) { return d.source.x })

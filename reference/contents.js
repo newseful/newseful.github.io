@@ -15,7 +15,9 @@ dictionary.palette = {
 	green : "#3EB571"
 }
 
-dictionary.mediaPath = "media/"
+dictionary.mediaPath = "media/";
+
+dictionary.tags = [];
 
 dictionary.terms = [
 	{
@@ -333,43 +335,16 @@ dictionary.terms = [
 		tags: ["media"],
 		connections: []
 	},
-	// Ex. of recursive explanation
-	// {
-	// 	term: "alpha",
-	// 	definition: "beta.",
-	// 	cat: 2,
-	// 	media: [],
-	// 	owner: 0,
-	// 	tags: ["power structures"],
-	// 	connections: [] 
-	// },
-	// {
-	// 	term: "beta",
-	// 	definition: "omega.",
-	// 	cat: 2,
-	// 	media: [],
-	// 	owner: 0,
-	// 	tags: ["power structures"],
-	// 	connections: [] 
-	// },
-	// {
-	// 	term: "omega",
-	// 	definition: "lambda.",
-	// 	cat: 2,
-	// 	media: [],
-	// 	owner: 0,
-	// 	tags: ["power structures"],
-	// 	connections: [] 
-	// },
-	// {
-	// 	term: "lambda",
-	// 	definition: "alpha.",
-	// 	cat: 2,
-	// 	media: [],
-	// 	owner: 0,
-	// 	tags: ["power structures"],
-	// 	connections: [] 
-	// },
+	{
+		term: "bloomberg",
+		definition: "Business news etc. Recent redesign featuring persistent live video feed in sticky header. Visually beautiful, still usable.",
+		cat: 2,
+		media: ["bloomberg-01.jpg", "bloomberg-02.jpg"],
+		owner: 0,
+		tags: ["media", "outlet"],
+		connections: []
+	},
+
 
 ];
 

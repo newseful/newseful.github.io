@@ -215,6 +215,10 @@ body, html {
 	box-sizing: border-box;
 }
 
+#dictionary {
+	overflow: hidden;
+}
+
 #dictionary svg {
 	background : #212121;
 	position: fixed;
@@ -407,7 +411,7 @@ h3 {
 	margin-bottom: 1em;
 }
 
-.term-tags li {
+li.tag {
 	cursor: crosshair;
 	color: #498764;
 	display: inline-block;
@@ -425,6 +429,20 @@ h3 {
 
 .term-tags {
 	margin-bottom: 1.3em;
+}
+
+#tag-list {
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+	z-index: 5000;
+	left: 85px;
+	top: 15px;
+}
+
+#tag-list li {
+	display: inline-block;
+	margin-right: 70%;
 }
 
 ::-webkit-input-placeholder {

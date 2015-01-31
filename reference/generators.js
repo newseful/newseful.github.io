@@ -11,7 +11,13 @@ dictionary.terms.sort(function(a, b) {
 	return 0;
 });
 
-
+// Generate tag index
+for (x in dictionary.terms) {
+	for (t in dictionary.terms[x].tags) {
+		tag = dictionary.terms[x].tags[t]
+		if (dictionary.tags.indexOf(dictionary.terms[x].tags[t]) == -1) dictionary.tags.push(dictionary.terms[x].tags[t]);
+	}
+}
 
 // Generate index + sort tags
 for (x in dictionary.terms) {

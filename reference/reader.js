@@ -10,7 +10,7 @@ var Reader = function(dict) {
 			tmp.classList.remove("template");
 
 			var tagList = tmp.querySelector(".term-tags");
-			var tag = tagList.querySelector(".term-tag");
+			var tag = tagList.querySelector(".tag");
 
 			var media = tmp.querySelector(".term-media");
 
@@ -151,6 +151,8 @@ var Reader = function(dict) {
 			return list;
 		},
 
+		inputIsFocused : false,
+
 		constructTermList : function(termList) {
 			var tmpContainer = document.querySelector(".full-term-list").cloneNode(true);
 			
@@ -168,6 +170,14 @@ var Reader = function(dict) {
 				} else {
 					_this.updateTermList();
 				}
+			});
+
+			tmpContainer.querySelector(".search-terms").addEventListener("focus", function() {
+				_this.inputIsFocused = true;
+			});
+
+			tmpContainer.querySelector(".search-terms").addEventListener("blur", function() {
+				_this.inputIsFocused = false;
 			});
 
 			tmpContainer.classList.remove("template");

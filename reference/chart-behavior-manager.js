@@ -109,6 +109,62 @@ var ChartBehaviorManager = function() {
 				.style('opacity', 1)
 
 			reader.render(dictionary.terms[d.index]);
+		},
+
+		renderTagList : function(b) {
+			if (b) {
+				var _this = this;
+
+				var s = d3.selectAll("body").append("div").attr("id", "tag-list").append("ul")
+
+				var li = s.selectAll("li")
+					.data(dictionary.tags)
+					.enter()
+						.append("li")
+						.classed("tag", true)
+						.text(function(d) { return d })
+
+				li.on("mouseenter", function(e) {
+					var d = this.innerHTML
+					_this.hoverNodesForTag(d);
+				});
+
+				li.on("mouseout", function(e) {
+					var d = this.datum
+					_this.unHoverNodesForTag(d);
+				})
+
+			} else {
+				d3.selectAll("#tag-list").remove()
+			}
+		},
+
+		categoricalGravity : false,
+
+		tagGravity : false,
+
+		initialize : function() {
+			var _this = this;
+			window.addEventListener('keyup', function(e) {
+				if (!reader.inputIsFocused) {
+					if (e.keyCode == 67) {
+						_this.categoricalGravity = true;
+						_this.tagGravity = false;
+						_this.renderTagList(false);
+						force.resume();
+					} else if (e.keyCode == 84) {
+						_this.categoricalGravity = false;
+						_this.tagGravity = true;
+						_this.renderTagList(true);
+						force.resume();
+					} else if (e.keyCode == 76) {
+						_this.categoricalGravity = false;
+						_this.tagGravity = false;
+						_this.renderTagList(false);
+						force.resume();
+					}
+				}
+			});
 		}
 
 	}
@@ -116,4 +172,4 @@ var ChartBehaviorManager = function() {
 } 
 
 var behaviors =  new ChartBehaviorManager();
-behaviors.getNodesByTagName("ethics");
+behaviors.initialize();
