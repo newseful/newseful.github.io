@@ -48,7 +48,7 @@ categoryFociDistributor.on('tick', function(e) {
 });
 
 var tagFociDistributor = d3.layout.force()
-	.charge(-2000)
+	.charge(-1500)
 	.size([width, height])
 	.nodes(tagData)
 	.start()
@@ -64,6 +64,10 @@ var tagFoci = stage.selectAll('.tag-node')
 tagFociDistributor.on('tick', function(e) {
 	tagFoci.attr('cx', function(d) { return d.x })
 		.attr('cy', function(d) { return d.y });
+
+	d3.select('#tag-list').selectAll('.tag')
+		.style('top', function(d){ return d.y + 'px' })
+		.style('left', function(d) { return d.x + 70 + 'px' });
 })
 
 var force = d3.layout.force()
@@ -123,10 +127,14 @@ var nodeLabel = stage.selectAll('.node-label')
 		.call(force.drag);
 
 force.on('tick', function(e) {
+	force.links(dictionary.links).gravity(0.1).charge(-300);
+	link.style('opacity', '1');
 
 	var k = e.alpha * .3;
 
 	if (behaviors.categoricalGravity) {
+		force.links([]).gravity(0);
+		link.style('opacity', '0');
 		for (var i = 0; i < dictionary.terms.length; i++) {
 			o = dictionary.terms[i];
 			var c = categoryData[o.cat];
@@ -137,6 +145,9 @@ force.on('tick', function(e) {
 	}
 
 	if (behaviors.tagGravity) {
+		force.links([]).gravity(0).charge(-50);
+		link.style('opacity', '0');
+
 		for (var i = 0; i < dictionary.terms.length; i++) {
 
 			o = dictionary.terms[i];
@@ -167,7 +178,7 @@ force.on('tick', function(e) {
 });
 
 node.on('mouseover', function(d) {
-	behaviors.hoverNode(this, d);
+	behaviors.hoverNode(this, d, behaviors.tagGravity);
 });
 
 node.on('mouseout', function(d) {

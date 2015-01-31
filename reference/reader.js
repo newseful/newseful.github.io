@@ -250,7 +250,8 @@ var Reader = function(dict) {
 			expander.style.top = Converter.pxToVh(startPos.top) + "vh";
 			expander.style.left = Converter.pxToVw(startPos.left) + "vw";
 			expander.style.width = Converter.pxToVw(startPos.width) + "%";
-			expander.style.transform = "translate(0,0)";
+			expander.style.transform = "translate(0%,0%)";
+			expander.style.webkitTransform = "translate(0%,0%)";
 
 			bg.style.opacity = "0.8";
 			bg.classList.add("bg");
@@ -263,6 +264,7 @@ var Reader = function(dict) {
 				expander.style.top = "50vh";
 				expander.style.left = "50vw";
 				expander.style.transform = "translate(-50%, -50%)";
+				expander.style.webkitTransform = "translate(-50%, -50%)";
 				expander.style.width = "75%";
 			}, 10);
 
@@ -271,7 +273,8 @@ var Reader = function(dict) {
 				expander.style.top = Converter.pxToVh(startPos.top) + "vh";
 				expander.style.left = Converter.pxToVw(startPos.left) + "vw";
 				expander.style.width = Converter.pxToVw(startPos.width) + "%";
-				expander.style.transform = "translate(0,0)";
+				expander.style.transform = "translate(0%,0%)";
+				expander.style.webkitTransform = "translate(0%,0%)"
 
 				window.setTimeout(function() {
 					overlay.parentNode.removeChild(overlay);

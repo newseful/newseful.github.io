@@ -197,19 +197,23 @@ var updateScheduleReader = function( hidden, y, currentWeek ) {
 updateScheduleReader(true)
 
 schedule.on("mousemove", function(event) {
-	guide.style('opacity', '1')
-		.attr('transform', 'translate(0,' + d3.mouse(this)[1] + ')');
+	if (d3.event.clientY){
+		guide.style('opacity', '1')
+			.attr('transform', 'translate(0,' + d3.mouse(this)[1] + ')');
 
-	var currentWeek = Math.ceil(reverseScale(d3.mouse(this)[1]));
+		var currentWeek = Math.ceil(reverseScale(d3.mouse(this)[1]));
 
-	currentWeekSelector
-		.style("opacity", "1")
-		.transition()
-		.duration(50)
-		.attr("transform", function() { return "translate(0,"+ scale(currentWeek - 1) +")" })
+		currentWeekSelector
+			.style("opacity", "1")
+			.transition()
+			.duration(50)
+			.attr("transform", function() { return "translate(0,"+ scale(currentWeek - 1) +")" })
 
-	srData[0] = data[currentWeek];
-	updateScheduleReader(false, d3.event.y, currentWeek);
+		srData[0] = data[currentWeek];
+		console.log(d3.event);
+
+		updateScheduleReader(false, d3.event.clientY, currentWeek);
+	}
 });
 
 schedule.on("mouseout", function() {

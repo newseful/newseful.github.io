@@ -2,7 +2,8 @@ var ChartBehaviorManager = function() {
 
 	return {
 
-		hoverNode : function(node, d) {
+		hoverNode : function(node, d, highlightTags) {
+
 			var selection = d3.select(node);
 
 			if (!d) {
@@ -17,6 +18,8 @@ var ChartBehaviorManager = function() {
 
 			d3.select('.node-label[data-index="' + d.index + '"]')
 				.style('opacity', 1)
+
+			if (highlightTags) { this.highlightTags(d.tags) };
 		},
 
 		unHoverNode : function(node, d) {
@@ -43,6 +46,7 @@ var ChartBehaviorManager = function() {
 					d3.select('.node-label[data-index="' + d.index + '"]')
 						.style('opacity', 0)
 				}
+				this.unHighlightTags();
 			}
 		},
 
@@ -111,6 +115,25 @@ var ChartBehaviorManager = function() {
 			reader.render(dictionary.terms[d.index]);
 		},
 
+		highlightTag : function(tagName) {
+			if (tagName) {
+				var i = dictionary.tags.indexOf(tagName);
+				var tags = d3.select("#tag-list").selectAll(".tag[data-tag-index='"+i+"']");
+				tags.classed("highlight", true);
+			}
+		},
+
+		unHighlightTags : function() {
+			d3.select("#tag-list").selectAll(".tag.highlight").classed("highlight", false);
+		},
+
+		highlightTags : function(tagList) {
+			this.unHighlightTags();
+			for (var i = 0; i < tagList.length; ++i) {
+				this.highlightTag(tagList[i]);
+			}
+		},
+
 		renderTagList : function(b) {
 			if (b) {
 				var _this = this;
@@ -118,11 +141,12 @@ var ChartBehaviorManager = function() {
 				var s = d3.selectAll("body").append("div").attr("id", "tag-list").append("ul")
 
 				var li = s.selectAll("li")
-					.data(dictionary.tags)
+					.data(tagData)
 					.enter()
 						.append("li")
 						.classed("tag", true)
-						.text(function(d) { return d })
+						.attr("data-tag-index", function(d, i) { return i })
+						.text(function(d) { return d.tag });
 
 				li.on("mouseenter", function(e) {
 					var d = this.innerHTML
@@ -152,16 +176,22 @@ var ChartBehaviorManager = function() {
 						_this.tagGravity = false;
 						_this.renderTagList(false);
 						force.resume();
+						tagFociDistributor.resume();
+						categoryFociDistributor.resume();
 					} else if (e.keyCode == 84) {
 						_this.categoricalGravity = false;
 						_this.tagGravity = true;
 						_this.renderTagList(true);
 						force.resume();
+						tagFociDistributor.resume();
+						categoryFociDistributor.resume();
 					} else if (e.keyCode == 76) {
 						_this.categoricalGravity = false;
 						_this.tagGravity = false;
 						_this.renderTagList(false);
 						force.resume();
+						tagFociDistributor.resume();
+						categoryFociDistributor.resume();
 					}
 				}
 			});

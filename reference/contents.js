@@ -344,6 +344,51 @@ dictionary.terms = [
 		tags: ["media", "outlet"],
 		connections: []
 	},
+	{
+		term: "speculation",
+		definition: "Educated guesses about the facts of a story made without verification.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["media", "ethics"],
+		connections: []
+	},
+	{
+		term: "visualization",
+		definition: "The practice of using graphical formats to present structured information in such a way that it is more easily understood than a simple verbal explanation.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["design"],
+		connections: []
+	},
+	{
+		term: "public opinion",
+		definition: "The reaction to an event by those not directly involved in the media or the story.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["power structures"],
+		connections: []
+	},
+	{
+		term: "aggregation",
+		definition: "The practice of collecting, sorting, and presenting data from multiple sources in a single context.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["design", "media"],
+		connections: []
+	},
+	{
+		term: "stream",
+		definition: "Live, on-location footage of events unfolding in real time, or major figures offering commentary or updates in such a manner that their commentary or updates become part of the story.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["media", "design", "time"],
+		connections: []
+	},
 
 
 ];
