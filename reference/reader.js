@@ -240,16 +240,26 @@ var Reader = function(dict) {
 			var expander = img.cloneNode(true);
 			var bg = document.createElement("div");
 
+			var vertical = (function() { return img.height > img.width })();
+			var orientation = vertical ? "vertical" : "horizontal";
+
 			var overlay = document.createElement("div");
 			overlay.classList.add("overlay");
 			var container = document.querySelector("body")
 
 			img.classList.add("expanded");
+			img.classList.add(orientation);
 
 			expander.classList.add("expander");
 			expander.style.top = Converter.pxToVh(startPos.top) + "vh";
 			expander.style.left = Converter.pxToVw(startPos.left) + "vw";
-			expander.style.width = Converter.pxToVw(startPos.width) + "%";
+			if (vertical) {
+				expander.style.height = Converter.pxToVh(startPos.height) + "%";
+				expander.style.width = "auto"
+			} else {
+				expander.style.width = Converter.pxToVw(startPos.width) + "%";
+				expander.style.height = "auto"
+			}
 			expander.style.transform = "translate(0%,0%)";
 			expander.style.webkitTransform = "translate(0%,0%)";
 
@@ -265,14 +275,22 @@ var Reader = function(dict) {
 				expander.style.left = "50vw";
 				expander.style.transform = "translate(-50%, -50%)";
 				expander.style.webkitTransform = "translate(-50%, -50%)";
-				expander.style.width = "75%";
+				if (vertical) {
+					expander.style.height = "90%";
+				} else {
+					expander.style.width = "75%";
+				}
 			}, 10);
 
 			overlay.addEventListener("click", function() {
 				bg.style.opacity = "0";
 				expander.style.top = Converter.pxToVh(startPos.top) + "vh";
 				expander.style.left = Converter.pxToVw(startPos.left) + "vw";
-				expander.style.width = Converter.pxToVw(startPos.width) + "%";
+				if (vertical) {
+					expander.style.height = Converter.pxToVh(startPos.height) + "%";
+				} else {
+					expander.style.width = Converter.pxToVw(startPos.width) + "%";
+				}
 				expander.style.transform = "translate(0%,0%)";
 				expander.style.webkitTransform = "translate(0%,0%)"
 

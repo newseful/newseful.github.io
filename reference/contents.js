@@ -2,9 +2,10 @@ window.dictionary = {};
 
 dictionary.categories = [
 	"Term",
-	"Outlet",
-	"Influence",
-	"Resource"
+	"Precedent",
+	"Resource",
+	"Relevant Entity",
+	"Event"
 ];
 
 dictionary.palette = {
@@ -166,7 +167,7 @@ dictionary.terms = [
 	},
 	{
 		term: "simultaneous perspective",
-		definition: "the perception of objective reality from multiple points of view at the same moment.",
+		definition: "The perception of objective reality from multiple points of view at the same moment.",
 		cat: 0,
 		media: [],
 		owner: 0,
@@ -188,7 +189,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: ["design"],
+		tags: ["design", "technology"],
 		connections: [] 
 	},
 	{
@@ -248,7 +249,7 @@ dictionary.terms = [
 	{
 		term: "designing news",
 		definition: "Book by Francesco Franchi/Gestalten on the future of news and media industries in our digital age",
-		cat: 3,
+		cat: 2,
 		media: [],
 		owner: 0,
 		tags: ["design"],
@@ -260,7 +261,7 @@ dictionary.terms = [
 		cat: 1,
 		media: ["guardian-01.jpg", "guardian-02.jpg"],
 		owner: 0,
-		tags: ["media", "design", "precedent"],
+		tags: ["media", "design"],
 		connections: []
 	},
 	{
@@ -269,7 +270,7 @@ dictionary.terms = [
 		cat: 1,
 		media: ["breaking-news-01.jpg", "breaking-news-02.jpg", "breaking-news-03.jpg"],
 		owner: 0,
-		tags: ["media", "design", "precedent"],
+		tags: ["media", "design",],
 		connections: []
 	},
 	{
@@ -278,7 +279,7 @@ dictionary.terms = [
 		cat: 1,
 		media: ["upshot-01.jpg", "upshot-02.jpg"],
 		owner: 0,
-		tags: ["media", "design", "precedent"],
+		tags: ["media", "design"],
 		connections: []
 	},
 	{
@@ -293,7 +294,7 @@ dictionary.terms = [
 	{
 		term: "twitter",
 		definition: "Emotional and measured responses from global network. Mixed relevance and reliability.",
-		cat: 1,
+		cat: 3,
 		media: [],
 		owner: 0,
 		tags: ["social", "outlet"],
@@ -302,7 +303,7 @@ dictionary.terms = [
 	{
 		term: "facebook",
 		definition: "Emotional responses from sheltered network. Limited relevance.",
-		cat: 1,
+		cat: 3,
 		media: [],
 		owner: 0,
 		tags: ["social", "outlet"],
@@ -314,13 +315,13 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: ["media", "social"],
+		tags: ["media", "social", "technology"],
 		connections: []
 	},
 	{
 		term: "trusted sources",
 		definition: "Professional journalism from established and reliable news sources.",
-		cat: 1,
+		cat: 0,
 		media: [],
 		owner: 0,
 		tags: ["outlet", "media"],
@@ -338,7 +339,7 @@ dictionary.terms = [
 	{
 		term: "bloomberg",
 		definition: "Business news etc. Recent redesign featuring persistent live video feed in sticky header. Visually beautiful, still usable.",
-		cat: 2,
+		cat: 1,
 		media: ["bloomberg-01.jpg", "bloomberg-02.jpg"],
 		owner: 0,
 		tags: ["media", "outlet"],
@@ -359,7 +360,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: ["design"],
+		tags: ["design", "technology"],
 		connections: []
 	},
 	{
@@ -377,7 +378,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: ["design", "media"],
+		tags: ["design", "media", "technology"],
 		connections: []
 	},
 	{
@@ -386,10 +387,153 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: ["media", "design", "time"],
+		tags: ["media", "design", "technology"],
 		connections: []
 	},
-
+	{
+		term: "bloomberg visual data",
+		definition: "Bloomberg's data visualization section.",
+		cat: 1,
+		media: ["bloomberg-viz-01.jpg", "bloomberg-viz-02.jpg", "bloomberg-viz-03.jpg"],
+		owner: 0,
+		tags: ["media", "outlet"],
+		connections: []
+	},
+	{
+		term: "outlet",
+		definition: "A channel through which news is distributed.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["media"],
+		connections: []
+	},
+	{
+		term: "the toolmaker's guide",
+		definition: "Talk by Mike Bostock (NYT Data Visualization) on creating useful tools.",
+		cat: 2,
+		media: ["bostock-01.jpg"],
+		owner: 0,
+		tags: ["media", "design"],
+		connections: []
+	},
+	{
+		term: "data",
+		definition: "Quantitative information.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["technology"],
+		connections: []
+	},
+	{
+		term: "nYT now",
+		definition: "New York Times app for current events coverage. Pushes notifications for developing stories.",
+		cat: 1,
+		media: ["nytnow-01.jpg", "nytnow-02.jpg", "nytnow-03.jpg"],
+		owner: 0,
+		tags: ["media", "design", "outlet"],
+		connections: []
+	},
+	{
+		term: "wikipedia",
+		definition: "Crowd-sourced and maintained encyclopedia. Good example of a self-correcting system",
+		cat: 1,
+		media: ["wikipedia-01.jpg", "wikipedia-02.jpg"],
+		owner: 0,
+		tags: ["media"],
+		connections: []
+	},
+	{
+		term: "self-correcting system",
+		definition: "An entity which is capable of correcting its errors without top-down maintenance.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["technology"],
+		connections: []
+	},
+	{
+		term: "ferguson",
+		definition: "Officer-involved shooting of Michael Brown (age 18) sparked outrage across the country.",
+		cat: 4,
+		media: [],
+		owner: 0,
+		tags: ["ethics","media","social"],
+		connections: []
+	},
+	{
+		term: "benghazi",
+		definition: "Terrorist attacks against US assets in Libya lead to questions about security adequacy.",
+		cat: 4,
+		media: [],
+		owner: 0,
+		tags: ["ethics","media","social"],
+		connections: []
+	},
+	{
+		term: "the interview",
+		definition: "Retaliatory cyber-attack against Sony for releasing their film 'The Interview'.",
+		cat: 4,
+		media: [],
+		owner: 0,
+		tags: ["ethics","media","social"],
+		connections: []
+	},
+	{
+		term: "charlie hebdo",
+		definition: "Terrorist attack on French satire publication elicits widespread sympathy in the media, also exacerbates anti-Islamic sentiment on social media.",
+		cat: 4,
+		media: [],
+		owner: 0,
+		tags: ["ethics","media","social"],
+		connections: []
+	},
+	{
+		term: "snowden leaks",
+		definition: "Ex-NSA employee Edward Snowden leaks vital information on top-secret PRISM program and other clandestine government monitoring operations.",
+		cat: 4,
+		media: [],
+		owner: 0,
+		tags: ["ethics","media","social", "technology"],
+		connections: []
+	},
+	{
+		term: "emotional contagion study",
+		definition: "Old paper published by Facebook researcher reveals controversial experiments in effecting user happiness.",
+		cat: 4,
+		media: [],
+		owner: 0,
+		tags: ["ethics","media","social","technology"],
+		connections: []
+	},
+	{
+		term: "ray rice abuse case",
+		definition: "Released video evidence shows NFL had graphic knowledge of Ravens player Rice's domestic abuse, went light on punishment, prompting social media outcry.",
+		cat: 4,
+		media: [],
+		owner: 0,
+		tags: ["ethics","media","social",],
+		connections: []
+	},
+	{
+		term: "the visual display of quantitative information",
+		definition: "Book by Edward Tufte on data visualization. Excellent for advocacy of clarity and simplicity.",
+		cat: 2,
+		media: [],
+		owner: 0,
+		tags: ["ethics","design"],
+		connections: []
+	},
+	{
+		term: "broadcast",
+		definition: "to communicate instantaneously across great distance to large numbers.",
+		cat: 0,
+		media: [],
+		owner: 0,
+		tags: ["media","technology"],
+		connections: []
+	},
 
 ];
 

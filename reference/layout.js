@@ -17,6 +17,8 @@ for (var i = 0; i < dictionary.categories.length; i++) {
 
 var tagData = [];
 
+var tagConnections = [];
+
 var tagGravity = false;
 
 for (var i = 0; i < dictionary.tags.length; i++) {
@@ -25,8 +27,36 @@ for (var i = 0; i < dictionary.tags.length; i++) {
 	})
 }
 
+for (var i = 0; i < tagData.length; i++) {
+	var t = tagData[i];
+	var p = ( function(){
+		if ( i < 1 ) { 
+			return tagData.length - 1  
+		}
+
+		return i - 1;
+	})();
+
+	var n = ( function() {
+		if (i == tagData.length - 1) {
+			return 0
+		}
+		return i + 1;
+	})();
+
+	tagConnections.push({
+		source : i,
+		target : p
+	});
+
+	tagConnections.push({
+		source : i,
+		target : n
+	})
+}
+
 var categoryFociDistributor = d3.layout.force()
-	.charge(-2000)
+	.charge(-1500)
 	.size([width, height])
 	.nodes(categoryData)
 
@@ -50,7 +80,17 @@ categoryFociDistributor.on('tick', function(e) {
 var tagFociDistributor = d3.layout.force()
 	.charge(-1500)
 	.size([width, height])
+	.gravity(0.03)
+	.links(tagConnections)
 	.nodes(tagData)
+	.linkStrength(.8)
+	.linkDistance(function() {
+		var tau = Math.PI * 2,
+				r = (width - 150) / 4,
+				c = tau * r,
+				d = c / tagData.length;
+		return d;
+	})
 	.start()
 
 var tagFoci = stage.selectAll('.tag-node')
@@ -61,6 +101,14 @@ var tagFoci = stage.selectAll('.tag-node')
 		.attr('r', '20')
 		.attr('opacity', '0');
 
+var tagLink = stage.selectAll('.tag-link')
+	.data(tagConnections)
+	.enter()
+		.append('line')
+		.classed('tag-link', true)
+		.attr('stroke', '#292929')
+		.attr('stroke-width', 1)
+
 tagFociDistributor.on('tick', function(e) {
 	tagFoci.attr('cx', function(d) { return d.x })
 		.attr('cy', function(d) { return d.y });
@@ -68,6 +116,12 @@ tagFociDistributor.on('tick', function(e) {
 	d3.select('#tag-list').selectAll('.tag')
 		.style('top', function(d){ return d.y + 'px' })
 		.style('left', function(d) { return d.x + 70 + 'px' });
+
+	// d3.selectAll('.tag-link')
+	// 	.attr('x1', function(d) { return d.source.x })
+	// 	.attr('x2', function(d) { return d.target.x })
+	// 	.attr('y1', function(d) { return d.source.y })
+	// 	.attr('y2', function(d) { return d.target.y })
 })
 
 var force = d3.layout.force()
@@ -122,12 +176,12 @@ var nodeLabel = stage.selectAll('.node-label')
 		.attr('class','node-label')
 		.text(function(d) { return d.term })
 		.attr('transform', 'translate(20,6)')
-		.style('opacity', '0')
+		.style('display' , 'none')
 		.attr('data-index', function(d, i) { return i })
 		.call(force.drag);
 
 force.on('tick', function(e) {
-	force.links(dictionary.links).gravity(0.1).charge(-300);
+	force.links(dictionary.links).gravity(0.2).charge(-300).chargeDistance(5000);
 	link.style('opacity', '1');
 
 	var k = e.alpha * .3;
@@ -145,7 +199,7 @@ force.on('tick', function(e) {
 	}
 
 	if (behaviors.tagGravity) {
-		force.links([]).gravity(0.1).charge(-50);
+		force.links([]).gravity(0).charge(-50).chargeDistance(50);
 		link.style('opacity', '0');
 
 		for (var i = 0; i < dictionary.terms.length; i++) {

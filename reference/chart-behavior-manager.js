@@ -17,7 +17,7 @@ var ChartBehaviorManager = function() {
 				.attr('r',10);
 
 			d3.select('.node-label[data-index="' + d.index + '"]')
-				.style('opacity', 1)
+				.style('display', 'block')
 
 			if (highlightTags) { this.highlightTags(d.tags) };
 		},
@@ -44,7 +44,7 @@ var ChartBehaviorManager = function() {
 						.attr('r',5);
 
 					d3.select('.node-label[data-index="' + d.index + '"]')
-						.style('opacity', 0)
+						.style('display', 'none')
 				}
 				this.unHighlightTags();
 			}
@@ -138,7 +138,7 @@ var ChartBehaviorManager = function() {
 			if (b) {
 				var _this = this;
 
-				var s = d3.selectAll("body").append("div").attr("id", "tag-list").append("ul")
+				var s = d3.selectAll("#dictionary").append("div").attr("id", "tag-list").append("ul")
 
 				var li = s.selectAll("li")
 					.data(tagData)
@@ -171,14 +171,14 @@ var ChartBehaviorManager = function() {
 			var _this = this;
 			window.addEventListener('keyup', function(e) {
 				if (!reader.inputIsFocused) {
-					if (e.keyCode == 67) {
+					if (e.keyCode == 67 && !_this.categoricalGravity) {
 						_this.categoricalGravity = true;
 						_this.tagGravity = false;
 						_this.renderTagList(false);
 						force.resume();
 						tagFociDistributor.resume();
 						categoryFociDistributor.resume();
-					} else if (e.keyCode == 84) {
+					} else if (e.keyCode == 84 && !_this.tagGravity) {
 						_this.categoricalGravity = false;
 						_this.tagGravity = true;
 						_this.renderTagList(true);

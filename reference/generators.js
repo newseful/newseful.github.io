@@ -32,14 +32,16 @@ for (x in dictionary.terms) {
 	var t = dictionary.terms[x];
 	var def = t.definition;
 	for (var i = 0; i < dictionary.index.length; i++) {
-		var index = dictionary.index[i];
-		var indexDoesHaveMatchInDefinition = def.match(new RegExp(index, "i"));
-		if (indexDoesHaveMatchInDefinition) {
-			t.connections.push({index : i, name : index});
-			dictionary.links.push({
-				source : parseInt(x),
-				target : i
-			})
+		if (i != parseInt(x)) {
+			var index = dictionary.index[i];
+			var indexDoesHaveMatchInDefinition = def.match(new RegExp(index, "i"));
+			if (indexDoesHaveMatchInDefinition) {
+				t.connections.push({index : i, name : index});
+				dictionary.links.push({
+					source : parseInt(x),
+					target : i
+				})
+			}
 		}
 	}
 }
