@@ -516,6 +516,33 @@ li.tag.highlight {
 	display: inline-block;
 }
 
+.tag-node {
+	pointer: cursor;
+}
+
+.node-label {
+	pointer-events: none;
+}
+
+.tag-node text {
+	font-size: .7em;
+	font-weight: 500;
+	fill: #212121;
+	letter-spacing: 2px;
+	z-index: 5;
+	text-transform: uppercase;
+	pointer-events: none;
+}
+
+.tag-node.highlight text {
+	fill: #E6E6E6;
+}
+
+.tag-node rect {
+	z-index: -1;
+	fill: #3D4B7A;
+}
+
 ::-webkit-input-placeholder {
    color: #4D4D4D;
 }

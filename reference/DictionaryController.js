@@ -1,66 +1,97 @@
+var width = window.innerWidth - 325 - 70,
+		height = window.innerHeight;
+
+var stage = d3.select('#dictionary')
+	.append('svg')
+	.attr('width', width)
+	.attr('height', height)
+	.style('left', "70px");
+
+var DictionaryController = function(dictionary) {
+	var dc = {
+
+		nodeGraph : new NodeGraph(stage, width, height, window.dictionary, this),
+		reader : new Reader(window.dictionary.terms, this),
+		dictionary : dictionary,
+
+		addListeners : function() {
+			var ng = this.nodeGraph;
+			var r = this.reader;
+			var _this = this;
+
+			window.addEventListener('keyup', function(e) {
+				if (!r.inputIsFocused) {
+					// change gravity for nodegraph
+					if (e.keyCode == 67 && !ng.categoricalGravity) {
+						ng.categoricalGravity = true;
+						ng.tagGravity = false;
+						ng.forceBump();
+					} else if (e.keyCode == 84 && !ng.tagGravity) {
+						ng.categoricalGravity = false;
+						ng.tagGravity = true;
+						ng.forceBump();
+					} else if (e.keyCode == 76) {
+						ng.categoricalGravity = false;
+						ng.tagGravity = false;
+						ng.forceBump();
+					}
+				}
+			});
+		},
+
+		notify : function(notification, i) {
+			var _this = this;
+
+			switch (notification) {
+				case 'hover term':
+					this.nodeGraph.hoverNode(this.nodeGraph.nodeForIndex(i));
+					break;
+				case 'unhover term':
+					this.nodeGraph.unHoverNode(this.nodeGraph.nodeForIndex(i));
+					break;
+				case 'select term':
+					this.nodeGraph.selectNode(this.nodeGraph.nodeForIndex(i));
+					this.reader.render(this.dictionary.terms[i]);
+					break;
+				case 'tag elements created':
+					for (var c = 0; c < i.length; ++c) {
+						i[c].addEventListener('mouseenter', function() {
+							_this.nodeGraph.hoverNodes(_this.nodeGraph.nodesForTagName(this.dataset.tagName));
+						});
+						i[c].addEventListener('mouseout', function() {
+							_this.nodeGraph.unHoverNodes(_this.nodeGraph.nodesForTagName(this.dataset.tagName));
+						});
+					}
+					break;
+				case 'hover tag':
+					this.nodeGraph.hoverNodes(_this.nodeGraph.nodesForTagName(i));
+					break;
+				case 'unhover tag':
+					this.nodeGraph.unHoverNodes(_this.nodeGraph.nodesForTagName(i));
+				default:
+					// do nothing
+			}
+		},
+
+		init : function() {
+			console.log("controller init");
+			this.addListeners();
+			this.reader.render();
+
+			this.nodeGraph.controller = dc;
+			this.reader.controller = dc;
+
+			return this;	
+		}
+
+	}
+
+	return dc.init();
+}
+
 var ChartBehaviorManager = function() {
 
 	return {
-
-		hoverNode : function(node, d, highlightTags) {
-
-			var selection = d3.select(node);
-
-			if (!d) {
-				d = selection.datum();
-			}
-
-			selection
-				.transition()
-				.duration(350)
-				.ease('elastic')
-				.attr('r',10);
-
-			d3.select('.node-label[data-index="' + d.index + '"]')
-				.style('display', 'block')
-
-			if (highlightTags) { this.highlightTags(d.tags) };
-		},
-
-		unHoverNode : function(node, d) {
-			if (node) {
-				var isCurrentlySelected = false;
-
-				var selection = d3.select(node).filter(function(d,i) {
-					isCurrentlySelected = this.classList.contains("selected");
-					return !isCurrentlySelected;
-				});
-
-				if (!isCurrentlySelected) {
-
-					if (!d) {
-						d = selection.datum();
-					}
-
-					selection
-						.transition()
-						.duration(350)
-						.ease('elastic')
-						.attr('r',5);
-
-					d3.select('.node-label[data-index="' + d.index + '"]')
-						.style('display', 'none')
-				}
-				this.unHighlightTags();
-			}
-		},
-
-		hoverNodes : function(indexList) {
-			for (var i = 0; i < indexList.length; i++) {
-				this.hoverNode('.node[data-index="' + indexList[i] + '"]');
-			}
-		},
-
-		unHoverNodes : function(indexList) {
-			for (var i = 0; i < indexList.length; i++) {
-				this.unHoverNode('.node[data-index="' + indexList[i] + '"]');
-			}
-		},
 
 		hoverNodesForTag : function(tagName) {
 			var nodes = this.getNodesByTagName(tagName);
@@ -134,35 +165,6 @@ var ChartBehaviorManager = function() {
 			}
 		},
 
-		renderTagList : function(b) {
-			if (b) {
-				var _this = this;
-
-				var s = d3.selectAll("#dictionary").append("div").attr("id", "tag-list").append("ul")
-
-				var li = s.selectAll("li")
-					.data(tagData)
-					.enter()
-						.append("li")
-						.classed("tag", true)
-						.attr("data-tag-index", function(d, i) { return i })
-						.text(function(d) { return d.tag });
-
-				li.on("mouseenter", function(e) {
-					var d = this.innerHTML
-					_this.hoverNodesForTag(d);
-				});
-
-				li.on("mouseout", function(e) {
-					var d = this.datum
-					_this.unHoverNodesForTag(d);
-				})
-
-			} else {
-				d3.selectAll("#tag-list").remove()
-			}
-		},
-
 		categoricalGravity : false,
 
 		tagGravity : false,
@@ -201,5 +203,4 @@ var ChartBehaviorManager = function() {
 
 } 
 
-var behaviors =  new ChartBehaviorManager();
-behaviors.initialize();
+var dc = new DictionaryController(window.dictionary);

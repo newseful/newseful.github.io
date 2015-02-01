@@ -1,5 +1,7 @@
+// Dictionary object for containing data
 window.dictionary = {};
 
+// Possible data categories index
 dictionary.categories = [
 	"Term",
 	"Precedent",
@@ -16,9 +18,20 @@ dictionary.palette = {
 	green : "#3EB571"
 }
 
+// Path to media resources for simplified "media" property in term
 dictionary.mediaPath = "media/";
 
+// Empty tag array to fill later in generators.js
 dictionary.tags = [];
+
+// Empty index array to fill later in generators.js for
+// faster searching (can use array.indexOf instead of looping)
+// through dictionary.terms.term properties
+dictionary.index = []
+
+// Empty array to fill with generated links between term
+// definitions and term names in generators.js
+dictionary.links = [];
 
 dictionary.terms = [
 	{
@@ -537,11 +550,14 @@ dictionary.terms = [
 
 ];
 
-dictionary.index = [];
-dictionary.tags = [];
-
+// Schedule object
 window.calendar = {};
 
+// Create an empty array to hold a list of objects
+// that attaches each week to all of its events
+calendar.cal = [];
+
+// All the week names for this semester
 calendar.weeks = [
 	"January 20",
 	"January 20 \u2013 January 27",
@@ -561,6 +577,7 @@ calendar.weeks = [
 	"April 28 \u2013 May 5",
 ]
 
+// All events and their corresponding weeks
 calendar.events = [
 	{
 		name : "Design dictionary",

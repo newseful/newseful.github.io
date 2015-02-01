@@ -1,39 +1,36 @@
-var Reader = function(dict) {
-	return {
+var Reader = function(dict, controller) {
+	r = {
 
 		container : document.querySelector("#terms"),
+		controller : controller,
+		inputIsFocused : false,
+		dictionary : dict,
 
 		constructSimpleTerm : function(term) {
-			var tmp = document.querySelector(".simple-term").cloneNode(true);
-			tmp.querySelector(".term-title").innerHTML = term.term;
-			tmp.querySelector(".term-body").innerHTML = this.highlight(term.definition, term.connections);
-			tmp.classList.remove("template");
+			var tagElements = [],
+					templateClone = document.querySelector(".simple-term").cloneNode(true),
+					tagList = templateClone.querySelector(".term-tags"),
+					tag = tagList.querySelector(".tag"),
+					media = templateClone.querySelector(".term-media");
 
-			var tagList = tmp.querySelector(".term-tags");
-			var tag = tagList.querySelector(".tag");
 
-			var media = tmp.querySelector(".term-media");
+			templateClone.querySelector(".term-title").innerHTML = term.term;
+			templateClone.querySelector(".term-body").innerHTML = this.highlight(term.definition, term.connections);
+			templateClone.classList.remove("template");
+			templateClone.querySelector(".term-category").innerHTML = dictionary.categories[term.cat];
+			templateClone.querySelector(".term-category").classList.add("category-" + term.cat);
 
-			tmp.querySelector(".term-category").innerHTML = dictionary.categories[term.cat];
-			tmp.querySelector(".term-category").classList.add("category-" + term.cat);
-
-			if (term.tags.length) {
-				for ( var i = 0; i < term.tags.length; i++ ) {
-					var curTag = i ? tag.cloneNode(true) : tag;
-					curTag.innerHTML = term.tags[i];
-					curTag.setAttribute('data-tag-name', term.tags[i]);
-					if (i) {
-						tagList.appendChild(curTag);
-					}
-
-					curTag.addEventListener("mouseenter", function() {
-						behaviors.hoverNodesForTag(this.dataset.tagName);
-					});
-
-					curTag.addEventListener("mouseout", function() {
-						behaviors.unHoverNodesForTag(this.dataset.tagName);
-					})
+			if (term.tags.length > 0) {
+				for ( var i = 0; i < term.tags.length; ++i ) {
+					var t = i ? tag.cloneNode(true) : tag;
+					t.innerHTML = term.tags[i];
+					t.setAttribute('data-tag-name', term.tags[i]);
+					tagElements.push(t);
+					tagList.appendChild(t);
 				}
+
+				this.controller.notify('tag elements created', tagElements);
+
 			} else {
 				while (tagList.hasChildNodes()) {
 					tagList.removeChild(tagList.lastChild);
@@ -41,25 +38,23 @@ var Reader = function(dict) {
 			}
 
 			if (term.media.length) {
-				for (var i = 0; i < term.media.length; i++) {
-					var img = document.createElement("img");
+				for (var i = 0; i < term.media.length; ++i) {
+					var img = document.createElement("img"),
+							_this = this;
+					
 					img.setAttribute("src", dictionary.mediaPath + term.media[i]);
-
-					var _this = this;
 
 					img.addEventListener("click", function() {
 						_this.expandImg(this);
 					});
-
 					media.appendChild(img);
 				}
 			} else {
 				media.parentNode.removeChild(media);
 			}
 
-			this.registerDescriptionListeners(tmp);
-
-			return tmp;
+			this.registerDescriptionListeners(templateClone);
+			return templateClone;
 		},
 
 		// Returns parsed term description with connections marked up
@@ -93,24 +88,22 @@ var Reader = function(dict) {
 
 		registerDescriptionListeners : function(element) {
 			if (element.querySelectorAll(".term-inline")) {
-				terms = element.querySelectorAll(".term-inline");
+				var _this = this;
+				var terms = element.querySelectorAll(".term-inline");
 
 				for (var i = 0; i < terms.length; i++) {
 					var t = terms[i];
 					t.addEventListener("mouseenter", function() {
 						var i = this.dataset.index;
-						var node = ".node[data-index='" + i + "']";
-						behaviors.hoverNode(node);
+						_this.controller.notify('hover term', i);
 					});
 					t.addEventListener("mouseout", function() {
 						var i = this.dataset.index;
-						var node = ".node[data-index='" + i + "']";
-						behaviors.unHoverNode(node);
+						_this.controller.notify('unhover term', i);
 					});
 					t.addEventListener("click", function() {
 						var i = this.dataset.index;
-						var node = ".node[data-index='" + i + "']";
-						behaviors.selectNode(node);
+						_this.controller.notify('select term', i);
 					});
 				}
 			}
@@ -130,28 +123,25 @@ var Reader = function(dict) {
 				tmpli.setAttribute('data-index', terms[i].index);
 				tmpli.classList.add('category-' + terms[i].cat);
 
+				var _this = this;
+
 				tmpli.addEventListener("mouseenter", function() {
-					var node = ".node[data-index='" + this.dataset.index + "']";
-					behaviors.hoverNode(node);
+					_this.controller.notify('hover term', this.dataset.index);
 				});
 
 				tmpli.addEventListener("mouseout", function() {
-					var node = ".node[data-index='" + this.dataset.index + "']";
-					behaviors.unHoverNode(node);
+					_this.controller.notify('unhover term', this.dataset.index);
 				});
 
 				tmpli.addEventListener("click", function() {
-					var node = ".node[data-index='" + this.dataset.index + "']";
-					behaviors.selectNode(node);
-				})
+					_this.controller.notify('select term', this.dataset.index);
+				});
 
 				list.appendChild(tmpli);
 			}
 
 			return list;
 		},
-
-		inputIsFocused : false,
 
 		constructTermList : function(termList) {
 			var tmpContainer = document.querySelector(".full-term-list").cloneNode(true);
@@ -162,7 +152,6 @@ var Reader = function(dict) {
 
 			tmpContainer.querySelector(".search-terms").addEventListener("keyup", function() {
 				var terms = this.value;
-
 				_this.clearTermList();
 
 				if (terms) {
@@ -201,27 +190,13 @@ var Reader = function(dict) {
 			container.parentNode.removeChild(container);
 		},
 
-		dictionary : dict,
 
-		// render term into reader section
-		// @term expects object containing term object of format:
-		// {
-	  // term: "news",
-		// definition: "The medium by which we are informed of current events.",
-		// cat: 0,
-		// media: [],
-		// owner: 0,
-		// tags: [],
-		// connections: []
-		// }
 		render : function(term) {
 			// Empty contents
 			while (this.container.hasChildNodes()) {
 				this.container.removeChild(this.container.lastChild);
 			}
 
-			// If we received term object display simple term template
-			// If we didn't, put the full list of terms in it
 			if (term) {
 				this.container.appendChild(this.constructSimpleTerm(term));
 				this.container.appendChild(document.createElement("hr"));
@@ -302,11 +277,12 @@ var Reader = function(dict) {
 		},
 
 		init : function() {
+			console.log("reader init");
 			this.render();
+			return this;
 		}
 
-	}
-}
+	};
 
-var reader = new Reader(window.dictionary.terms);
-reader.init();
+	return r.init();
+}
