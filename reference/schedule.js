@@ -57,16 +57,6 @@ guide.append("path")
 	.attr("transform", "translate(" + (width - 3) + ",0) rotate(-90) scale(1.5)")
 	.classed('schedule-connector', true);
 
-var ticks = schedule.selectAll(".tick")
-	.data(data)
-	.enter()
-		.append("line")
-		.classed("tick", true)
-		.attr('x1', 0)
-		.attr('x2', 8)
-		.attr('y1', function(d,i) { return scale.range()[i] })
-		.attr('y2', function(d,i) { return scale.range()[i] });
-
 var progress = schedule.append("path")
 	.classed("progress", true)
 	.attr("transform", "translate(0," + timeScale(today) + ") rotate(90) scale(1.5)")
@@ -78,7 +68,7 @@ var eventContainer = schedule.selectAll(".events")
 eventContainer.enter()
 		.append("g")
 		.classed("events", true)
-		.attr('transform', function(d, i) { return "translate(20," + scale.range()[i] + ")" });
+		.attr('transform', function(d, i) { return "translate(18," + scale.range()[i] + ")" });
 
 eventContainer
 	.append("path")

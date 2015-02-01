@@ -236,7 +236,6 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 		},
 
 		updateTagNode : function() {
-
 			this.tagNode
 				.attr('transform', function(d) { return 'translate(' + d.x + ', ' + d.y + ')'});
 
@@ -252,7 +251,7 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 
 		  if (this.tagGravity) {
 
-		  	this.NodeDistributor.links([]).gravity(0).charge(-100).chargeDistance(100);
+		  	this.NodeDistributor.links([]).gravity(0).charge(-100).chargeDistance(150);
 				this.link.style('opacity', '0');
 				this.tagNode.style('display', 'block');
 
