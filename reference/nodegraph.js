@@ -157,8 +157,8 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 									c = tau * r,
 									l = c / _this.circularTermConnections.length;			
 							return l; })
-			  		.gravity(0.3)
-			  		.charge(-300)
+			  		.gravity(0.001)
+			  		.charge(-30)
 			  		.chargeDistance(5000)
 			  		.start();
 			  	break;
