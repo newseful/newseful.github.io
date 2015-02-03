@@ -362,7 +362,7 @@ dictionary.terms = [
 		term: "speculation",
 		definition: "Educated guesses about the facts of a story made without verification.",
 		cat: 0,
-		media: [],
+		media: ["speculation.jpg"],
 		owner: 0,
 		tags: ["media", "ethics"],
 		connections: []
