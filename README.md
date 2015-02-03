@@ -4,4 +4,4 @@ Agendae is an exploratory project seeking new models for the display and dissemi
 2. Make it easier to keep track of a developing story across multiple device contexts, and
 3. Leverage the inherent qualities of digital media to enhance understanding
 
-[Blog](http://agendae.github.io) | [Reference](http://agendae.github.io/reference/) | [Who](http://kevinzweerink.com)
+[Blog](http://agendae.github.io) | [Reference](http://agendae.github.io/reference/) | [Research](https://github.com/agendae/research) | [Who](http://kevinzweerink.com)
