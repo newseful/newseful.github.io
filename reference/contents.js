@@ -49,7 +49,7 @@ dictionary.terms = [
 		cat: 0,
 		media: [],
 		owner: 0,
-		tags: ["media", "time"],
+		tags: ["media"],
 		connections: [] 
 	},
 	{
@@ -547,7 +547,177 @@ dictionary.terms = [
 		tags: ["media","technology"],
 		connections: []
 	},
-
+	{
+		term: "three ways to redesign breaking news",
+		definition: "Brief Fast Company article on possible improvements to breaking news design.",
+		cat: 2,
+		media: [],
+		owner: 0,
+		tags: ["media","technology","design"],
+		connections: []
+	},
+	{
+		term: "joshua topolsky",
+		definition: "Digital editor. Responsible for current Bloomberg redesign. Previously at The Verge.",
+		cat: 3,
+		media: ["topolsky.jpg"],
+		owner: 0,
+		tags: ["media","technology","design"],
+		connections: []
+	},
+	{
+		term: "vox media",
+		definition: "Consortium of digital news publications exploring the evolution of editorial design for the screen.",
+		cat: 3,
+		media: ["vox-media.jpg"],
+		owner: 0,
+		tags: ["media","technology"],
+		connections: []
+	},
+	{
+		term: "vox.com",
+		definition: "Digital news site trying to take advantage of its digital context in new ways.",
+		cat: 1,
+		media: ["vox-01.jpg", "vox-02.jpg", "vox-03.jpg"],
+		owner: 0,
+		tags: ["media","technology","outlet"],
+		connections: []
+	},
+	{
+		term: "quartz",
+		definition: "Independent digital news company. Strong, appropriate data visualizations.",
+		cat: 1,
+		media: imageMap(3, "qz"),
+		owner: 0,
+		tags: ["media","technology","outlet"],
+		connections: []
+	},
+	{
+		term: "legit",
+		definition: "Hackathon project to allow reporters/news media personnel to verify tweets geotagged around a breaking news event.",
+		cat: 1,
+		media: [],
+		owner: 0,
+		tags: ["media","technology"],
+		connections: []
+	},
+	{
+		term: "amber alert system",
+		definition: "Existing example of a (somewhat abbrasive) implementation of breaking news updates on mobile device.",
+		cat: 1,
+		media: [],
+		owner: 0,
+		tags: ["technology"],
+		connections: []
+	},
+	{
+		term: "cNN",
+		definition: "24-hour news network and web news source. Notable for lack of print edition.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["media","outlet"],
+		connections: []
+	},
+	{
+		term: "new york times",
+		definition: "Gold standard of the newspaper world. Notable also for interactive features, see The Upshot.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["media","outlet"],
+		connections: []
+	},
+	{
+		term: "uSA today",
+		definition: "Mostly digital popular news source. Not known for ethical rigor.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["media","outlet"],
+		connections: []
+	},
+	{
+		term: "bBC",
+		definition: "British broadcasting corporation, digital presence is notable for its consistency across the exceptionally wide range of content.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["media","outlet"],
+		connections: []
+	},
+	{
+		term: "huffington post",
+		definition: "Early example of an entirely digital news source. Reputation was at one point substandard but has recently improved.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["media","outlet"],
+		connections: []
+	},
+	{
+		term: "the atlantic",
+		definition: "Classic print magazine. Digital presence has become relevant to breaking news with powerful pieces published by staff writers such as Ta-Nehisi Coates.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["media","outlet"],
+		connections: []
+	},
+	{
+		term: "al-jazeera",
+		definition: "Qatari broadcaster. Direct audience in US is minimal, but a lot of their stories are picked up by domestic outlets.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["media","outlet"],
+		connections: []
+	},
+	{
+		term: "reuters",
+		definition: "British news agency which has few direct avenues to broadcast, but many of their stories are picked up by domestic outlets.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["media","outlet"],
+		connections: []
+	},
+	{
+		term: "associated press",
+		definition: "American nonprofit news agency. Few direct publishing platforms, but many stories carried by domestic outlets.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["media","outlet"],
+		connections: []
+	},
+	{
+		term: "timeline.js",
+		definition: "Open source tool to easily create interactive timelines. Seen across digital media in wake of ferguson, snowden leaks, etc.",
+		cat: 1,
+		media: imageMap(2, "timeline"),
+		owner: 0,
+		tags: ["design","technology"],
+		connections: []
+	},
+	{
+		term: "storymap.js",
+		definition: "Open source tool to easily create interactive map stories.",
+		cat: 1,
+		media: imageMap(2, "storymap"),
+		owner: 0,
+		tags: ["design","technology"],
+		connections: []
+	},
+	{
+		term: "knight lab",
+		definition: "Northwestern University organization responsible for timeline.js and storymap.js, two tools that make creating interactive stories more accessible to journalists.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["technology"],
+		connections: []
+	},
 ];
 
 // Schedule object

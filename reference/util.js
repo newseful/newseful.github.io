@@ -26,3 +26,13 @@ Converter.vwToPx = function(vw) {
 	var scalar = window.innerWidth / 100;
 	return vw * scalar;
 }
+
+var imageMap = function(range, prefix) {
+	map = [];
+
+	for (var i = 1; i <= range; ++i) {
+		map.push(prefix + "-0" + i + ".jpg");
+	}
+
+	return map;
+}

@@ -79,7 +79,7 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 
 			// Set these things after data props have been initiated
 			this.CategoryFociDistributor
-				.charge(-1500)
+				.charge(-1000)
 				.size([this.w, this.h])
 				.nodes(this.categoryData),
 
@@ -150,15 +150,15 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 					this.tagNode.style('display', 'none');
 			  	this.NodeDistributor
 			  		.links(this.circularTermConnections)
-			  		.linkStrength(0.9)
+			  		.linkStrength(1)
 			  		.linkDistance(function(d) {
 							var tau = Math.PI * 2,
 									r = (_this.w - 150) / 4,
 									c = tau * r,
 									l = c / _this.circularTermConnections.length;			
 							return l; })
-			  		.gravity(0.001)
-			  		.charge(-30)
+			  		.gravity(0.006)
+			  		.charge(-20)
 			  		.chargeDistance(5000)
 			  		.start();
 			  	break;
