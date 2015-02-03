@@ -525,6 +525,7 @@ li.tag.highlight {
 
 .node-label {
 	pointer-events: none;
+	font-weight: 300;
 }
 
 .tag-node text {

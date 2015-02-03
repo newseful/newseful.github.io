@@ -276,7 +276,7 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 					.text(function(d) { return d.term })
 					.attr('transform', 'translate(20,6)')
 					.style('display' , 'none')
-					.attr('data-index', function(d, i) { return i });
+					.attr('data-index', function(d, i) { return i })
 
 			this.nodeLabel.exit().remove();
 		},
