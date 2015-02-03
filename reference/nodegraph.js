@@ -92,7 +92,7 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 				.linkStrength(.8)
 				.linkDistance(function() {
 					var tau = Math.PI * 2,
-							r = (_this.w - 150) / 4,
+							r = (_this.w - 150) / 3,
 							c = tau * r,
 							d = c / _this.tagData.length;
 					return d;
@@ -141,7 +141,7 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 					this.tagNode.style('display', 'none');
 					break;
 				case 'tag':
-					this.NodeDistributor.links([]).gravity(0).charge(-100).chargeDistance(150).start();
+					this.NodeDistributor.links([]).gravity(0).charge(-300).chargeDistance(300).start();
 					this.link.style('opacity', '0');
 					this.tagNode.style('display', 'block');
 					break;
