@@ -587,7 +587,7 @@ dictionary.terms = [
 		term: "quartz",
 		definition: "Independent digital news company. Strong, appropriate data visualizations.",
 		cat: 1,
-		media: imageMap(3, "qz"),
+		media: imageMap(4, "qz"),
 		owner: 0,
 		tags: ["media","technology","outlet"],
 		connections: []
@@ -711,11 +711,47 @@ dictionary.terms = [
 	},
 	{
 		term: "knight lab",
-		definition: "Northwestern University organization responsible for timeline.js and storymap.js, two tools that make creating interactive stories more accessible to journalists.",
+		definition: "A team of technologists and journalists at Northwestern working at advancing news media innovation through exploration and experimentation.",
 		cat: 3,
 		media: [],
 		owner: 0,
 		tags: ["technology"],
+		connections: []
+	},
+	{
+		term: "david bauer",
+		definition: "Journalist who likes to combine words, code and data. Writes and builds for Quartz.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["technology","media","design"],
+		connections: []
+	},
+	{
+		term: "instacurate",
+		definition: "Tool built by David Bauer that culls a list of articles and linked stories from your twitter timeline, allowing you to skip the cruft.",
+		cat: 1,
+		media: imageMap(2, 'instacurate'),
+		owner: 0,
+		tags: ["technology","media"],
+		connections: []
+	},
+	{
+		term: "dystopia tracker",
+		definition: "David Bauer project tracking dystopic predictions from literature/film, their projected realization timelines, and in some cases when they actually were realized. Great example of crowd-sourced data",
+		cat: 1,
+		media: imageMap(3, 'dystopia-tracker'),
+		owner: 0,
+		tags: ["technology","media"],
+		connections: []
+	},
+	{
+		term: "david yanofsky",
+		definition: "Brooklyn-based designer creating data driven and visual stories for Quartz.",
+		cat: 3,
+		media: [],
+		owner: 0,
+		tags: ["technology","design","media"],
 		connections: []
 	},
 ];
