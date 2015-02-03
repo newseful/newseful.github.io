@@ -17,6 +17,11 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 		tagConnections : [],
 		termData : d.terms,
 		termConnections : d.links,
+		circularTermConnections : [],
+
+		tagGravity : false,
+		categoricalGravity : false,
+		circularLayout : false,
 
 		// Generators
 		setCategoryData : function(c) {
@@ -33,31 +38,31 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 				});
 			}
 		},
-		setTagConnections : function(t) {
+		buildCircularConnectionMap : function(src, destination) {
 			// Generates a list of connections
 			// connecting adjacent tags so that layout.force
 			// can form them into an even circle
-			for (var i = 0; i < t.length; ++i) {
+			for (var i = 0; i < src.length; ++i) {
 				var p = ( function(){
 					if ( i < 1 ) { 
-						return t.length - 1  
+						return src.length - 1  
 					}
 					return i - 1;
 				})();
 				var n = ( function() {
-					if (i == t.length - 1) {
+					if (i == src.length - 1) {
 						return 0
 					}
 					return i + 1;
 				})();
-				this.tagConnections.push({
+				destination.push({
 					source : i,
 					target : p
 				});
-				this.tagConnections.push({
+				destination.push({
 					source : i,
 					target : n
-				})
+				});
 			}
 		},
 
@@ -114,7 +119,9 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 
 			this.NodeDistributor.on('tick', function(e) {
 				_this.updateNode(e);
-			})
+			});
+
+			this.updateForce();
 
 		},
 
@@ -122,6 +129,51 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 			this.TagFociDistributor.resume();
 			this.CategoryFociDistributor.resume();
 			this.NodeDistributor.resume();
+		},
+
+		updateForce : function(gravityType) {
+			var _this = this;
+
+			switch (gravityType) {
+				case 'categorical':
+					this.NodeDistributor.links([]).gravity(0).charge(-300).chargeDistance(5000).start();
+					this.link.style('opacity', '0');
+					this.tagNode.style('display', 'none');
+					break;
+				case 'tag':
+					this.NodeDistributor.links([]).gravity(0).charge(-100).chargeDistance(150).start();
+					this.link.style('opacity', '0');
+					this.tagNode.style('display', 'block');
+					break;
+				case 'circular':
+					this.link.style('opacity', '0');
+					this.tagNode.style('display', 'none');
+			  	this.NodeDistributor
+			  		.links(this.circularTermConnections)
+			  		.linkStrength(0.9)
+			  		.linkDistance(function(d) {
+							var tau = Math.PI * 2,
+									r = (_this.w - 150) / 4,
+									c = tau * r,
+									l = c / _this.circularTermConnections.length;			
+							return l; })
+			  		.gravity(0.3)
+			  		.charge(-300)
+			  		.chargeDistance(5000)
+			  		.start();
+			  	break;
+			  default:
+			  	this.NodeDistributor
+			  		.links(this.termConnections)
+			  		.gravity(0.2)
+			  		.charge(-300)
+			  		.chargeDistance(5000)
+						.linkStrength(0.5)
+						.start();
+
+					this.link.style('opacity', '1');
+					this.tagNode.style('display', 'none');
+			}
 		},
 
 		// NODES, LINKS
@@ -248,12 +300,9 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 
 		  // Calculate gravitational things
 		  var k = e.alpha * 0.3;
+		  var _this = this;
 
 		  if (this.tagGravity) {
-
-		  	this.NodeDistributor.links([]).gravity(0).charge(-100).chargeDistance(150);
-				this.link.style('opacity', '0');
-				this.tagNode.style('display', 'block');
 
 		  	for (var i = 0; i < this.termData.length; ++i) {
 					o = this.termData[i];
@@ -266,22 +315,12 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 
 		  } else if (this.categoricalGravity) {
 
-		  	this.NodeDistributor.links([]).gravity(0).charge(-300).chargeDistance(5000);
-				this.link.style('opacity', '0');
-				this.tagNode.style('display', 'none');
-
 				for (var i = 0; i < this.termData.length; i++) {
 					o = this.termData[i];
 					var c = this.categoryData[o.cat];
 					o.x += (c.x - o.x) * k;
 					o.y += (c.y - o.y) * k;
 				}
-		  } else {
-
-		  	this.NodeDistributor.links(dictionary.links).gravity(0.2).charge(-300).chargeDistance(5000);
-				this.link.style('opacity', '1');
-				this.tagNode.style('display', 'none');
-
 		  }
 
 		  // Update link and node positions
@@ -428,7 +467,8 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 			// Create/format internal data properties
 			this.setCategoryData(this.dictionary.categories);
 			this.setTagData(this.dictionary.tags);
-			this.setTagConnections(this.dictionary.tags);
+			this.buildCircularConnectionMap(this.tagData, this.tagConnections);
+			this.buildCircularConnectionMap(this.termData, this.circularTermConnections);
 
 			// Set things into motion
 			this.populate();
