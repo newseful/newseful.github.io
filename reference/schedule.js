@@ -7,6 +7,8 @@ var mouse = {
 	isHovering : false
 };
 
+var wHeight = window.innerHeight;
+
 var schedule = d3.select('#schedule').append('svg')
 	.attr('width', width)
 	.attr('height', height)
@@ -26,6 +28,16 @@ var reverseScale = d3.scale.linear()
 
 var firstDay = new Date("2015-01-20");
 var lastDay = new Date("2015-05-05");
+
+var clamp = function(el, y) {
+	if (y > (wHeight - (.5 * el.offsetHeight))) {
+		return wHeight - (.5 * el.offsetHeight);
+	}  else if (y < .5 * el.offsetHeight) {
+		return .5 * el.offsetHeight;
+	}
+
+	return y;
+}
 
 var today = new Date();
 
@@ -110,7 +122,9 @@ var updateScheduleReader = function( hidden, y, currentWeek ) {
 	// Update
 	scheduleReader
 		.classed({"hidden" : hidden, "panel-review" : function(d,i) { return presDates.indexOf(currentWeek) > -1 } })
-		.style('top', y + 'px')
+		.style('top', function(d, i) { 
+			return clamp(this, y) + 'px';
+		})
 
 	// Exit
 	scheduleReader.exit().remove();
@@ -200,7 +214,6 @@ schedule.on("mousemove", function(event) {
 			.attr("transform", function() { return "translate(0,"+ scale(currentWeek - 1) +")" })
 
 		srData[0] = data[currentWeek];
-		console.log(d3.event);
 
 		updateScheduleReader(false, d3.event.clientY, currentWeek);
 	}
