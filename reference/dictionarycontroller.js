@@ -24,25 +24,25 @@ var DictionaryController = function(dictionary) {
 					// change gravity for nodegraph
 
 					if (e.keyCode == 67 && !ng.categoricalGravity) {
-						ng.updateForce('categorical')
+						ng.updateForce( ng.gravityTypes.categoricalGravity )
 						ng.categoricalGravity = true;
 						ng.tagGravity = false;
 						ng.circularLayout = false;
 						ng.forceBump();
 					} else if (e.keyCode == 84 && !ng.tagGravity) {
-						ng.updateForce('tag')
+						ng.updateForce( ng.gravityTypes.tagGravity )
 						ng.categoricalGravity = false;
 						ng.tagGravity = true;
 						ng.circularLayout = false;
 						ng.forceBump();
 					}  else if (e.keyCode == 79 && !ng.circularLayout) {
-						ng.updateForce('circular')
+						ng.updateForce( ng.gravityTypes.circular )
 						ng.categoricalGravity = false;
 						ng.tagGravity = false;
 						ng.circularLayout = true;
 						ng.forceBump();
 					} else if (e.keyCode == 76) {
-						ng.updateForce('link')
+						ng.updateForce(null)
 						ng.categoricalGravity = false;
 						ng.tagGravity = false;
 						ng.circularLayout = false;

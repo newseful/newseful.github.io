@@ -23,6 +23,12 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 		categoricalGravity : false,
 		circularLayout : false,
 
+		gravityTypes : {
+			tagGravity : 'tagGravity',
+			categoricalGravity : 'categoricalGravity',
+			circular : 'circular'
+		},
+
 		// Generators
 		setCategoryData : function(c) {
 			for (var i = 0; i < c.length; ++i) {
@@ -135,17 +141,22 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 			var _this = this;
 
 			switch (gravityType) {
-				case 'categorical':
+				case this.gravityTypes.categoricalGravity:
+
 					this.NodeDistributor.links([]).gravity(0).charge(-300).chargeDistance(5000).start();
 					this.link.style('opacity', '0');
 					this.tagNode.style('display', 'none');
 					break;
-				case 'tag':
+
+				case this.gravityTypes.tagGravity:
+
 					this.NodeDistributor.links([]).gravity(0).charge(-300).chargeDistance(300).start();
 					this.link.style('opacity', '0');
 					this.tagNode.style('display', 'block');
 					break;
-				case 'circular':
+
+				case this.gravityTypes.circular:
+
 					this.link.style('opacity', '0');
 					this.tagNode.style('display', 'none');
 			  	this.NodeDistributor
@@ -162,6 +173,7 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 			  		.chargeDistance(5000)
 			  		.start();
 			  	break;
+			  	
 			  default:
 			  	this.NodeDistributor
 			  		.links(this.termConnections)
