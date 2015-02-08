@@ -337,7 +337,9 @@ var CausalityTimeline = function(data, options) {
 		padding : options.padding || 30,
 		colors : options.colors || {
 			interfaceColor : d3.rgb('#C9C9C9'),
-			dataColors : [d3.rgb('#4673F0'), d3.rgb('#F05946'), d3.rgb('#48D46B'), d3.rgb('#F7903B'), d3.rgb('#8E40D6')]
+			dataColors : d3.scale.linear()
+										.domain([0, data.length])
+										.range([d3.rgb(74,39,246), d3.rgb(0,232,116)])
 		},
 		groupIndex : [],
 		eventsByDate : [],
@@ -443,7 +445,7 @@ var CausalityTimeline = function(data, options) {
 						day = new Date(_this.dateScale.invert(m[0])).addHours(12).getTime(),
 						dayIndex = Math.floor((day - _this.minDate.getTime()) / MSECPERDAY)
 
-				if (_this.eventsByDate[dayIndex].length > 0) {
+				if (_this.eventsByDate[dayIndex] && _this.eventsByDate[dayIndex].length > 0) {
 				
 					reader.selectAll('*').remove();
 					reader.append('h2').text( _this.dateFormat( new Date(day) ) );
@@ -457,7 +459,7 @@ var CausalityTimeline = function(data, options) {
 							.text(function(d) { return d.text })
 							.style({
 									'padding-left' : '1.5em',
-									'border-left' : function(d) { return '4px solid' + _this.colors.dataColors[d.group] },
+									'border-left' : function(d) { return '4px solid' + _this.colors.dataColors(d.group) },
 									'margin-bottom' : '1em'
 							});
 
@@ -509,7 +511,7 @@ var CausalityTimeline = function(data, options) {
 					.attr('x2', function(d, i) { return _this.dateScale(new Date(d.events[d.events.length - 1].date)) })
 					.attr('y2', function(d, i) { return i * _this.padding })
 					.attr('stroke-width', 2)
-					.attr('stroke', function(d, i) { return _this.colors.dataColors[i].brighter() })
+					.attr('stroke', function(d, i) { return _this.colors.dataColors(i) })
 					.attr('opacity', .8);
 
 		},
@@ -523,15 +525,27 @@ var CausalityTimeline = function(data, options) {
 					.classed('node-group', true)
 					.attr('data-group', function(d, i) { return i });
 
-			nodeGroup.selectAll('.node')
+			var node = nodeGroup.selectAll('.node')
 				.data(function(d) { return d.events })
 				.enter()
 					.append('circle')
 					.classed('node', true)
 					.attr('cx', function(d) { return _this.dateScale(new Date(d.date)) })
 					.attr('cy', function(d) { return this.parentNode.dataset.group * _this.padding })
-					.attr('r', 5)
-					.attr('fill', function(d) { return _this.colors.dataColors[this.parentNode.dataset.group] });
+					.attr('r', 4)
+					.attr('fill', function(d) { return _this.colors.dataColors(this.parentNode.dataset.group) })
+
+			var mouseMove = function(m) {
+				var x = m[0];
+				node
+					.transition()
+					.duration(350)
+					.ease('elastic')
+					.attr('r', function(d) { return Math.abs(this.getAttribute('cx') - x) < 10 ? 7 : 4})
+			}
+
+			this.mouseMoveActions.push(mouseMove);
+
 		},
 
 		addCurves : function() {
@@ -544,7 +558,7 @@ var CausalityTimeline = function(data, options) {
 				.enter()
 					.append('g')
 					.classed('curve-group', true)
-					.attr('data-color', function(d, i) { return  _this.colors.dataColors[i]; })
+					.attr('data-color', function(d, i) { return  _this.colors.dataColors(i); })
 					.attr('data-group', function(d, i) { return i });
 
 			var cDay = curveGroup.selectAll('.curve-day')
