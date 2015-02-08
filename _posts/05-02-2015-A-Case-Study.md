@@ -22,3 +22,9 @@ These three groups make up the core actors of the events, but there are more lev
 On a less central timeline we have the media reaction and cultural commentary that occurred during the development of this story. This would encompass the media storm that ensued as the leaked documents were parsed and exposed controversies about internal issues at Sony, and it would extend from particularly notable tweets all the way to Obama’s address calling Sony’s decision to pull the film a mistake.
 
 The purpose of parsing the events for these different timelines must not be to establish a hierarchy of influence, but to make the chain of cause and event more legible. In a 1-dimensional timeline, actors and events must all be stored in the same physical space. A 2-dimensional timeline allows actors to be separated, and their interactions can be more clearly laid out and understood.
+
+<br>
+
+<script src='js/case-study.js'></script>
+<div id='case-study-vis-01'></div>
+<div id="case-study-vis-reader-01"></div>

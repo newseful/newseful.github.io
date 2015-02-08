@@ -10,4 +10,7 @@ window.onload = function(e) {
 			document.querySelector('body').scrollTop = query.getBoundingClientRect().top - 80;
 		});
 	}
+
+	var visualizationInit = new Event('init');
+	window.dispatchEvent(visualizationInit);
 };
