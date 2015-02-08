@@ -573,7 +573,8 @@ window.addEventListener('init', function(e) {
 		.attr('height', h)
 		.style({
 			'margin-left' : '-' + margin + 'px',
-			'overflow' : 'visible'
+			'overflow' : 'visible',
+			'cursor' : 'crosshair',
 		});
 
 	var guide = stage.append('g')
@@ -585,14 +586,17 @@ window.addEventListener('init', function(e) {
 		.attr('x1', 0)
 		.attr('y1', 0)
 		.attr('x2', 0)
-		.attr('y2', h)
+		.attr('y2', '100%')
 		.attr('stroke-width', 1)
 		.attr('stroke', '#C9C9C9');
 
+
+
 	guide.append('text')
 		.classed('guide-date', true)
-		.attr('transform', 'translate(10,'+ h + ')')
+		.attr('transform', 'translate(10,0)')
 		.text(dateFormat(dateScale.invert(15)))
+		.attr('y', '100%')
 		.style({
 			'font-family' : '"aktiv-grotesk", sans-serif',
 			'font-weight' : '300',
@@ -645,11 +649,16 @@ window.addEventListener('init', function(e) {
 
 	h = graph[0][0].getBoundingClientRect().height + 50;
 
+	guide.append('path')
+		.attr('d', d3.svg.symbol().type('triangle-down').size(8))
+		.attr('fill' , '#8D8E94')
+
+	guide.append('path')
+		.attr('d', d3.svg.symbol().type('triangle-up').size(8))
+		.attr('fill', '#8D8E94')
+		.attr('transform','translate(0,'+ (h - 2) +')');
+
 	stage.attr('height', h);
-
-	guide.select('.guide-date').attr('transform', 'translate(10'+ (h - 10) +')');
-
-	guide.select('.guide-line').attr('y2', h);
 
 	stage.on('mousemove', function(e) {
 		var x = d3.mouse(this)[0];
@@ -658,10 +667,10 @@ window.addEventListener('init', function(e) {
 		guide.attr('transform', 'translate('+ x +',0)');
 		var textWidth = d[0][0].getBoundingClientRect().width;
 		if (textWidth > (w - 15) - x) {
-			d.attr('transform', 'translate(-10,'+ h +')')
+			d.attr('transform', 'translate(-10,0)')
 				.attr('text-anchor', 'end')
 		} else {
-			d.attr('transform', 'translate(10,'+ h +')')
+			d.attr('transform', 'translate(10,0)')
 				.attr('text-anchor', 'start')
 		}
 
