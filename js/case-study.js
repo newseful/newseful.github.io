@@ -1,4 +1,8 @@
 MSECPERDAY = 86400000;
+Date.prototype.addHours= function(h){
+    this.setHours(this.getHours()+h);
+    return this;
+}
 
 window.visualizations = window.visualizations || {};
 
@@ -436,11 +440,11 @@ var CausalityTimeline = function(data, options) {
 			var _this = this;
 			var populateReader = function(m) {
 				var reader = d3.select(_this.reader),
-						day = new Date(_this.dateScale.invert(m[0])).getTime(),
-						dayIndex = (day - _this.minDate.getTime() / MSECPERDAY)
+						day = new Date(_this.dateScale.invert(m[0])).addHours(12).getTime(),
+						dayIndex = Math.floor((day - _this.minDate.getTime()) / MSECPERDAY)
 				
 				reader.selectAll('*').remove();
-				reader.append('h2').text( _this.dateFormat(_this.dateScale.invert(m[0])) );
+				reader.append('h2').text( _this.dateFormat( new Date(day) ) );
 				reader.append('ul')
 					.style({ 'list-style' : 'none', 'padding' : '0' })
 					.selectAll('.list-item')
@@ -605,7 +609,8 @@ var CausalityTimeline = function(data, options) {
 						'font-weight' : '300',
 						'fill' : this.colors.interfaceColor,
 						'font-size' : '12px',
-						'text-transform' : 'uppercase'
+						'text-transform' : 'uppercase',
+						'pointer-events' : 'none'
 					})
 					.attr('transform', function(d, i) { return 'translate(-10,' + ((i * _this.padding) + 5) + ')' })
 					.attr('text-anchor', 'end');
