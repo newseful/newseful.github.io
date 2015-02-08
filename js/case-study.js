@@ -403,7 +403,7 @@ var CausalityTimeline = function(data, options) {
 		},
 
 		calculateHeight : function() {
-			this.h = (this.data.length * this.padding) + (this.padding * 2);
+			this.h = (this.data.length * this.padding) + this.padding;
 		},
 
 		setDateScale : function() {
