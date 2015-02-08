@@ -437,7 +437,7 @@ var CausalityTimeline = function(data, options) {
 			var populateReader = function(m) {
 				var reader = d3.select(_this.reader),
 						day = new Date(_this.dateScale.invert(m[0])).getTime(),
-						dayIndex = Math.floor((day - _this.minDate.getTime()) / MSECPERDAY)
+						dayIndex = Math.round((day - _this.minDate.getTime()) / MSECPERDAY)
 				
 				reader.selectAll('*').remove();
 				reader.append('h2').text( _this.dateFormat(_this.dateScale.invert(m[0])) );
