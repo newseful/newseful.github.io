@@ -442,27 +442,31 @@ var CausalityTimeline = function(data, options) {
 				var reader = d3.select(_this.reader),
 						day = new Date(_this.dateScale.invert(m[0])).addHours(12).getTime(),
 						dayIndex = Math.floor((day - _this.minDate.getTime()) / MSECPERDAY)
-				
-				reader.selectAll('*').remove();
-				reader.append('h2').text( _this.dateFormat( new Date(day) ) );
-				reader.append('ul')
-					.style({ 'list-style' : 'none', 'padding' : '0' })
-					.selectAll('.list-item')
-					.data(_this.eventsByDate[dayIndex])
-					.enter()
-						.append('li')
-						.classed('list-item', true)
-						.text(function(d) { return d.text })
-						.style({
-								'padding-left' : '1.5em',
-								'border-left' : function(d) { return '4px solid' + _this.colors.dataColors[d.group] },
-								'margin-bottom' : '1em'
-						});
 
-				if (_this.eventsByDate[dayIndex].length == 0) {
-					reader.append('p')
-						.text('No events to show for this date')
-						.style({ 'opacity' : '0.5', 'font-style' : 'italic' });
+				if (_this.eventsByDate[dayIndex].length > 0) {
+				
+					reader.selectAll('*').remove();
+					reader.append('h2').text( _this.dateFormat( new Date(day) ) );
+					reader.append('ul')
+						.style({ 'list-style' : 'none', 'padding' : '0' })
+						.selectAll('.list-item')
+						.data(_this.eventsByDate[dayIndex])
+						.enter()
+							.append('li')
+							.classed('list-item', true)
+							.text(function(d) { return d.text })
+							.style({
+									'padding-left' : '1.5em',
+									'border-left' : function(d) { return '4px solid' + _this.colors.dataColors[d.group] },
+									'margin-bottom' : '1em'
+							});
+
+					if (_this.eventsByDate[dayIndex].length == 0) {
+						reader.append('p')
+							.text('No events to show for this date')
+							.style({ 'opacity' : '0.5', 'font-style' : 'italic' });
+					}
+
 				}
 
 			}
