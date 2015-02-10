@@ -534,14 +534,52 @@ var CausalityTimeline = function(data, options) {
 					.attr('cy', function(d) { return this.parentNode.dataset.group * _this.padding })
 					.attr('r', 4)
 					.attr('fill', function(d) { return _this.colors.dataColors(this.parentNode.dataset.group) })
+					.attr('data-transitioning-up', 0)
+					.attr('data-transitioning-down', 0);
 
 			var mouseMove = function(m) {
 				var x = m[0];
+
+				var blockingNodeTransition = function(o) {
+					var ox = o.getAttribute('cx');
+
+					if (Math.abs(ox - x) < 10 && o.dataset.transitioningUp == 0) {
+						d3.select(o)
+							.attr('data-transitioning-up', 1)
+							.transition()
+							.ease('elastic')
+							.duration(350)
+							.attr('r', 7)
+							.each('end', function() {
+								this.setAttribute('data-transitioning-up', 0);
+							})
+							.each('interrupt', function() {
+								this.setAttribute('data-transitioning-up', 0);
+							})
+					}
+
+					console.log(Math.abs(ox-x));
+
+					if (Math.abs(ox - x) > 10 && o.dataset.transitioningDown == 0){
+						d3.select(o)
+							.attr('data-transitioning-down', 1)
+							.transition()
+							.ease('elastic')
+							.duration(350)
+							.attr('r', 4)
+							.each('end', function() {
+								this.setAttribute('data-transitioning-down', 0)
+							})
+							.each('interrupt', function() {
+								this.setAttribute('data-transitioning-down', 0);
+							})
+					}
+				}
+
 				node
-					.transition()
-					.duration(350)
-					.ease('elastic')
-					.attr('r', function(d) { return Math.abs(this.getAttribute('cx') - x) < 10 ? 7 : 4})
+					.each(function() {
+						blockingNodeTransition(this);
+					});
 			}
 
 			this.mouseMoveActions.push(mouseMove);
