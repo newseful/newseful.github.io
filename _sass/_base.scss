@@ -1,3 +1,4 @@
+
 html, body {
     font-family: "ff-spinoza-web-pro", times, serif;
     color: $black;
@@ -23,8 +24,7 @@ html, body {
 }
 
 .header {
-    color: $mid-gray;
-    //letter-spacing: 2px;
+    color: $green;
     position: absolute;
     top: 8.65em;
     right: 75%;
@@ -51,10 +51,10 @@ article {
     }
 
     a {
-        color: $mid-gray;
+        color: $green;
 
         &:hover {
-            color: $black;
+            color: darken($green, 20%);
         }
     }
 

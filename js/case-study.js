@@ -475,6 +475,52 @@ visualizations.hebdoData = [
 		]
 	}
 
+];
+
+visualizations.fergusonData = [
+	{
+		name : 'Michael Brown',
+		events : [
+			
+		]
+	},
+	{
+		name : 'Darren Wilson',
+		events : [
+		]
+	},
+	{
+		name : 'Ferguson Police',
+		events : [
+		]
+	},
+	{
+		name : 'St. Louis Police',
+		events : [
+		]
+	},
+	{
+		name : 'National Guard',
+		events : [
+		]
+	},
+	{
+		name : 'Cultural Commentary',
+		events : [
+		]
+	},
+	{
+		name : 'Public Response, Local',
+		events : [
+
+		]
+	},
+	{
+		name : 'Public Response, National',
+		events : [
+
+		]
+	},
 ]
 
 window.addEventListener('init', function(e) {
@@ -505,5 +551,10 @@ window.addEventListener('init', function(e) {
 		.style({
 			'margin-left' : -1 * ((ct2.w - ct2.container.getBoundingClientRect().width) / 2)
 		});
+
+	opts = {
+		container : document.querySelector('#case-study-vis-03'),
+		w : document.querySelector('#')
+	}
 
 });

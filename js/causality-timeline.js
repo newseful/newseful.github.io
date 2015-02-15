@@ -21,10 +21,12 @@ var CausalityTimeline = function(data, options) {
 		dataTimestamp : '',
 		padding : options.padding || 30,
 		colors : options.colors || {
-			interfaceColor : d3.rgb('#C9C9C9'),
+			interfaceColor : d3.rgb('#9EBBC6'),
+			ephemeraColor : d3.rgb('#D3E6ED'),
 			dataColors : d3.scale.linear()
 										.domain([0, data.length])
-										.range([d3.rgb(74,39,246), d3.rgb(0,232,116)])
+										.range(['#9385B1', '#91E789'])
+										.interpolate(d3.interpolateHcl)
 		},
 		groupIndex : [],
 		eventsByIncrement : [],
@@ -360,12 +362,13 @@ var CausalityTimeline = function(data, options) {
 					.classed('label', true)
 					.text(function(d) { return d })
 					.style({
-						'font-family' : '"aktiv-grotesk", sans-serif',
+						'font-family' : '"inconsolata", monospace',
 						'font-weight' : '300',
 						'fill' : this.colors.interfaceColor,
 						'font-size' : '12px',
 						'text-transform' : 'uppercase',
-						'pointer-events' : 'none'
+						'pointer-events' : 'none',
+						'letter-spacing' : '1px',
 					})
 					.attr('transform', function(d, i) { return 'translate(-10,' + ((i * _this.padding) + 5) + ')' })
 					.attr('text-anchor', 'end');
@@ -384,7 +387,7 @@ var CausalityTimeline = function(data, options) {
 				.attr('x2', 0)
 				.attr('y2', this.h - this.padding)
 				.attr('stroke-width', 1)
-				.attr('stroke', this.colors.interfaceColor);
+				.attr('stroke', this.colors.ephemeraColor);
 
 			guide.append('text')
 				.classed('guide-date', true)
@@ -392,7 +395,7 @@ var CausalityTimeline = function(data, options) {
 				.text(this.dateFormat(this.dateScale.invert(0)))
 				.attr('y', this.h - this.padding)
 				.style({
-					'font-family' : '"aktiv-grotesk", sans-serif',
+					'font-family' : '"inconsolata", monospace',
 					'font-weight' : '300',
 					'fill' : this.colors.interfaceColor,
 					'font-size' : '12px'
@@ -401,11 +404,11 @@ var CausalityTimeline = function(data, options) {
 			guide.append('path')
 				.attr('d', d3.svg.symbol().type('triangle-down').size(8))
 				.attr('transform', 'translate(0,' + (this.padding * -1) + ')')
-				.attr('fill' , this.colors.interfaceColor);
+				.attr('fill' , this.colors.ephemeraColor);
 
 			guide.append('path')
 				.attr('d', d3.svg.symbol().type('triangle-up').size(8))
-				.attr('fill', this.colors.interfaceColor)
+				.attr('fill', this.colors.ephemeraColor)
 				.attr('transform','translate(0,'+ (this.h - this.padding) +')');
 
 			var date = guide.select('.guide-date')

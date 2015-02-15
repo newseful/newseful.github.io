@@ -1,7 +1,7 @@
---- 
+---
 title: A Case Study (Three Case Studies)
 layout: post
---- 
+---
 
 I spent some time [researching](http://github.com/agendae/research/) a few major news events from the past year. The purpose of the research was twofold: first, I wanted to search for inconsistencies and misreported facts—to try and identify where things went wrong in the reporting and relaying of these stories; second, I wanted to review the timelines of these events in hindsight—to compare and contrast my remembered experience of these sequences with the documentation of them that came out in the end.
 
@@ -44,3 +44,13 @@ As such, the timeline of the Charlie Hebdo attacks is more heavily weighted than
 
 <div id='case-study-vis-02'></div>
 <div id='case-study-vis-reader-02'></div>
+
+## Ferguson
+
+Easily the largest and loudest news event of the past year has been the shooting of Michael Brown and its associated fallout. Where the North Korea story represents a fairly extended sequence of events, and the Charlie Hebdo massacre represents an extremely condensed sequence, the Ferguson story is an example of both scales as a single, concentrated series of events lead to months of protests and reactions on a scale large enough to warrant coverage.
+
+
+<br>
+
+<div id='case-study-vis-03'></div>
+<div id='case-study-vis-reader-03'></div>
