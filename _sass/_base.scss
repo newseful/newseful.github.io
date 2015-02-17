@@ -1,13 +1,19 @@
+@import '../_brand/stylesheets/brand';
 
 html, body {
-    font-family: "ff-spinoza-web-pro", times, serif;
+    font-family: "Lyon Text NYT","ff-spinoza-web-pro", times, serif;
     color: $black;
     background: $white;
     font-size: 18px;
+    line-height: 1.38888888;
+}
+
+a {
+    transition: color .1s ease;
 }
 
 .wrapper {
-    max-width: 600px;
+    max-width: 27rem;
     width: 45%;
     margin: auto;
 }
@@ -18,30 +24,28 @@ html, body {
 }
 
 .post-meta {
-    font-family: "inconsolata", monospace;
-    text-transform: uppercase;
+    font-family: "Atlas Grotesk","aktiv-grotesk",sans-serif;
     font-size: 11px;
 }
 
 .header {
-    color: $green;
+    color: $brandPrimary;
     position: absolute;
-    top: 8.65em;
+    top: 9em;
     right: 75%;
     font-weight: 600;
 }
 
 .footer {
-    color: $mid-gray;
-    font-family: "inconsolata", monospace;
-    text-transform: uppercase;
+    color: $gray;
+    font-family: "Atlas Grotesk","aktiv-grotesk",sans-serif;
     font-size: 11px;
     margin-bottom: 6em;
 }
 
 .line {
     width: 25%;
-    border-top: 2px solid $mid-gray;
+    border-top: 2px solid $gray;
     margin: 5em 0;
 }
 
@@ -51,10 +55,10 @@ article {
     }
 
     a {
-        color: $green;
+        color: $brandPrimary;
 
         &:hover {
-            color: darken($green, 20%);
+            color: darken($brandPrimary, 20%);
         }
     }
 
@@ -62,7 +66,7 @@ article {
         list-style-type: disc;
         li {
             em {
-                color: $mid-gray;
+                color: $gray;
             }
         }
         li:not(:last-of-type) {

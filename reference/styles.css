@@ -67,7 +67,7 @@ table {
 	color: #4F4C48;
 	text-align: center;
 	border-bottom: 1px solid #292929;
-	font-family: "ff-spinoza-web-pro";
+	font-family: "Lyon Text NYT", "ff-spinoza-web-pro";
 	font-size: 2.25em;
 	position: relative;
 }
@@ -98,14 +98,15 @@ table {
 	background: #212121;
 	border-left: none;
 	color: #8F8F8F;
-	line-height: 1.2;
 	display: none;
 	padding: 1.5em 0;
-	font-family: "inconsolata";
+	font-family: "Atlas Grotesk", "aktiv-grotesk-std";
+	font-size: .9em;
 }
 
 #description p,#description ul,#description ol,#description h2 {
 	padding: 0 1.5em;
+	line-height: 1.388888;
 }
 
 #description ol {
@@ -269,7 +270,7 @@ table {
 /************** GRAPH STYLES ***************/
 
 body, html {
-	font-family: "aktiv-grotesk-std";
+	font-family: "Atlas Grotesk", "aktiv-grotesk-std";
 	position: relative;
 }
 
@@ -573,7 +574,7 @@ li.tag.highlight {
 	color: #4D4D4D;
 	border: 1px solid;
 	border-radius: 4px;
-	font-family: "aktiv-grotesk-std";
+	font-family: "Atlas Grotesk","aktiv-grotesk-std";
 	font-size: 1em;
 	font-weight:300;
 	padding: .5em 1em;

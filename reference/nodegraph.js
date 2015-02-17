@@ -228,7 +228,7 @@ var NodeGraph = function( stage, w, h, d, controller ) {
 			var text = tg.append('text')
 				.text(function(d) { return d.tag })
 				.attr('x', 10)
-				.attr('y', function(d) { return this.parentNode.getBBox().height + 2.5 })
+				.attr('y', function(d) { return this.parentNode.getBBox().height + 4 })
 				.attr('text-anchor', 'middle');
 
 			var box = tg.insert('rect', 'text')

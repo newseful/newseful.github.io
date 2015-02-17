@@ -3,18 +3,11 @@
 ---
 @charset "utf-8";
 
-// Globals
-
-$black: #1A2326;
-$white: #FFF;
-$gray: #D3E6ED;
-$mid-gray: #799099;
-$green : #42C678;
-
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+				"../_brand/stylesheets/brand.scss",
         "base",
         "colophon",
         "responds",

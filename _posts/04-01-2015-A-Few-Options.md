@@ -1,6 +1,6 @@
 ---
 title: A Few Options
-layout: post
+layout: default
 ---
 
 At some point, I will have to decide what form this project will take. Here are a few options that have been in the back of my mind.

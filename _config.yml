@@ -7,5 +7,5 @@ url: "http://kevinzweerink.com" # the base hostname & protocol for your site
 twitter_username: kevinzweerink
 github_username:  kevinzweerink
 
-# Build settingsr
+# Build settings
 markdown: kramdown

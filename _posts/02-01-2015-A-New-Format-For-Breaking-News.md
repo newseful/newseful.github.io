@@ -1,6 +1,6 @@
 ---
 title: A New Format For Developing News
-layout: post
+layout: default
 ---
 
 We now experience news in real-time. Twitter, Facebook, streaming platforms, and established news sources provide up-to-the minute updates on current events, but none of them were designed explicitly for developing news coverage. The format of our stories hasn't yet caught up with the speed of their distribution. This leads to a proliferation of unverified facts in the race to publish first, and the noise of the crowd can often overwhelm responsible reportage. 

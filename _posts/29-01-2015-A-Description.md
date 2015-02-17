@@ -1,6 +1,6 @@
 ---
 title: A Description
-layout: Post
+layout: default
 ---
 
 (Project Name \| Agendae) is an exploratory project searching for new models for the display and dissemination of developing news stories on the internet with the explicit goals of finding patterns that:
