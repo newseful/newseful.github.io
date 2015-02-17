@@ -44,7 +44,7 @@
 		vertical-align: middle;
 		text-transform: uppercase;
 		padding: 1em 1.3em;
-		background: $gray;
+		background: $grayLightest;
 		color: $black;
 		border-radius: .3em;
 		opacity: 0;
@@ -60,7 +60,7 @@
 			content: "";
 			height:0;
 			width:0;
-			border: 1em solid $gray;
+			border: 1em solid $grayLightest;
 			border-left-color: rgba(0,0,0,0);
 			border-top-color: rgba(0,0,0,0);
 			border-bottom-color: rgba(0,0,0,0);
