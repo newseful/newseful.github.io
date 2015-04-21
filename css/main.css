@@ -1,0 +1,591 @@
+/* line 40, ../scss/globals.scss */
+.text_large, .hero__intro-text, .component-title, .timeline__heading, .tracking__heading, .annotations__heading, .panel__title {
+  font-size: 1.6875rem;
+  line-height: 1.704;
+}
+
+/* line 45, ../scss/globals.scss */
+.text_medium, .announcement__text, .example__title {
+  font-size: 1.5rem;
+  line-height: 1.704;
+}
+
+/* line 50, ../scss/globals.scss */
+.text_secondary, .panel__subtitle {
+  font-size: 1.2rem;
+  line-height: 1.704;
+}
+
+/* line 55, ../scss/globals.scss */
+.text_standard, .component-info, .timeline__description, .tracking__description, .annotations__description, .panel__code-inline, .panel__source-box, .panel__text, .panel__annotation-syntax-spec, .panel__tracker-syntax-spec, .example__subtitle, .site-footer__list-link {
+  font-size: 1.3125rem;
+  line-height: 1.523;
+}
+
+/* line 60, ../scss/globals.scss */
+.text_button, .button, .site-header__logo, .site-header__nav-list-item, .modules-overview__module-link, .panel__navigation-link, .panel__code-block, .panel__static-input, .site-footer__list-header, .site-footer__cp {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* line 65, ../scss/globals.scss */
+.text_small, .example__text, .example__quote, .example__attribution {
+  font-size: 1rem;
+  line-height: 1.523;
+}
+
+/* line 70, ../scss/globals.scss */
+.border-box, .site-header, .modules-overview__module-link {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 74, ../scss/globals.scss */
+.serif, .site-header__logo, .hero__intro-text, .announcement__text, .component-info, .timeline__description, .tracking__description, .annotations__description, .panel__text, .panel__annotation-syntax-spec, .panel__tracker-syntax-spec, .example__text, .example__quote, .site-footer__list-link {
+  font-family: "Lyon Text NYT", serif;
+  font-weight: 400;
+}
+
+/* line 79, ../scss/globals.scss */
+.sans, .button, .site-header__nav-list-item, .modules-overview__module-link, .component-title, .timeline__heading, .tracking__heading, .annotations__heading, .panel__navigation-link, .panel__title, .panel__subtitle, .example__title, .example__subtitle, .example__attribution, .site-footer__list-header, .site-footer__cp {
+  font-family: "Atlas Grotesk", sans-serif;
+  font-weight: 300;
+}
+
+/* line 84, ../scss/globals.scss */
+.mono, .panel__code-inline, .panel__code, .panel__code-block, .panel__source-box, .panel__static-input {
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+}
+
+/* line 1, ../scss/button.scss */
+.button {
+  display: inline-block;
+  padding: .7rem 1rem .6rem 1rem;
+  color: #63848C;
+  background: #D3E6ED;
+  border: 1px solid #83AFBA;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* line 15, ../scss/button.scss */
+.button--primary {
+  color: #FFF;
+  background: #42C678;
+  border: none;
+}
+
+/* line 1, ../scss/header.scss */
+.site-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 1.5rem;
+  border-bottom: 1px solid #D3E6ED;
+  background: #FFF;
+}
+
+/* line 15, ../scss/header.scss */
+.site-header__logo {
+  color: #42C678;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0;
+}
+
+/* line 25, ../scss/header.scss */
+.site-header__home-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 30, ../scss/header.scss */
+.site-header__nav {
+  display: inline-block;
+  float: right;
+}
+
+/* line 35, ../scss/header.scss */
+.site-header__nav-list {
+  margin: 0;
+}
+
+/* line 39, ../scss/header.scss */
+.site-header__nav-list-item {
+  display: inline-block;
+  padding-left: 2rem;
+}
+
+/* line 47, ../scss/header.scss */
+.site-header__nav-list-item-link {
+  color: #9EBBC6;
+  text-decoration: none;
+}
+
+/* line 52, ../scss/header.scss */
+.site-header__nav-list-item-link--current {
+  color: #42C678;
+}
+
+/* line 1, ../scss/hero.scss */
+.section--hero {
+  padding: 10rem 0;
+}
+
+/* line 5, ../scss/hero.scss */
+.hero__intro {
+  width: 60%;
+  margin: auto;
+}
+
+/* line 10, ../scss/hero.scss */
+.hero__intro-text {
+  color: #1A2326;
+}
+
+/* line 17, ../scss/hero.scss */
+.hero__video-link::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: .4rem solid transparent;
+  border-left: 0.6rem solid #FFF;
+  margin-right: .3rem;
+}
+
+/* line 27, ../scss/hero.scss */
+.hero__docs-link {
+  margin-left: 1rem;
+}
+
+/* line 1, ../scss/modules_overview.scss */
+.section--modules-overview {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 5, ../scss/modules_overview.scss */
+.modules-overview__module-link {
+  float: left;
+  width: 33.32%;
+  padding: 2rem 0;
+  text-align: center;
+  border-right: 1px solid #D3E6ED;
+  text-decoration: none;
+  color: #9EBBC6;
+}
+
+/* line 20, ../scss/modules_overview.scss */
+.modules-overview__module-link:hover .modules-overview__module-image {
+  top: -1rem;
+}
+
+/* line 24, ../scss/modules_overview.scss */
+.modules-overview__module-image {
+  -moz-transition: top 0.2s ease;
+  -o-transition: top 0.2s ease;
+  -webkit-transition: top 0.2s ease;
+  transition: top 0.2s ease;
+  width: 100%;
+  top: 0;
+  position: relative;
+}
+
+/* line 32, ../scss/modules_overview.scss */
+.modules-overview__module-link:last-of-type {
+  border: none;
+}
+
+/* line 1, ../scss/announcement.scss */
+.section--announcement {
+  padding: 4rem 0;
+}
+
+/* line 5, ../scss/announcement.scss */
+.section--announcement--centered {
+  text-align: center;
+}
+
+/* line 9, ../scss/announcement.scss */
+.announcement__text {
+  width: 60%;
+  margin: auto;
+  color: #404E54;
+}
+
+/* line 19, ../scss/announcement.scss */
+.announcement__button {
+  margin-top: 2rem;
+}
+
+/* line 1, ../scss/components.scss */
+.component-container, .timeline__info, .annotations__info, .tracking__info {
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  width: 30%;
+  position: absolute;
+  top: 50%;
+}
+
+/* line 10, ../scss/components.scss */
+.component-title, .timeline__heading, .tracking__heading, .annotations__heading {
+  color: #42C678;
+  margin-bottom: 1.5rem;
+}
+
+/* line 18, ../scss/components.scss */
+.component-info, .timeline__description, .tracking__description, .annotations__description {
+  color: #1A2326;
+  margin-bottom: 1.5rem;
+}
+
+/* line 26, ../scss/components.scss */
+.section--annotations, .section--tracking, .section--timeline {
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 39, ../scss/components.scss */
+.timeline__img, .tracking__img {
+  float: right;
+}
+
+/* line 43, ../scss/components.scss */
+.timeline__img, .tracking__img, .annotations__img {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 49, ../scss/components.scss */
+.timeline__info {
+  left: 10%;
+}
+
+/* line 54, ../scss/components.scss */
+.annotations__info {
+  right: 10%;
+}
+
+/* line 59, ../scss/components.scss */
+.tracking__info {
+  left: 10%;
+}
+
+@media all and (max-width: 1000px) {
+  /* line 65, ../scss/components.scss */
+  .component-container, .timeline__info, .annotations__info, .tracking__info {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    width: 60%;
+    margin: auto;
+    position: static;
+  }
+
+  /* line 74, ../scss/components.scss */
+  .section--annotations, .section--tracking, .section--timeline {
+    text-align: center;
+  }
+
+  /* line 78, ../scss/components.scss */
+  .timeline__img, .tracking__img, .annotations__img {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+/* line 1, ../scss/panels.scss */
+.panels {
+  overflow: hidden;
+  *zoom: 1;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+/* line 7, ../scss/panels.scss */
+.left-panel, .right-panel {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  *zoom: 1;
+  width: 50%;
+  height: calc(100vh - 4rem);
+  overflow: scroll;
+  position: fixed;
+}
+
+/* line 17, ../scss/panels.scss */
+.left-panel {
+  float: left;
+  border-right: 1px solid #D3E6ED;
+  padding: 6rem 3rem 2rem 3rem;
+}
+
+/* line 23, ../scss/panels.scss */
+.right-panel {
+  float: left;
+  left: 50%;
+  padding: 1rem 5rem 2rem 5rem;
+}
+
+/* line 29, ../scss/panels.scss */
+.right-panel--timeline {
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+/* line 33, ../scss/panels.scss */
+.panel__navigation {
+  width: calc(50% - 1px);
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  border-bottom: 1px solid #D3E6ED;
+  background: #FFF;
+}
+
+/* line 42, ../scss/panels.scss */
+.panel__navigation-list {
+  padding: 1.5rem;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* line 48, ../scss/panels.scss */
+.panel__navigation-item {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* line 53, ../scss/panels.scss */
+.panel__navigation-link {
+  color: #1A2326;
+  text-decoration: none;
+}
+
+/* line 61, ../scss/panels.scss */
+.panel__section {
+  padding-top: 2rem;
+}
+
+/* line 65, ../scss/panels.scss */
+.panel__section:not(.panel__section--first) {
+  border-top: 1px solid #D3E6ED;
+}
+
+/* line 69, ../scss/panels.scss */
+.panel__navigation-link--current {
+  color: #42C678;
+}
+
+/* line 73, ../scss/panels.scss */
+.panel__title {
+  color: #42C678;
+  margin-top: 0;
+}
+
+/* line 81, ../scss/panels.scss */
+.panel__subtitle {
+  color: #1A2326;
+  margin-top: 2rem;
+}
+
+/* line 89, ../scss/panels.scss */
+.panel__link {
+  color: #42C678;
+  text-decoration: none;
+}
+
+/* line 94, ../scss/panels.scss */
+.panel__code-inline {
+  color: #63848C;
+}
+
+/* line 104, ../scss/panels.scss */
+.panel__code-block {
+  background: #D3E6ED;
+  color: #63848C;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow: scroll;
+}
+
+/* line 115, ../scss/panels.scss */
+.panel__version {
+  color: #799099;
+}
+
+/* line 119, ../scss/panels.scss */
+.panel__source-box {
+  color: #799099;
+  margin: 4rem 0;
+}
+
+/* line 127, ../scss/panels.scss */
+.panel__source-link {
+  text-decoration: none;
+  color: inherit;
+  float: right;
+}
+
+/* line 133, ../scss/panels.scss */
+.panel__static-input {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #D3E6ED;
+  color: #63848C;
+  border-radius: 4px;
+}
+
+/* line 151, ../scss/panels.scss */
+.panel__text {
+  color: #1A2326;
+}
+
+/* line 158, ../scss/panels.scss */
+.panel__annotation-syntax-spec, .panel__tracker-syntax-spec {
+  padding-left: 2rem;
+  border-left: 2px solid #42C678;
+  color: #9EBBC6;
+}
+
+/* line 167, ../scss/panels.scss */
+.panel__annotation-wrapper, .panel__tracker-wrapper {
+  color: #42C678;
+}
+
+/* line 171, ../scss/panels.scss */
+.panel__annotation-value, .panel__tracker-value {
+  color: #1A2326;
+}
+
+/* line 175, ../scss/panels.scss */
+.panel__annotation-separator {
+  color: #42C678;
+}
+
+/* line 179, ../scss/panels.scss */
+.panel__annotation-key {
+  color: #53646B;
+}
+
+/* line 183, ../scss/panels.scss */
+.example__text, .example__quote {
+  color: #799099;
+}
+
+/* line 190, ../scss/panels.scss */
+.example__title {
+  color: #799099;
+}
+
+/* line 196, ../scss/panels.scss */
+.example__subtitle {
+  color: #799099;
+}
+
+/* line 203, ../scss/panels.scss */
+.example__attribution {
+  color: #53646B;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+/* line 213, ../scss/panels.scss */
+.example__quote {
+  margin-left: 2rem;
+}
+
+/* line 1, ../scss/footer.scss */
+.site-footer {
+  width: 80%;
+  margin: auto;
+  padding: 4rem 0;
+}
+
+/* line 7, ../scss/footer.scss */
+.site-footer__list {
+  width: 20%;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* line 15, ../scss/footer.scss */
+.site-footer__list-header {
+  color: #53646B;
+  margin-top: 0;
+}
+
+/* line 23, ../scss/footer.scss */
+.site-footer__list-link {
+  color: #53646B;
+  text-decoration: none;
+}
+
+/* line 31, ../scss/footer.scss */
+.site-footer__cp {
+  color: #53646B;
+  float: right;
+}
+
+/* line 1, ../scss/custom-newseful.scss */
+.newseful-annotation {
+  color: #1A2326;
+}
+
+/* line 5, ../scss/custom-newseful.scss */
+.newseful-fact-inline__wrapper {
+  color: #1A2326;
+}
+
+/* line 9, ../scss/custom-newseful.scss */
+.newseful-annotation__name,
+.newseful-annotation__title,
+.newseful-annotation__description,
+.newseful-timeline__reaction-text-content,
+.newseful-timeline__source-button,
+.newseful-timeline__reaction-title,
+.newseful-timeline__label,
+.newseful-fact-module {
+  font-family: 'Atlas Grotesk', sans-serif;
+}
+
+/* line 20, ../scss/custom-newseful.scss */
+.newseful-timeline__event-text-content {
+  font-family: 'Lyon Text NYT', serif;
+}
+
+/* line 24, ../scss/custom-newseful.scss */
+.newseful-timeline__timestamp--reaction,
+.newseful-timeline__date-marker,
+.newseful-fact-module__list-item::before,
+.newseful-annotation__generic-props-list,
+.newseful-timeline__timestamp {
+  font-family: 'inconsolata', monospace;
+}
+
+/* line 12, ../scss/main.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 17, ../scss/main.scss */
+.section {
+  border-bottom: 1px solid #D3E6ED;
+}

@@ -1,0 +1,30 @@
+.newseful-annotation {
+	color: $black;
+}
+
+.newseful-fact-inline__wrapper {
+	color: $black;
+}
+
+.newseful-annotation__name, 
+.newseful-annotation__title, 
+.newseful-annotation__description, 
+.newseful-timeline__reaction-text-content, 
+.newseful-timeline__source-button,
+.newseful-timeline__reaction-title,
+.newseful-timeline__label,
+.newseful-fact-module {
+	font-family: 'Atlas Grotesk', sans-serif;
+}
+
+.newseful-timeline__event-text-content {
+	font-family: 'Lyon Text NYT', serif;
+}
+
+.newseful-timeline__timestamp--reaction,
+.newseful-timeline__date-marker,
+.newseful-fact-module__list-item::before,
+.newseful-annotation__generic-props-list,
+.newseful-timeline__timestamp {
+	font-family: 'inconsolata', monospace;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Newseful</title>
+	<link href='/css/main.css' rel='stylesheet'>
+	<link href='../assets/newseful.css' rel='stylesheet'>
+</head>
+<body>
+	<header class='site-header'>
+		<h1 class='site-header__logo'><a href='/' class='site-header__home-link'>Newseful</a></h1>
+
+		<nav class='site-header__nav'>
+			<ul class='site-header__nav-list'>
+				<li class='site-header__nav-list-item'><a class='site-header__nav-list-item-link' href='/docs/timeline'>Timeline</a></li>
+
+				<li class='site-header__nav-list-item'><a class='site-header__nav-list-item-link site-header__nav-list-item-link--current' href='/docs/annotations'>Annotations</a></li>
+
+				<li class='site-header__nav-list-item'><a class='site-header__nav-list-item-link' href='/docs/tracking'>Fact Tracking</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class='panels'>
+		<div class='left-panel'>
+			<div class="panel__navigation">
+					<ul class='panel__navigation-list'>
+						<li class='panel__navigation-item'><a href='#overview' class='panel__navigation-link panel__navigation-link--current'>Overview</a></li>
+						<li class='panel__navigation-item'><a href='#setup' class='panel__navigation-link'>Setup</a></li>
+						<li class='panel__navigation-item'><a href='#syntax' class='panel__navigation-link'>Syntax</a></li>
+						<li class='panel__navigation-item'><a href='#configuration' class='panel__navigation-link'>Configuration</a></li>
+						<li class='panel__navigation-item'><a href='#maps' class='panel__navigation-link'>Maps</a></li>
+					</ul>
+			</div>
+
+			<div class='panel__section panel__section--first' id='overview'>
+				<h1 class="panel__title">Annotations <span class='panel__version'>v1.0.1</span></h1>
+
+				<div class='panel__source-box'>
+					<span class='panel__source-label'>Hosted Version</span>
+					<a class='panel__source-link' href='http://newseful.github.io/modules/annotations'>Source &rarr;</a>
+
+					<input type='text' value='http://cdn.cloudflare.com/newseful/timeline/1.0.1/newseful-annotations.js' readonly class='panel__static-input'>
+				</div>
+
+				<p class='panel__text'>
+					Newseful's annotation module provides a convenient syntax for adding contextual detail to a story without sacrificing brevity. A simple, easy-to-understand pattern creates inline-tooltips with supporting information or geographic data.
+				</p>
+			</div>
+
+			<div class='panel__section' id='setup'>
+				<h2 class='panel__title'>Setup</h2>
+
+				<p class='panel__text'>
+					The annotations module is independent of external dependencies, so setting it up is quite simple. Just include this script tag anywhere on your site:
+				</p>
+
+				<pre class='panel__code-block'><code class='panel__code'>&lt;script src='cdn.cloudflare.com/newseful/newseful-annotation.js'&gt;&lt;/script&gt;</code></pre>
+
+				<p class='panel__text'>
+					You'll also need a link to the Newseful style sheet, unless you plan on styling the timeline yourself. To include the Newseful style sheet, add this code to the head section of your page.
+
+					<pre class="panel__code-block"><code class='panel__code'>&lt;link rel='stylesheet' href='cdn.cloudflare.com/newseful/newseful.css'&gt;</code></pre>
+				</p>
+
+				<p class='panel__text'>
+					Now you'll need to tell the annotations module what the container element is for the article, and it will look there for instances of the syntax described below. Use this code to initialize the module:
+				</p>
+
+				<pre class="panel__code-block"><code class='panel__code'>var opts = {
+	textElement : document.querySelector('YOUR SELECTOR')
+} 
+
+var annotations = new NFAnnotations(opts);</code></pre>
+			</div>
+
+			<div class='panel__section' id='syntax'>
+				<h2 class='panel__title'>Syntax</h2>
+				<p class='panel__text'>
+					The power of the annotation module is in its declarative syntax. To specify a contextual aside, a reporter need only adhere to the following syntax:
+				</p>
+
+				<p class='panel__annotation-syntax-spec'>
+					New York's 
+						<span class='panel__annotation-wrapper'>((</span> 
+							<span class='panel__annotation-key'>name:</span>
+							<span class='panel__annotation-value'>Michael Bloomberg</span><span class='panel__annotation-separator'>;</span>
+							
+
+							<span class="panel__annotation-key">title:</span>
+							<span class='panel__annotation-value'>Former Mayor, New York City</span><span class='panel__annotation-separator'>;</span>
+
+							<span class='panel__annotation-key'>description:</span>
+							<span class='panel__annotation-value'>American business magnate, politician, and philanthropist. He served as the 108th Mayor of New York City, holding office for three consecutive terms beginning with his first election in 2001.</span><span class='panel__annotation-separator'>;</span>
+
+							<span class='panel__annotation-key'>net worth:</span>
+							<span class="panel__annotation-value">$35.5b</span>
+						<span class='panel__annotation-wrapper'>))</span>
+
+						declined to comment at press time.
+				</p>
+
+				<p class="panel__text">
+					This will generate a tooltip inline much like the one to the right.
+				</p>
+
+				<p class='panel__text'>
+					The entire block of text specifying the annotation must be wrapped in <span class='panel__annotation-wrapper'>((</span>double parentheses<span class='panel__annotation-wrapper'>))</span>
+				</p>
+
+				<p class='panel__text'>
+					Within the parentheses, data must be split into keys and values. Newseful's annotation module looks for certain keys to use for default layouts, but any text may be used as a key and will be formatted with the generic structured data layout. Keys must be separated from their values with a colon, and values must be terminated with a semicolon (as such they may not contain semicolons within them).
+				</p>
+
+				<p class='panel__annotation-syntax-spec'>
+					<span class='panel__annotation-key'>name:</span>
+					<span class='panel__annotation-value'>Michael Bloomberg</span><span class='panel__annotation-separator'>;</span>
+				</p>
+			</div>
+
+			<div class='panel__section' id='configuration'>
+				<h2 class="panel__title">Configuration</h2>
+
+				<p class="panel__text">
+					The annotations module has several default keys that it looks for:
+				</p>
+
+				<ul class='panel__list'>
+					<li class="panel__list-item panel__code-inline">Name</li>
+					<li class="panel__list-item panel__code-inline">Title</li>
+					<li class="panel__list-item panel__code-inline">Description</li>
+					<li class="panel__list-item panel__code-inline">Location*</li>
+				</ul>
+
+				<p class="panel__text">The location key is special, and requires some additional setup, covered below.</p>
+			</div>
+
+			<div class="panel__section" id='maps'>
+				<h2 class="panel__title">Maps</h2>
+				<p class="panel__text">Newseful's annotation module also allows for the easy addition of contextual maps to a story, as seen to the right. However, in order to implement the maps feature, you will need to provide an API key for the <a href='http://mapbox.com/plans' class='panel__link'>Mapbox API</a></p>
+
+				<p class="panel__text">To initialize the annotations module with your Mapbox API key, use the following code:</p>
+
+				<pre class="panel__code-block"><code class='panel__code'>var opts = {
+	textElement : document.querySelector('YOUR SELECTOR'),
+	apiKey : 'YOUR API KEY'
+} 
+
+var annotations = new NFAnnotations(opts);</code></pre>
+
+				<p class="panel__text">
+					The use of the your Mapbox API key will of course be subject to the terms of service laid out by Mapbox, so be sure that your plan can support the views you will receive.
+				</p>
+			</div>
+		</div>
+
+		<div class='right-panel'>
+			<h2 class='example__title'>Example Story</h2>
+			<a href='http://www.latimes.com/nation/la-na-back-story-ferguson-shooting-story.html#page=1' class='example__attribution'>Originally published on LATimes.com</a>
+
+			<div class='example__story-content'>
+
+				<p class='example__text'>St. Louis County officials  announced Monday night that a grand jury had declined to indict ((name: Ferguson, Mo.,; location: Ferguson, Missouri, US)) Police Officer ((name: Darren Wilson; title: Police Officer; description: Officer in the Ferguson, MO police department, shot Michael Brown in highly controversial series of events in Summer of 2014)) in the shooting of Michael Brown.  Here&rsquo;s what we know about the deadly encounter.</p>
+
+				<h2 class='example__subtitle'>What&rsquo;s the police version of events?</h2>
+
+				<p class='example__text'>Wilson has not spoken publicly about what happened, and no direct video of the shooting has surfaced. According to a preliminary police account, which was included in Brown&rsquo;s official ((name: autopsy report; description: Official report released by the St Louis coroner; date: 08/10/2014; pub: 11/2014)), the confrontation began when Wilson, on patrol, spotted Brown and a friend, Dorian Johnson, walking in the street.</p>
+
+				<p class='example__text'>Wilson &ldquo;observed the two individuals, he requested that they get out of the roadway. The deceased became belligerent towards Officer Wilson,&rdquo; the report stated. It continues:</p>
+
+				<p class='example__quote'>Grand jury decides not to indict officer in Ferguson shooting
+				Times staff writer Matt Pearce discusses a Missouri grand jury&rsquo;s decision not to indict Ferguson police Officer Darren Wilson in the fatal shooting of Michael Brown.
+				&ldquo;As Officer Wilson attempted to exit out of his patrol vehicle the deceased pushed his door shut and began to struggle with Officer Wilson, during the struggle the Officer&rsquo;s weapon was un-holstered. The weapon discharged during the struggle.</p>
+
+				<p class='example__quote'>The deceased then ran down the roadway. Officer Wilson then began to chase the deceased. As he was giving chase to the deceased, the deceased turned around and ran towards officer Wilson.</p>
+
+				<p class='example__text'>Wilson then fired &ldquo;several times,&rdquo; the report said. (Police have not said exactly how many times Wilson fired his gun.) Official and private autopsies both appeared to show that Brown was shot at least six times during the encounter.</p>
+
+				<p class='example__subtitle'>What does Brown&rsquo;s friend say happened?</p>
+
+				<p class='example__text'>((name: Dorian Johnson; title: Friend of Michael Brown; description: Dorian Johnson was walking with Michael Brown on the day he was shot))  says that when the incident began, Wilson used profanity to tell the young men to get out of the street, hit Brown with his car door while trying to open it, then grabbed Brown by the neck.</p>
+
+				<p class='example__text'>&ldquo;They&rsquo;re not wrestling so much as his arm went from his throat to now clenched on his shirt,&rdquo; Johnson told MSNBC. &ldquo;It&rsquo;s like tug of war. He&rsquo;s trying to pull him in. He&rsquo;s pulling away, that&rsquo;s when I heard, &lsquo;I&rsquo;m gonna shoot you.&rsquo;&rdquo;</p>
+
+				<p class='example__text'>After the first shot wounded Brown, Johnson said, Brown ran and Wilson chased him. Wilson then shot Brown in the back, and Brown stopped, turned with his hands up, and said, &ldquo;I don&rsquo;t have a gun, stop shooting!&rdquo; according to Johnson&rsquo;s account to MSNBC.</p>
+
+				<p class='example__text'>As Wilson stood face-to-face with Brown, the officer shot him several more times, Johnson said.</p>
+			</div>
+
+		</div>
+	</div>
+<script src='/js/main.js'></script>
+<script src='newseful-annotation-helper.js'></script>
+
+<script>
+	var opts = {
+		apiKey : 'pk.eyJ1Ijoia2V2aW56d2VlcmluayIsImEiOiJQS0ZwLVpZIn0.k5CgNEeEwLYeOFRz0SHWgA',
+		textElement : document.querySelector('.example__story-content')
+	} 
+
+	var annotations = new NFAnnotations(opts);
+</script>
+</body>
+</html>

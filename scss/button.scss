@@ -1,0 +1,19 @@
+.button {
+	@extend .sans;
+	@extend .text_button;
+
+	display: inline-block;
+	padding: .7rem 1rem .6rem 1rem;
+	color: $blue_darker;
+	background: $blue_lighter;
+	border: 1px solid $blue;
+	border-radius: 4px;
+
+	text-decoration: none;
+}
+
+.button--primary {
+	color: $white;
+	background: $green;
+	border: none;
+}

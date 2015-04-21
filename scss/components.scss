@@ -1,0 +1,84 @@
+.component-container {
+	-webkit-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+
+	width: 30%;
+	position: absolute;
+	top: 50%;
+}
+
+.component-title {
+	@extend .sans;
+	@extend .text_large;
+
+	color: $green;
+	margin-bottom: 1.5rem;
+}
+
+.component-info {
+	@extend .serif;
+	@extend .text_standard;
+
+	color: $black;
+	margin-bottom: 1.5rem;
+}
+
+.section--annotations, .section--tracking, .section--timeline {
+	position: relative;
+	overflow: hidden;
+}
+
+.timeline__heading, .tracking__heading, .annotations__heading {
+	@extend .component-title;
+}
+
+.timeline__description, .tracking__description, .annotations__description {
+	@extend .component-info;
+}
+
+.timeline__img, .tracking__img {
+	float: right;
+}
+
+.timeline__img, .tracking__img, .annotations__img {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+.timeline__info {
+	@extend .component-container;
+	left: $wide_margin;
+}
+
+.annotations__info {
+	@extend .component-container;
+	right: $wide_margin;
+}
+
+.tracking__info {
+	@extend .component-container;
+	left: $wide_margin;
+}
+
+@media all and (max-width: 1000px) {
+	.component-container {
+		-webkit-transform: translate(0,0);
+		transform: translate(0,0);
+
+		width: $narrow_width;
+		margin: auto;
+		position: static;
+	}
+
+	.section--annotations, .section--tracking, .section--timeline {
+		text-align: center;
+	}
+
+	.timeline__img, .tracking__img, .annotations__img {
+		float: none;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+

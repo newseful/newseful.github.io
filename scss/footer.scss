@@ -1,0 +1,37 @@
+.site-footer {
+	width : $wide_width;
+	margin: auto;
+	padding: 4rem 0;
+}
+
+.site-footer__list {
+	width: 20%;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.site-footer__list-header {
+	@extend .sans;
+	@extend .text_button;
+
+	color: $gray_darker;
+	margin-top: 0;
+}
+
+.site-footer__list-link {
+	@extend .serif;
+	@extend .text_standard;
+
+	color: $gray_darker;
+	text-decoration: none;
+}
+
+.site-footer__cp {
+	@extend .sans;
+	@extend .text_button;
+
+	color: $gray_darker;
+	float: right;
+}

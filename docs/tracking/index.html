@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Newseful</title>
+	<link href='/css/main.css' rel='stylesheet'>
+	<link href='../assets/newseful.css' rel='stylesheet'>
+</head>
+<body>
+	<header class='site-header'>
+		<h1 class='site-header__logo'><a href='/' class='site-header__home-link'>Newseful</a></h1>
+
+		<nav class='site-header__nav'>
+			<ul class='site-header__nav-list'>
+				<li class='site-header__nav-list-item'><a class='site-header__nav-list-item-link' href='/docs/timeline'>Timeline</a></li>
+
+				<li class='site-header__nav-list-item'><a class='site-header__nav-list-item-link' href='/docs/annotations'>Annotations</a></li>
+
+				<li class='site-header__nav-list-item'><a class='site-header__nav-list-item-link site-header__nav-list-item-link--current' href='/docs/tracking'>Fact Tracking</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class='panels'>
+		<div class='left-panel'>
+			<div class="panel__navigation">
+					<ul class='panel__navigation-list'>
+						<li class='panel__navigation-item'><a href='#overview' class='panel__navigation-link panel__navigation-link--current'>Overview</a></li>
+						<li class='panel__navigation-item'><a href='#setup' class='panel__navigation-link'>Setup</a></li>
+						<li class='panel__navigation-item'><a href='#syntax' class='panel__navigation-link'>Syntax</a></li>
+					</ul>
+			</div>
+
+			<div class='panel__section panel__section--first' id='overview'>
+				<h1 class="panel__title">Fact Tracking <span class='panel__version'>v1.0.1</span></h1>
+
+				<div class='panel__source-box'>
+					<span class='panel__source-label'>Hosted Version</span>
+					<a class='panel__source-link' href='http://newseful.github.io/modules/tracking'>Source &rarr;</a>
+
+					<input type='text' value='http://cdn.cloudflare.com/newseful/timeline/1.0.1/newseful-tracking.js' readonly class='panel__static-input'>
+				</div>
+
+				<p class='panel__text'>
+					Newseful's fact tracking module provides an extremely simple syntax for adding visual weight to key points in a story, and visual distinction between facts that are independently confirmed, reported by other sources, or categorically false.
+				</p>
+
+				<p class="panel__text">
+					Additionally, the fact tracking module provides the option to cull all marked facts from a story and present them as a list sorted by confirmation status.
+				</p>
+			</div>
+
+			<div class='panel__section' id='setup'>
+				<h2 class='panel__title'>Setup</h2>
+
+				<p class='panel__text'>
+					Fact tracking requires no external dependencies, so setup is as simple as including the script and the newseful css file, and then initializing via the code provided below.
+				</p>
+
+				<pre class='panel__code-block'><code class='panel__code'>&lt;script src='cdn.cloudflare.com/newseful/newseful-fact-tracking.js'&gt;&lt;/script&gt;
+				&lt;link rel='stylesheet' href='cdn.cloudflare.com/newseful/newseful.css'&gt;</code></pre>
+
+				<p class='panel__text'>
+					You'll need to initialize the fact tracker as such:
+				</p>
+
+				<pre class="panel__code-block"><code class='panel__code'>var opts = {
+		showList : true,
+		textElement : document.querySelector('.content')
+	}
+	var factCheck = new NFFactCheck(opts);</code></pre>
+
+				<p class="panel__text">
+					The parameter <span class='panel__code-inline'>showList</span> specifies whether a formatted list of key points from the article should be presented, and <span class="panel__code-inline">textElement</span> passes in an element for the fact tracking module to parse.
+				</p>
+			</div>
+
+			<div class='panel__section' id='syntax'>
+				<h2 class='panel__title'>Syntax</h2>
+				<p class='panel__text'>
+					The syntax used in the fact tracker is very simple. For any key points whose status you wish to indicate, simply enclose the status in double brackets just before the period at the end of the sentence.
+				</p>
+
+				<p class="panel__tracker-syntax-spec">
+					The suspects were seen driving North in Picardy <span class='panel__tracker-wrapper'>[[</span><span class='panel__tracker-value'>confirmed</span><span class='panel__tracker-wrapper'>]]</span>.
+				</p>
+
+				<p class="panel__text">
+					Newseful recognizes two keywords: <span class='panel__code-inline'>confirmed</span> and <span class='panel__code-inline'>false</span>. <span class='panel__code-inline'>Confirmed</span> appears green, <span class='panel__code-inline'>false</span> red, and any unrecognized keyword will be presented as yellow. In this way, the yellow color can be used with generic terms like "unconfirmed," or with specific attributions like "Reuters".
+				</p>
+			</div>
+		</div>
+
+		<div class='right-panel'>
+
+			<h2 class='example__title'>Example Story</h2>
+			<a href='http://www.latimes.com/nation/la-na-back-story-ferguson-shooting-story.html#page=1' class='example__attribution'>Adapted from original story published on LATimes.com</a>
+
+			<div class='example__story-content'>
+
+				<p class='example__text'>St Louis County officials announced Monday night that a grand jury had declined to indict Ferguson, MO, Police Officer Darren Wilson in the shooting of Michael Brown [[confirmed]]. Here&rsquo;s what we know about the deadly encounter.</p>
+
+				<h2 class='example__subtitle'>What&rsquo;s the police version of events?</h2>
+
+				<p class='example__text'>Wilson has not spoken publicly about what happened, and no direct video of the shooting has surfaced. According to a preliminary police account, which was included in Brown&rsquo;s official autopsy report, the confrontation began when Wilson, on patrol, spotted Brown and a friend, Dorian Johnson, walking in the street</p>
+
+				<p class='example__text'>Wilson &ldquo;observed the two individuals, he requested that they get out of the roadway. The deceased became belligerent towards Officer Wilson,&rdquo; the report stated. It continues:</p>
+
+				<p class='example__quote'>&ldquo;As Officer Wilson attempted to exit out of his patrol vehicle the deceased pushed his door shut and began to struggle with Officer Wilson, during the struggle the Officer&rsquo;s weapon was un-holstered. The weapon discharged during the struggle[[Autopsy]].</p>
+
+				<p class='example__quote'>The deceased then ran down the roadway. Officer Wilson then began to chase the deceased. As he was giving chase to the deceased, the deceased turned around and ran towards officer Wilson.</p>
+
+				<p class='example__text'>Wilson then fired &ldquo;several times,&rdquo; the report said. (Police have not said exactly how many times Wilson fired his gun). Official and private autopsies both appeared to show that Brown was shot at least six times during the encounter[[confirmed]].</p>
+
+				<p class='example__subtitle'>What does Brown&rsquo;s friend say happened?</p>
+
+				<p class='example__text'>Johnson says that when the incident began, Wilson used profanity to tell the young men to get out of the street, hit Brown with his car door while trying to open it, then grabbed Brown by the neck.</p>
+
+				<p class='example__text'>&ldquo;They&rsquo;re not wrestling so much as his arm went from his throat to now clenched on his shirt,&rdquo; Johnson told MSNBC. &ldquo;It&rsquo;s like tug of war. He&rsquo;s trying to pull him in. He&rsquo;s pulling away, that&rsquo;s when I heard, &lsquo;I&rsquo;m gonna shoot you.&rsquo;&rdquo;</p>
+
+				<p class='example__text'>After the first shot wounded Brown, Johnson said, Brown ran and Wilson chased him. Wilson then shot Brown in the back, and Brown stopped, turned with his hands up, and said, &ldquo;I don&rsquo;t have a gun, stop shooting!&rdquo; according to Johnson&rsquo;s account to MSNBC[[Johnson]].</p>
+
+				<p class='example__text'>As Wilson stood face-to-face with Brown, the officer shot him several more times, Johnson said[[Johnson]].</p>
+
+				<p class="example__text">An image circulating on social media claiming to show an X-Ray Officer Wilson&rsquo;s injuries was confirmed to be unrelated[[false]]</p>
+			</div>
+
+		</div>
+	</div>
+<script src='/js/main.js'></script>
+<script src='newseful-fact-check.js'></script>
+
+<script>
+	var opts = {
+		showList : true,
+		textElement : document.querySelector('.example__story-content')
+	}
+
+	var factCheck = new NFFactCheck(opts);
+</script>
+</body>
+</html>

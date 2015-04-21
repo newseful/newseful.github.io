@@ -1,0 +1,29 @@
+.section--hero {
+	padding: 10rem 0;
+}
+
+.hero__intro {
+	width: $narrow_width;
+	margin: auto;
+}
+
+.hero__intro-text {
+	@extend .serif;
+	@extend .text_large;
+
+	color: $black;
+}
+
+.hero__video-link::before {
+	content: '';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border: .4rem solid transparent;
+	border-left: .6rem solid $white;
+	margin-right: .3rem;
+}
+
+.hero__docs-link {
+	margin-left: 1rem;
+}

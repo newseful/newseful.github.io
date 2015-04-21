@@ -1,0 +1,87 @@
+@import "compass/css3";
+@import "compass/utilities";
+
+// COLORS
+
+$green : #42C678;
+
+$black : #1A2326;
+$gray_darkest : #404E54;
+$gray_darker : #53646B;
+$gray : #799099;
+$gray_lighter : #9EBBC6;
+$gray_lightest : #D3E6ED;
+$white : #FFF;
+
+$blue : #83AFBA;
+$blue_darker : #63848C;
+$blue_lighter : #D3E6ED;
+
+$red : #DB8D61;
+$red_darker : #8F5C40;
+$red_lighter : #F2D8C7;
+
+$yellow : #B09E52;
+$yellow_darker : #87793F;
+$yellow_lighter : #F2E7B8;
+
+$wide_width : 80%;
+$wide_margin : 10%;
+
+$narrow_width : 60%;
+$narrow_margin : 20%;
+
+// FONTS
+
+$sans : 'Atlas Grotesk', sans-serif;
+$serif : 'Lyon Text NYT', serif;
+$mono : 'Inconsolata', monospace;
+
+.text_large {
+	font-size: 1.6875rem;
+	line-height: 1.704;
+}
+
+.text_medium {
+	font-size: 1.5rem;
+	line-height: 1.704;
+}
+
+.text_secondary {
+	font-size: 1.2rem;
+	line-height: 1.704
+}
+
+.text_standard {
+	font-size: 1.3125rem;
+	line-height: 1.523;
+}
+
+.text_button {
+	font-size: 1rem;
+	line-height: 1;
+}
+
+.text_small {
+	font-size: 1rem;
+	line-height: 1.523;
+}
+
+.border-box {
+	@include box-sizing(border-box);
+}
+
+.serif {
+	font-family: $serif;
+	font-weight: 400;
+}
+
+.sans {
+	font-family: $sans;
+	font-weight: 300;
+}
+
+.mono {
+	font-family: $mono;
+	font-weight: 400;
+}

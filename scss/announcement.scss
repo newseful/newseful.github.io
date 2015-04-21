@@ -1,0 +1,21 @@
+.section--announcement {
+	padding: 4rem 0;
+}
+
+.section--announcement--centered {
+	text-align: center;
+}
+
+.announcement__text {
+	@extend .serif;
+	@extend .text_medium;
+
+	width: $narrow_width;
+	margin: auto;
+
+	color: $gray_darkest;
+}
+
+.announcement__button {
+	margin-top: 2rem;
+}

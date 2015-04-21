@@ -1,0 +1,60 @@
+/* line 40, ../scss/globals.scss */
+.text_large {
+  font-size: 1.6875rem;
+  line-height: 1.704;
+}
+
+/* line 45, ../scss/globals.scss */
+.text_medium {
+  font-size: 1.5rem;
+  line-height: 1.704;
+}
+
+/* line 50, ../scss/globals.scss */
+.text_secondary {
+  font-size: 1.2rem;
+  line-height: 1.704;
+}
+
+/* line 55, ../scss/globals.scss */
+.text_standard {
+  font-size: 1.3125rem;
+  line-height: 1.523;
+}
+
+/* line 60, ../scss/globals.scss */
+.text_button {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* line 65, ../scss/globals.scss */
+.text_small {
+  font-size: 1rem;
+  line-height: 1.523;
+}
+
+/* line 70, ../scss/globals.scss */
+.border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 74, ../scss/globals.scss */
+.serif {
+  font-family: "Lyon Text NYT", serif;
+  font-weight: 400;
+}
+
+/* line 79, ../scss/globals.scss */
+.sans {
+  font-family: "Atlas Grotesk", sans-serif;
+  font-weight: 300;
+}
+
+/* line 84, ../scss/globals.scss */
+.mono {
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+}

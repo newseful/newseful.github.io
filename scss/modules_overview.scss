@@ -1,0 +1,34 @@
+.section--modules-overview {
+	@include clearfix;
+}
+
+.modules-overview__module-link {
+	@extend .sans;
+	@extend .text_button;
+	@extend .border-box;
+
+	float: left;
+	width: 33.32%;
+	padding: 2rem 0;
+	text-align: center;
+	border-right: 1px solid $blue_lighter;
+
+	text-decoration: none;
+	color: $gray_lighter;
+}
+
+.modules-overview__module-link:hover .modules-overview__module-image {
+	top: -1rem;
+}
+
+.modules-overview__module-image {
+	@include transition(top .2s ease);
+
+	width: 100%;
+	top: 0;
+	position: relative;
+}
+
+.modules-overview__module-link:last-of-type {
+	border: none;
+}

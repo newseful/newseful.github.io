@@ -1,0 +1,217 @@
+.panels {
+	@include clearfix;
+	width: 100%;
+	margin-top: 4rem;
+}
+
+.left-panel, .right-panel {
+	@include box-sizing(border-box);
+	@include clearfix;
+
+	width: 50%;
+	height: calc(100vh - 4rem);
+	overflow: scroll;
+	position: fixed;
+}
+
+.left-panel {
+	float: left;
+	border-right: 1px solid $blue_lighter;
+	padding: 6rem 3rem 2rem 3rem;
+}
+
+.right-panel {
+	float: left;
+	left: 50%;
+	padding: 1rem 5rem 2rem 5rem;
+}
+
+.right-panel--timeline {
+	padding: 4rem 2rem 2rem 2rem;
+}
+
+.panel__navigation {
+	width: calc(50% - 1px);
+	position: fixed;
+	top: 4rem;
+	left: 0;
+	border-bottom: 1px solid $blue_lighter;
+	background: $white;
+}
+
+.panel__navigation-list {
+	padding: 1.5rem;
+	margin: 0;
+	list-style-type: none;
+}
+
+.panel__navigation-item {
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.panel__navigation-link {
+	@extend .sans;
+	@extend .text_button;
+
+	color: $black;
+	text-decoration: none;
+}
+
+.panel__section {
+	padding-top: 2rem;
+}
+
+.panel__section:not(.panel__section--first) {
+	border-top: 1px solid $blue_lighter;
+}
+
+.panel__navigation-link--current {
+	color: $green;
+}
+
+.panel__title {
+	@extend .sans;
+	@extend .text_large;
+
+	color: $green;
+	margin-top: 0;
+}
+
+.panel__subtitle {
+	@extend .sans;
+	@extend .text_secondary;
+
+	color: $black;
+	margin-top: 2rem;
+}
+
+.panel__link {
+	color: $green;
+	text-decoration: none;
+}
+
+.panel__code-inline {
+	@extend .mono;
+	@extend .text_standard;
+	color: $blue_darker;
+}
+
+.panel__code {
+	@extend .mono;
+}
+
+.panel__code-block {
+	@extend .mono;
+	@extend .text_button;
+
+	background: $blue_lighter;
+	color: $blue_darker;
+	padding: 1rem;
+	border-radius: 4px;
+	overflow: scroll;
+}
+
+.panel__version {
+	color: $gray;
+}
+
+.panel__source-box {
+	@extend .mono;
+	@extend .text_standard;
+
+	color: $gray;
+	margin: 4rem 0;
+}
+
+.panel__source-link {
+	text-decoration: none;
+	color: inherit;
+	float: right;
+}
+
+.panel__static-input {
+	@include box-sizing(border-box);
+
+	@extend .mono;
+	@extend .text_button;
+
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+
+	width: 100%;
+	margin-top: 1rem;
+	padding: 1rem;
+	background: $blue_lighter;
+	color: $blue_darker;
+	border-radius: 4px;
+}
+
+.panel__text {
+	@extend .serif;
+	@extend .text_standard;
+
+	color: $black;
+}
+
+.panel__annotation-syntax-spec, .panel__tracker-syntax-spec {
+	@extend .serif;
+	@extend .text_standard;
+
+	padding-left: 2rem;
+	border-left: 2px solid $green;
+	color: $gray_lighter;
+}
+
+.panel__annotation-wrapper, .panel__tracker-wrapper {
+	color: $green;
+}
+
+.panel__annotation-value, .panel__tracker-value {
+	color: $black;
+}
+
+.panel__annotation-separator {
+	color: $green;
+}
+
+.panel__annotation-key {
+	color: $gray_darker;
+}
+
+.example__text {
+	@extend .serif;
+	@extend .text_small;
+
+	color: $gray;
+}
+
+.example__title {
+	@extend .sans;
+	@extend .text_medium;
+	color: $gray;
+}
+
+.example__subtitle {
+	@extend .sans;
+	@extend .text_standard;
+
+	color: $gray;
+}
+
+.example__attribution {
+	@extend .sans;
+	@extend .text_small;
+
+	color: $gray_darker;
+	text-decoration: none;
+	margin-bottom: 2rem;
+	display: block;
+}
+
+.example__quote {
+	@extend .example__text;
+
+	margin-left: 2rem;
+}

@@ -1,0 +1,19 @@
+@import 'globals';
+@import 'button';
+@import 'header';
+@import 'hero';
+@import 'modules_overview';
+@import 'announcement';
+@import 'components';
+@import 'panels';
+@import 'footer';
+@import 'custom-newseful';
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.section {
+	border-bottom: 1px solid $blue_lighter;
+}
