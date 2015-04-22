@@ -3,7 +3,7 @@
 <head>
 	<title>Newseful</title>
 	<link href='/css/main.css' rel='stylesheet'>
-	<link href='../assets/newseful.css' rel='stylesheet'>
+	<link href='http://nf-components.na1429654158.netdna-cdn.com/components/styles/1.0/newseful.css' rel='stylesheet'>
 </head>
 <body>
 	<header class='site-header'>
@@ -36,9 +36,9 @@
 
 				<div class='panel__source-box'>
 					<span class='panel__source-label'>Hosted Version</span>
-					<a class='panel__source-link' href='http://newseful.github.io/modules/timeline'>Source &rarr;</a>
+					<a class='panel__source-link' href='http://newseful.github.io/components/timeline'>Source &rarr;</a>
 
-					<input type='text' value='http://cdn.cloudflare.com/newseful/timeline/1.0.1/newseful-timeline.js' readonly class='panel__static-input'>
+					<input type='text' value='http://nf-components.na1429654158.netdna-cdn.com/components/timeline/1.0/newseful-timeline.js'>
 				</div>
 
 				<p class='panel__text'>
@@ -57,14 +57,14 @@
 					The newseful timeline component relies on two external dependencies when using Google Sheets as a data source. These dependencies are the javascript libraries <span class='panel__code-inline'>d3.js</span> and <span class="panel__code-inline">tabletop.js</span>. To add the hosted versions of these files, and the newseful timeline file, to your project, copy and paste these lines into your code editor:
 				</p>
 
-				<pre class='panel__code-block'><code class='panel__code'>&lt;script src='cdn.cloudflare.com/d3/d3.min.js'&gt;&lt;/script&gt;
-&lt;script src='cdn.cloudflare.com/newseful/newseful-timeline.js'&gt;&lt;/script&gt;
-&lt;script src='cdn.cloudflare.com/tabletop/tabletop.js'&gt;&lt;/script&gt;</code></pre>
+				<pre class='panel__code-block'><code class='panel__code'>&lt;script src='http://d3js.org/d3.v3.min.js'&gt;&lt;/script&gt;
+&lt;script src='https://raw.githubusercontent.com/jsoma/tabletop/master/src/tabletop.js'&gt;&lt;/script&gt;
+&lt;script src='http://nf-components.na1429654158.netdna-cdn.com/components/timeline/1.0/newseful-timeline.js'&gt;&lt;/script&gt;</code></pre>
 
 				<p class='panel__text'>
 					You'll also need a link to the Newseful style sheet, unless you plan on styling the timeline yourself. To include the Newseful style sheet, add this code to the head section of your page.
 
-					<pre class="panel__code-block"><code class='panel__code'>&lt;link rel='stylesheet' href='cdn.cloudflare.com/newseful/newseful.css'&gt;</code></pre>
+					<pre class="panel__code-block"><code class='panel__code'>&lt;link rel='stylesheet' href='http://nf-components.na1429654158.netdna-cdn.com/components/styles/1.0/newseful.css'&gt;</code></pre>
 				</p>
 
 				<p class='panel__text'>
@@ -163,7 +163,7 @@ var timeline = new NFTimelineView({
 <script src='/js/main.js'></script>
 <script src='d3.min.js'></script>
 <script src='tabletop.js'></script>
-<script src='newseful-timeline.js'></script>
+<script src='http://nf-components.na1429654158.netdna-cdn.com/components/timeline/1.0/newseful-timeline.js'></script>
 
 <script>
 	var opts = {
