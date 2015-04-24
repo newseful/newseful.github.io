@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1000px" height="400px" viewBox="0 0 1000 400" enable-background="new 0 0 1000 400" xml:space="preserve">
+<g>
+	<polygon fill="#3777E3" points="395.125,255.613 291.051,255.613 266.145,299.199 370.219,299.199 	"/>
+	<polygon fill="#FFCF63" points="292.943,165.191 344.923,255.584 395.125,255.613 343.542,165.221 	"/>
+	<polygon fill="#11A861" points="266.205,298.992 318.121,208.792 292.943,165.191 240.854,255.666 	"/>
+</g>
+<path fill="#D3E6ED" d="M762,297.773c0,2.367-1.487,4.727-3.538,4.727h-169.69c-2.051,0-3.771-2.359-3.771-4.727V162.074
+	c0-2.367,1.721-3.574,3.771-3.574h169.69c2.051,0,3.538,1.207,3.538,3.574V297.773z"/>
+<path fill="#83AFBA" d="M585,171.5v-9.426c0-2.367,1.721-3.574,3.771-3.574h169.69c2.051,0,3.538,1.207,3.538,3.574v9.426"/>
+<rect x="604" y="187.5" fill="#DB8D61" width="71" height="12"/>
+<rect x="604" y="239.5" fill="#DB8D61" width="71" height="12"/>
+<rect x="619" y="204.5" fill="#B09E52" width="36" height="13"/>
+<rect x="664" y="204.5" fill="#83AFBA" width="55" height="13"/>
+<rect x="619" y="222.5" fill="#B09E52" width="26" height="13"/>
+<path fill="#DB8D61" d="M483.415,400.556c0-8.801,7.135-15.936,15.936-15.936c8.801,0,15.936,7.135,15.936,15.936"/>
+<path fill="none" stroke="#D3E6ED" stroke-width="4" stroke-miterlimit="10" d="M471.255,400.556
+	c0-15.518,12.578-28.096,28.095-28.096c15.518,0,28.096,12.578,28.096,28.096"/>
+<rect x="619" y="255.5" fill="#B09E52" width="36" height="13"/>
+<rect x="619" y="274.5" fill="#B09E52" width="26" height="13"/>
+<rect x="664" y="222.5" fill="#83AFBA" width="70" height="13"/>
+<g>
+	<rect x="664" y="255.5" fill="#83AFBA" width="55" height="13"/>
+	<rect x="664" y="274.5" fill="#83AFBA" width="70" height="13"/>
+</g>
+</svg>

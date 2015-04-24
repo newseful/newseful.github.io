@@ -5,7 +5,7 @@
 }
 
 /* line 45, ../scss/globals.scss */
-.text_medium, .announcement__text, .example__title {
+.text_medium, .announcement__text, .example__title, .slide-control, .slide-info__heading {
   font-size: 1.5rem;
   line-height: 1.704;
 }
@@ -17,7 +17,7 @@
 }
 
 /* line 55, ../scss/globals.scss */
-.text_standard, .component-info, .timeline__description, .tracking__description, .annotations__description, .panel__code-inline, .panel__source-box, .panel__text, .panel__annotation-syntax-spec, .panel__tracker-syntax-spec, .example__subtitle, .site-footer__list-link {
+.text_standard, .component-info, .timeline__description, .tracking__description, .annotations__description, .panel__code-inline, .panel__source-box, .panel__text, .panel__annotation-syntax-spec, .panel__tracker-syntax-spec, .example__subtitle, .site-footer__list-link, .slide-info__body {
   font-size: 1.3125rem;
   line-height: 1.523;
 }
@@ -42,13 +42,13 @@
 }
 
 /* line 74, ../scss/globals.scss */
-.serif, .site-header__logo, .hero__intro-text, .announcement__text, .component-info, .timeline__description, .tracking__description, .annotations__description, .panel__text, .panel__annotation-syntax-spec, .panel__tracker-syntax-spec, .example__text, .example__quote, .site-footer__list-link {
+.serif, .site-header__logo, .hero__intro-text, .announcement__text, .component-info, .timeline__description, .tracking__description, .annotations__description, .panel__text, .panel__annotation-syntax-spec, .panel__tracker-syntax-spec, .example__text, .example__quote, .site-footer__list-link, .slide-info__body {
   font-family: "Lyon Text NYT", serif;
   font-weight: 400;
 }
 
 /* line 79, ../scss/globals.scss */
-.sans, .button, .site-header__nav-list-item, .modules-overview__module-link, .component-title, .timeline__heading, .tracking__heading, .annotations__heading, .panel__navigation-link, .panel__title, .panel__subtitle, .example__title, .example__subtitle, .example__attribution, .site-footer__list-header, .site-footer__cp {
+.sans, .button, .site-header__nav-list-item, .modules-overview__module-link, .component-title, .timeline__heading, .tracking__heading, .annotations__heading, .panel__navigation-link, .panel__title, .panel__subtitle, .example__title, .example__subtitle, .example__attribution, .site-footer__list-header, .site-footer__cp, .slide-control, .slide-info__heading {
   font-family: "Atlas Grotesk", sans-serif;
   font-weight: 300;
 }
@@ -579,13 +579,88 @@
   font-family: 'inconsolata', monospace;
 }
 
-/* line 12, ../scss/main.scss */
+/* line 3, ../scss/slides.scss */
+.slides {
+  -moz-transition: margin-left 0.5s ease;
+  -o-transition: margin-left 0.5s ease;
+  -webkit-transition: margin-left 0.5s ease;
+  transition: margin-left 0.5s ease;
+}
+
+/* line 7, ../scss/slides.scss */
+.slide-control {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: padding 0.05s ease;
+  -o-transition: padding 0.05s ease;
+  -webkit-transition: padding 0.05s ease;
+  transition: padding 0.05s ease;
+  border: 1px solid #83AFBA;
+  background: #FFF;
+  cursor: pointer;
+  text-align: center;
+  color: #83AFBA;
+  padding: .75rem .75rem;
+  position: absolute;
+  top: 50%;
+  line-height: 1;
+}
+
+/* line 25, ../scss/slides.scss */
+.slide-control:hover {
+  padding: .75rem 1.5rem;
+}
+
+/* line 29, ../scss/slides.scss */
+.advance {
+  border-radius: 4px 0 0 4px;
+  right: -1px;
+}
+
+/* line 34, ../scss/slides.scss */
+.retreat {
+  border-radius: 0 4px 4px 0;
+  left: -1px;
+}
+
+/* line 39, ../scss/slides.scss */
+.slide-img {
+  width: 50%;
+  margin: 2rem auto 0;
+}
+
+/* line 44, ../scss/slides.scss */
+.slide-img img {
+  max-width: 100%;
+  display: block;
+}
+
+/* line 49, ../scss/slides.scss */
+.slide-info {
+  width: 60%;
+  margin: auto;
+  border-top: 1px solid #D3E6ED;
+  text-align: center;
+}
+
+/* line 56, ../scss/slides.scss */
+.slide-info__heading {
+  color: #42C678;
+}
+
+/* line 63, ../scss/slides.scss */
+.slide-info__body {
+  color: #1A2326;
+}
+
+/* line 13, ../scss/main.scss */
 html, body {
   margin: 0;
   padding: 0;
 }
 
-/* line 17, ../scss/main.scss */
+/* line 18, ../scss/main.scss */
 .section {
   border-bottom: 1px solid #D3E6ED;
 }
