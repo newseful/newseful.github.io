@@ -11,28 +11,28 @@
 	@extend .sans;
 	@extend .text_medium;
 
-	border: 1px solid $blue;
 	background: $white;
 	cursor: pointer;
 	text-align: center;
 	color: $blue;
-	padding: .75rem .75rem;
+	padding: 0 .75rem;
 	position: absolute;
-	top: 50%;
-	line-height: 1;
+	top: 0;
+	bottom: 0;
+	line-height: 35rem;
 }
 
 .slide-control:hover {
-	padding: .75rem 1.5rem;
+	padding: 0 1.5rem;
 }
 
 .advance {
-	border-radius: 4px 0 0 4px;
+	border-left: 1px solid $blue_lighter;
 	right: -1px;
 }
 
 .retreat {
-	border-radius: 0 4px 4px 0;
+	border-right: 1px solid $blue_lighter;
 	left: -1px;
 }
 

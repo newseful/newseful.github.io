@@ -148,17 +148,6 @@
 }
 
 /* line 17, ../scss/hero.scss */
-.hero__video-link::before {
-  content: '';
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border: .4rem solid transparent;
-  border-left: 0.6rem solid #FFF;
-  margin-right: .3rem;
-}
-
-/* line 27, ../scss/hero.scss */
 .hero__docs-link {
   margin-left: 1rem;
 }
@@ -251,34 +240,36 @@
 }
 
 /* line 39, ../scss/components.scss */
-.timeline__img, .tracking__img {
-  float: right;
-}
-
-/* line 43, ../scss/components.scss */
 .timeline__img, .tracking__img, .annotations__img {
   display: block;
   padding: 0;
   margin: 0;
 }
 
-/* line 49, ../scss/components.scss */
+/* line 45, ../scss/components.scss */
+.timeline__img, .tracking__img {
+  display: block;
+  float: right;
+  margin-right: 5rem;
+}
+
+/* line 51, ../scss/components.scss */
 .timeline__info {
   left: 10%;
 }
 
-/* line 54, ../scss/components.scss */
+/* line 56, ../scss/components.scss */
 .annotations__info {
   right: 10%;
 }
 
-/* line 59, ../scss/components.scss */
+/* line 61, ../scss/components.scss */
 .tracking__info {
   left: 10%;
 }
 
 @media all and (max-width: 1000px) {
-  /* line 65, ../scss/components.scss */
+  /* line 67, ../scss/components.scss */
   .component-container, .timeline__info, .annotations__info, .tracking__info {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
@@ -287,12 +278,12 @@
     position: static;
   }
 
-  /* line 74, ../scss/components.scss */
+  /* line 76, ../scss/components.scss */
   .section--annotations, .section--tracking, .section--timeline {
     text-align: center;
   }
 
-  /* line 78, ../scss/components.scss */
+  /* line 80, ../scss/components.scss */
   .timeline__img, .tracking__img, .annotations__img {
     float: none;
     display: inline-block;
@@ -596,31 +587,31 @@
   -o-transition: padding 0.05s ease;
   -webkit-transition: padding 0.05s ease;
   transition: padding 0.05s ease;
-  border: 1px solid #83AFBA;
   background: #FFF;
   cursor: pointer;
   text-align: center;
   color: #83AFBA;
-  padding: .75rem .75rem;
+  padding: 0 .75rem;
   position: absolute;
-  top: 50%;
-  line-height: 1;
+  top: 0;
+  bottom: 0;
+  line-height: 35rem;
 }
 
 /* line 25, ../scss/slides.scss */
 .slide-control:hover {
-  padding: .75rem 1.5rem;
+  padding: 0 1.5rem;
 }
 
 /* line 29, ../scss/slides.scss */
 .advance {
-  border-radius: 4px 0 0 4px;
+  border-left: 1px solid #D3E6ED;
   right: -1px;
 }
 
 /* line 34, ../scss/slides.scss */
 .retreat {
-  border-radius: 0 4px 4px 0;
+  border-right: 1px solid #D3E6ED;
   left: -1px;
 }
 

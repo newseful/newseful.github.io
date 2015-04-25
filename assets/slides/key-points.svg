@@ -3,10 +3,10 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="1000px" height="400px" viewBox="0 0 1000 400" enable-background="new 0 0 1000 400" xml:space="preserve">
-<circle fill="#42C678" cx="300.286" cy="142.166" r="16.667"/>
-<rect x="349" y="126.5" fill="#83AFBA" width="364" height="31"/>
-<circle fill="#B09E52" cx="300.286" cy="201.689" r="16.667"/>
-<rect x="349" y="186.5" fill="#83AFBA" width="325" height="31"/>
-<circle fill="#DB8D61" cx="300.286" cy="258.832" r="16.667"/>
-<rect x="349" y="243.5" fill="#83AFBA" width="355" height="31"/>
+<circle fill="#42C678" fill-opacity="0.3" stroke="#42C678" stroke-width="3" stroke-miterlimit="10" cx="272.336" cy="133.933" r="19.02"/>
+<rect x="327.926" y="116.055" fill="#D3E6ED" stroke="#83AFBA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="415.377" height="35.375"/>
+<circle fill="#F2E7B8" stroke="#B09E52" stroke-width="3" stroke-miterlimit="10" cx="272.336" cy="201.857" r="19.019"/>
+<rect x="327.926" y="184.524" fill="#D3E6ED" stroke="#83AFBA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="370.872" height="35.375"/>
+<circle fill="#F2D8C7" stroke="#DB8D61" stroke-width="3" stroke-miterlimit="10" cx="272.336" cy="267.065" r="19.02"/>
+<rect x="327.926" y="249.569" fill="#D3E6ED" stroke="#83AFBA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="405.106" height="35.376"/>
 </svg>

@@ -3,10 +3,10 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="1000px" height="400px" viewBox="0 0 1000 400" enable-background="new 0 0 1000 400" xml:space="preserve">
-<rect x="276" y="133.5" fill="#B09E52" width="422" height="23"/>
-<rect x="276" y="168.5" fill="#B09E52" width="446" height="23"/>
-<rect x="276" y="206.5" fill="#B09E52" width="422" height="23"/>
-<rect x="276" y="243.5" fill="#B09E52" width="216" height="23"/>
-<rect x="505" y="168.5" fill="#8F5C40" width="217" height="23"/>
-<rect x="275" y="206.5" fill="#8F5C40" width="116" height="23"/>
+<rect x="276" y="133.5" fill="#F2E7B8" width="422" height="23"/>
+<rect x="276" y="168.5" fill="#F2E7B8" width="446" height="23"/>
+<rect x="276" y="206.5" fill="#F2E7B8" width="422" height="23"/>
+<rect x="276" y="243.5" fill="#F2E7B8" width="216" height="23"/>
+<rect x="505" y="168.5" fill="#DB8D61" width="217" height="23"/>
+<rect x="275" y="206.5" fill="#DB8D61" width="116" height="23"/>
 </svg>

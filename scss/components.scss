@@ -36,14 +36,16 @@
 	@extend .component-info;
 }
 
-.timeline__img, .tracking__img {
-	float: right;
-}
-
 .timeline__img, .tracking__img, .annotations__img {
 	display: block;
 	padding: 0;
 	margin: 0;
+}
+
+.timeline__img, .tracking__img {
+	display: block;
+	float: right;
+	margin-right: 5rem;
 }
 
 .timeline__info {

@@ -1,5 +1,5 @@
 /*
-Error: Undefined variable: "$blue".
+Error: Undefined variable: "$white".
         on line 14 of /Users/Kevin/Sites/newseful/newseful.github.io/scss/slides.scss
 
 9: 	@include transition(padding .05s ease);
@@ -7,20 +7,16 @@ Error: Undefined variable: "$blue".
 11: 	@extend .sans;
 12: 	@extend .text_medium;
 13: 
-14: 	border: 1px solid $blue;
-15: 	background: $white;
-16: 	cursor: pointer;
-17: 	text-align: center;
-18: 	color: $blue;
-19: 	padding: .75rem .75rem;
+14: 	background: $white;
+15: 	cursor: pointer;
+16: 	text-align: center;
+17: 	color: $blue;
+18: 	padding: 0 .75rem;
+19: 	position: absolute;
 
 Backtrace:
 /Users/Kevin/Sites/newseful/newseful.github.io/scss/slides.scss:14
 /Users/Kevin/.rvm/gems/ruby-1.9.3-p286/gems/sass-3.4.13/lib/sass/script/tree/variable.rb:49:in `_perform'
-/Users/Kevin/.rvm/gems/ruby-1.9.3-p286/gems/sass-3.4.13/lib/sass/script/tree/node.rb:50:in `perform'
-/Users/Kevin/.rvm/gems/ruby-1.9.3-p286/gems/sass-3.4.13/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
-/Users/Kevin/.rvm/gems/ruby-1.9.3-p286/gems/sass-3.4.13/lib/sass/script/tree/list_literal.rb:63:in `map'
-/Users/Kevin/.rvm/gems/ruby-1.9.3-p286/gems/sass-3.4.13/lib/sass/script/tree/list_literal.rb:63:in `_perform'
 /Users/Kevin/.rvm/gems/ruby-1.9.3-p286/gems/sass-3.4.13/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/Kevin/.rvm/gems/ruby-1.9.3-p286/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
 /Users/Kevin/.rvm/gems/ruby-1.9.3-p286/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
@@ -74,4 +70,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$blue\".\A         on line 14 of /Users/Kevin/Sites/newseful/newseful.github.io/scss/slides.scss\A \A 9: 	@include transition(padding .05s ease);\A 10: \A 11: 	@extend .sans;\A 12: 	@extend .text_medium;\A 13: \A 14: 	border: 1px solid $blue;\A 15: 	background: $white;\A 16: 	cursor: pointer;\A 17: 	text-align: center;\A 18: 	color: $blue;\A 19: 	padding: .75rem .75rem;"; }
+  content: "Error: Undefined variable: \"$white\".\A         on line 14 of /Users/Kevin/Sites/newseful/newseful.github.io/scss/slides.scss\A \A 9: 	@include transition(padding .05s ease);\A 10: \A 11: 	@extend .sans;\A 12: 	@extend .text_medium;\A 13: \A 14: 	background: $white;\A 15: 	cursor: pointer;\A 16: 	text-align: center;\A 17: 	color: $blue;\A 18: 	padding: 0 .75rem;\A 19: 	position: absolute;"; }
