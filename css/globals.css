@@ -1,59 +1,75 @@
-/* line 40, ../scss/globals.scss */
+@font-face {
+  font-family: 'Lyon Text Web';
+  src: url("../assets/fonts/LyonText-RegularNo2-Web.eot");
+  src: url("../assets/fonts/LyonText-RegularNo2-Web.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/LyonText-RegularNo2-Web.woff") format("woff"), url("../assets/fonts/LyonText-RegularNo2-Web.ttf") format("truetype"), url("../assets/fonts/LyonText-RegularNo2-Web.svg#Lyon Text Web") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: 'Atlas Grotesk Web';
+  src: url("../assets/fonts/AtlasGrotesk-Regular-Web.eot");
+  src: url("../assets/fonts/AtlasGrotesk-Regular-Web.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/AtlasGrotesk-Regular-Web.woff") format("woff"), url("../assets/fonts/AtlasGrotesk-Regular-Web.ttf") format("truetype"), url("../assets/fonts/AtlasGrotesk-Regular-Web.svg#AtlasGrotesk-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+/* line 64, ../scss/globals.scss */
 .text_large {
   font-size: 1.6875rem;
   line-height: 1.704;
 }
 
-/* line 45, ../scss/globals.scss */
+/* line 69, ../scss/globals.scss */
 .text_medium {
   font-size: 1.5rem;
   line-height: 1.704;
 }
 
-/* line 50, ../scss/globals.scss */
+/* line 74, ../scss/globals.scss */
 .text_secondary {
   font-size: 1.2rem;
   line-height: 1.704;
 }
 
-/* line 55, ../scss/globals.scss */
+/* line 79, ../scss/globals.scss */
 .text_standard {
   font-size: 1.3125rem;
   line-height: 1.523;
 }
 
-/* line 60, ../scss/globals.scss */
+/* line 84, ../scss/globals.scss */
 .text_button {
   font-size: 1rem;
   line-height: 1;
 }
 
-/* line 65, ../scss/globals.scss */
+/* line 89, ../scss/globals.scss */
 .text_small {
   font-size: 1rem;
   line-height: 1.523;
 }
 
-/* line 70, ../scss/globals.scss */
+/* line 94, ../scss/globals.scss */
 .border-box {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 74, ../scss/globals.scss */
+/* line 98, ../scss/globals.scss */
 .serif {
-  font-family: "Lyon Text NYT", serif;
+  font-family: "Lyon Text Web", serif;
   font-weight: 400;
 }
 
-/* line 79, ../scss/globals.scss */
+/* line 103, ../scss/globals.scss */
 .sans {
-  font-family: "Atlas Grotesk", sans-serif;
+  font-family: "Atlas Grotesk Web", sans-serif;
   font-weight: 300;
 }
 
-/* line 84, ../scss/globals.scss */
+/* line 108, ../scss/globals.scss */
 .mono {
   font-family: "Inconsolata", monospace;
   font-weight: 400;
