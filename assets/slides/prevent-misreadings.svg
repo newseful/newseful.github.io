@@ -3,10 +3,28 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="1000px" height="400px" viewBox="0 0 1000 400" enable-background="new 0 0 1000 400" xml:space="preserve">
-<rect x="276" y="133.5" fill="#F2E7B8" width="422" height="23"/>
-<rect x="276" y="168.5" fill="#F2E7B8" width="446" height="23"/>
-<rect x="276" y="206.5" fill="#F2E7B8" width="422" height="23"/>
-<rect x="276" y="243.5" fill="#F2E7B8" width="216" height="23"/>
-<rect x="505" y="168.5" fill="#DB8D61" width="217" height="23"/>
-<rect x="275" y="206.5" fill="#DB8D61" width="116" height="23"/>
+<g>
+	<rect x="278" y="135.5" fill="#D3E6ED" width="418" height="19"/>
+	<path fill="#83AFBA" d="M694,137.5v15H280v-15H694 M698,133.5H276v23h422V133.5L698,133.5z"/>
+</g>
+<g>
+	<rect x="278" y="170.5" fill="#D3E6ED" width="442" height="19"/>
+	<path fill="#83AFBA" d="M718,172.5v15H280v-15H718 M722,168.5H276v23h446V168.5L722,168.5z"/>
+</g>
+<g>
+	<rect x="278" y="208.5" fill="#D3E6ED" width="418" height="19"/>
+	<path fill="#83AFBA" d="M694,210.5v15H280v-15H694 M698,206.5H276v23h422V206.5L698,206.5z"/>
+</g>
+<g>
+	<rect x="278" y="245.5" fill="#D3E6ED" width="212" height="19"/>
+	<path fill="#83AFBA" d="M488,247.5v15H280v-15H488 M492,243.5H276v23h216V243.5L492,243.5z"/>
+</g>
+<g>
+	<rect x="507" y="170.5" fill="#F2D8C7" width="213" height="19"/>
+	<path fill="#DB8D61" d="M718,172.5v15H509v-15H718 M722,168.5H505v23h217V168.5L722,168.5z"/>
+</g>
+<g>
+	<rect x="277" y="208.5" fill="#F2D8C7" width="112" height="19"/>
+	<path fill="#DB8D61" d="M387,210.5v15H279v-15H387 M391,206.5H275v23h116V206.5L391,206.5z"/>
+</g>
 </svg>

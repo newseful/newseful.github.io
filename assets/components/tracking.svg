@@ -3,20 +3,23 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="800px" height="500px" viewBox="0 0 800 500" enable-background="new 0 0 800 500" xml:space="preserve">
-<circle fill="#9EBBC6" cx="217.708" cy="177.828" r="26.634"/>
-<path fill="#9EBBC6" d="M619,191.863c0,6.703-5.434,12.137-12.137,12.137H281.137c-6.703,0-12.137-5.434-12.137-12.137v-28.727
-	c0-6.703,5.434-12.137,12.137-12.137h325.727c6.703,0,12.137,5.434,12.137,12.137V191.863z"/>
-<polyline fill="none" stroke="#FFFFFF" stroke-width="4.8545" stroke-linejoin="bevel" stroke-miterlimit="10" points="
+<circle fill="#D3E6ED" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" cx="217.708" cy="177.828" r="26.634"/>
+<path fill="#D3E6ED" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" d="M619,191.863c0,6.703-5.434,12.137-12.137,12.137
+	H281.137c-6.703,0-12.137-5.434-12.137-12.137v-28.728c0-6.703,5.434-12.137,12.137-12.137h325.728
+	c6.703,0,12.137,5.434,12.137,12.137L619,191.863L619,191.863z"/>
+<polyline fill="none" stroke="#83AFBA" stroke-width="4.8545" stroke-linejoin="bevel" stroke-miterlimit="10" points="
 	205.508,177.828 214.003,187.539 227.353,168.929 "/>
-<circle fill="#9EBBC6" cx="217.708" cy="260.355" r="26.634"/>
-<path fill="#9EBBC6" d="M619,274.863c0,6.703-5.434,12.137-12.137,12.137H281.137c-6.703,0-12.137-5.434-12.137-12.137v-28.727
-	c0-6.703,5.434-12.137,12.137-12.137h325.727c6.703,0,12.137,5.434,12.137,12.137V274.863z"/>
+<circle fill="#D3E6ED" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" cx="217.708" cy="260.355" r="26.634"/>
+<path fill="#D3E6ED" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" d="M619,274.863c0,6.703-5.434,12.137-12.137,12.137
+	H281.137c-6.703,0-12.137-5.434-12.137-12.137v-28.728c0-6.703,5.434-12.137,12.137-12.137h325.728
+	c6.703,0,12.137,5.434,12.137,12.137L619,274.863L619,274.863z"/>
 <g>
-	<text transform="matrix(1 0 0 1 209.5537 271.3574)" fill="#FFFFFF" font-family="'AtlasGrotesk-Medium'" font-size="27.8869">?</text>
+	<text transform="matrix(1 0 0 1 209.5537 271.3574)" fill="#83AFBA" font-family="'AtlasGrotesk-Medium'" font-size="27.8869">?</text>
 </g>
-<circle fill="#9EBBC6" cx="217.708" cy="342.882" r="26.634"/>
-<path fill="#9EBBC6" d="M619,356.863c0,6.703-5.434,12.137-12.137,12.137H281.137c-6.703,0-12.137-5.434-12.137-12.137v-28.727
-	c0-6.703,5.434-12.137,12.137-12.137h325.727c6.703,0,12.137,5.434,12.137,12.137V356.863z"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="4.8545" stroke-linejoin="bevel" stroke-miterlimit="10" x1="209.246" y1="334.42" x2="226.17" y2="351.344"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="4.8545" stroke-linejoin="bevel" stroke-miterlimit="10" x1="209.246" y1="351.344" x2="226.17" y2="334.42"/>
+<circle fill="#D3E6ED" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" cx="217.708" cy="342.882" r="26.634"/>
+<path fill="#D3E6ED" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" d="M619,356.863c0,6.703-5.434,12.137-12.137,12.137
+	H281.137c-6.703,0-12.137-5.434-12.137-12.137v-28.728c0-6.703,5.434-12.137,12.137-12.137h325.728
+	c6.703,0,12.137,5.434,12.137,12.137L619,356.863L619,356.863z"/>
+<line fill="none" stroke="#83AFBA" stroke-width="4.8545" stroke-linejoin="bevel" stroke-miterlimit="10" x1="209.246" y1="334.42" x2="226.17" y2="351.344"/>
+<line fill="none" stroke="#83AFBA" stroke-width="4.8545" stroke-linejoin="bevel" stroke-miterlimit="10" x1="209.246" y1="351.344" x2="226.17" y2="334.42"/>
 </svg>
