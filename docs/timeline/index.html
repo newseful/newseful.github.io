@@ -42,7 +42,7 @@
 				</div>
 
 				<p class='panel__text'>
-					The newseful timeline provides a more structured layout for developing stories. By separating events from reactions, it provides the reader with a clearer understanding of the reporter's work.
+					The newseful timeline provides a more structured layout for developing stories. By separating events from reactions, it provides the reader with a clearer understanding of the reporter&rsquo;s work.
 				</p>
 
 				<p class='panel__text'>
@@ -57,18 +57,18 @@
 					The newseful timeline component relies on two external dependencies when using Google Sheets as a data source. These dependencies are the javascript libraries <span class='panel__code-inline'>d3.js</span> and <span class="panel__code-inline">tabletop.js</span>. To add the hosted versions of these files, and the newseful timeline file, to your project, copy and paste these lines into your code editor:
 				</p>
 
-				<pre class='panel__code-block'><code class='panel__code'>&lt;script src='http://d3js.org/d3.v3.min.js'&gt;&lt;/script&gt;
-&lt;script src='https://raw.githubusercontent.com/jsoma/tabletop/master/src/tabletop.js'&gt;&lt;/script&gt;
-&lt;script src='http://nf-components.na1429654158.netdna-cdn.com/components/timeline/1.0/newseful-timeline.js'&gt;&lt;/script&gt;</code></pre>
+				<pre class='panel__code-block'><code class='panel__code'>&lt;script src=&lsquo;http://d3js.org/d3.v3.min.js&rsquo;&gt;&lt;/script&gt;
+&lt;script src=&lsquo;https://raw.githubusercontent.com/jsoma/tabletop/master/src/tabletop.js&rsquo;&gt;&lt;/script&gt;
+&lt;script src=&lsquo;http://nf-components.na1429654158.netdna-cdn.com/components/timeline/1.0/newseful-timeline.js&rsquo;&gt;&lt;/script&gt;</code></pre>
 
 				<p class='panel__text'>
-					You'll also need a link to the Newseful style sheet, unless you plan on styling the timeline yourself. To include the Newseful style sheet, add this code to the head section of your page.
+					You&rsquo;ll also need a link to the Newseful style sheet, unless you plan on styling the timeline yourself. To include the Newseful style sheet, add this code to the head section of your page.
 
-					<pre class="panel__code-block"><code class='panel__code'>&lt;link rel='stylesheet' href='http://nf-components.na1429654158.netdna-cdn.com/components/styles/1.0/newseful.css'&gt;</code></pre>
+					<pre class="panel__code-block"><code class='panel__code'>&lt;link rel=&lsquo;stylesheet&rsquo; href=&lsquo;http://nf-components.na1429654158.netdna-cdn.com/components/styles/1.0/newseful.css&rsquo;&gt;</code></pre>
 				</p>
 
 				<p class='panel__text'>
-					With these files added to your project, you're ready to create a timeline. There are two required options to instantiate the default timeline, the <span class="panel__code-inline">container</span>, which is a reference to the element on the page that will contain the timeline, and the <span class="panel__code-inline">dataURL</span> property, which contains a link to the public version of your Google Sheet. For more information on data sources and setting up your Google Sheet's public URL, visit the Data Sources section below.
+					With these files added to your project, you&rsquo;re ready to create a timeline. There are two required options to instantiate the default timeline, the <span class="panel__code-inline">container</span>, which is a reference to the element on the page that will contain the timeline, and the <span class="panel__code-inline">dataURL</span> property, which contains a link to the public version of your Google Sheet. For more information on data sources and setting up your Google Sheet&rsquo;s public URL, visit the Data Sources section below.
 				</p>
 
 				<p class='panel__text'>
@@ -76,8 +76,8 @@
 				</p>
 
 				<pre class="panel__code-block"><code class='panel__code'>&lt;script&gt;
-  var sheet = 'http://YOUR_SHEET_URL';
-  var element = document.querySelector('YOUR_ELEMENT_SELECTOR');
+  var sheet = &lsquo;http://YOUR_SHEET_URL&rsquo;;
+  var element = document.querySelector(&lsquo;YOUR_ELEMENT_SELECTOR&rsquo;);
 
   var timeline = new NFTimelineView({
   	container : element,
@@ -89,21 +89,21 @@
 			<div class='panel__section' id='datasources'>
 				<h2 class='panel__title'>Data Sources</h2>
 				<p class='panel__text'>
-					Newseful's timeline component provides two options for data sources. The default option is to use Google Sheets as a data source, but properly formatted <span class='panel__code-inline'>JSON</span> can also be used.
+					Newseful&rsquo;s timeline component provides two options for data sources. The default option is to use Google Sheets as a data source, but properly formatted <span class='panel__code-inline'>JSON</span> can also be used.
 				</p>
 
 				<h3 class='panel__subtitle'>Google Sheets</h3>
 				<p class="panel__text">
-					To use Google Sheets, you'll need to set up your spreadsheet in a particular way. For reference on how the columns should be titled and filled, consult <a class='panel__link' href='https://docs.google.com/spreadsheets/d/1EdTC-8FwXN06a04kCIwL7x7pfg67-cn7Tp-Kfgs9UeQ/pubhtml?gid=0&single=true'>this example spreadsheet.</a>
+					To use Google Sheets, you&rsquo;ll need to set up your spreadsheet in a particular way. For reference on how the columns should be titled and filled, consult <a class='panel__link' href='https://docs.google.com/spreadsheets/d/1EdTC-8FwXN06a04kCIwL7x7pfg67-cn7Tp-Kfgs9UeQ/pubhtml?gid=0&single=true'>this example spreadsheet.</a>
 				</p>
 
 				<p class="panel__text">
-					Once your spreadsheet is set up, you'll need to make it publicly visible. In order to do this, within the google sheets interface navigate to <span class='panel__code-inline'>File > Publish to the web</span>. Once you've published your sheet, you should see a URL. Copy this URL and use it as the <span class="panel__code-inline">dataURL</span> property when instantiating a new timeline (see above).
+					Once your spreadsheet is set up, you&rsquo;ll need to make it publicly visible. In order to do this, within the google sheets interface navigate to <span class='panel__code-inline'>File > Publish to the web</span>. Once you&rsquo;ve published your sheet, you should see a URL. Copy this URL and use it as the <span class="panel__code-inline">dataURL</span> property when instantiating a new timeline (see above).
 				</p>
 
 				<h3 class='panel__subtitle'>Custom Data Source</h3>
 				<p class="panel__text">
-					Newseful's timeline can also accept a custom data source as <span class='panel__code-inline'>JSON</span>. In order to use a custom data source, you will need to format the <span class='panel__code-inline'>JSON</span> as follows:
+					Newseful&rsquo;s timeline can also accept a custom data source as <span class='panel__code-inline'>JSON</span>. In order to use a custom data source, you will need to format the <span class='panel__code-inline'>JSON</span> as follows:
 				</p>
 
 				<pre class="panel__code-block"><code class='panel__code'>var data = {
@@ -133,19 +133,19 @@
 					Several configuration options are also available when instantiating the timeline.
 				</p>
 
-				<pre class="panel__code-block"><code class='panel__code'>var sheet = 'http://YOUR_SHEET_URL';
-var element = document.querySelector('YOUR_ELEMENT_SELECTOR');
+				<pre class="panel__code-block"><code class='panel__code'>var sheet = &lsquo;http://YOUR_SHEET_URL&rsquo;;
+var element = document.querySelector(&lsquo;YOUR_ELEMENT_SELECTOR&rsquo;);
 
 var timeline = new NFTimelineView({
 	container : element,
 	dataURL : sheet,
-	sortOrder : 'chrono',
+	sortOrder : &lsquo;chrono&rsquo;,
 	labelFrequency : 3
 });</code></pre>
 
 				<h3 class="panel__subtitle">Event Order</h3>
 				<p class='panel__text'>
-					The default order for events in the Newseful timeline is reverse chronological. To override this and enable chronological sorting, instantiate the timeline with <span class="panel__code-inline">'chrono'</span> as the <span class='panel__code-inline'>sortOrder</span> parameter of the instantiation options.
+					The default order for events in the Newseful timeline is reverse chronological. To override this and enable chronological sorting, instantiate the timeline with <span class="panel__code-inline">&lsquo;chrono&rsquo;</span> as the <span class='panel__code-inline'>sortOrder</span> parameter of the instantiation options.
 				</p>
 
 				<h3 class="panel__subtitle">Label Frequency</h3>

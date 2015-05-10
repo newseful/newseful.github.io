@@ -54,20 +54,20 @@
 					The annotations module is independent of external dependencies, so setting it up is quite simple. Just include this script tag anywhere on your site:
 				</p>
 
-				<pre class='panel__code-block'><code class='panel__code'>&lt;script src='cdn.cloudflare.com/newseful/newseful-annotation.js'&gt;&lt;/script&gt;</code></pre>
+				<pre class='panel__code-block'><code class='panel__code'>&lt;script src=&lsquo;cdn.cloudflare.com/newseful/newseful-annotation.js&rsquo;&gt;&lt;/script&gt;</code></pre>
 
 				<p class='panel__text'>
-					You'll also need a link to the Newseful style sheet, unless you plan on styling the timeline yourself. To include the Newseful style sheet, add this code to the head section of your page.
+					You&rsquo;ll also need a link to the Newseful style sheet, unless you plan on styling the timeline yourself. To include the Newseful style sheet, add this code to the head section of your page.
 
-					<pre class="panel__code-block"><code class='panel__code'>&lt;link rel='stylesheet' href='cdn.cloudflare.com/newseful/newseful.css'&gt;</code></pre>
+					<pre class="panel__code-block"><code class='panel__code'>&lt;link rel=&lsquo;stylesheet&rsquo; href=&lsquo;cdn.cloudflare.com/newseful/newseful.css&rsquo;&gt;</code></pre>
 				</p>
 
 				<p class='panel__text'>
-					Now you'll need to tell the annotations module what the container element is for the article, and it will look there for instances of the syntax described below. Use this code to initialize the module:
+					Now you&rsquo;ll need to tell the annotations module what the container element is for the article, and it will look there for instances of the syntax described below. Use this code to initialize the module:
 				</p>
 
 				<pre class="panel__code-block"><code class='panel__code'>var opts = {
-	textElement : document.querySelector('YOUR SELECTOR')
+	textElement : document.querySelector(&lsquo;YOUR SELECTOR&lsquo;)
 } 
 
 var annotations = new NFAnnotations(opts);</code></pre>
@@ -108,7 +108,7 @@ var annotations = new NFAnnotations(opts);</code></pre>
 				</p>
 
 				<p class='panel__text'>
-					Within the parentheses, data must be split into keys and values. Newseful's annotation module looks for certain keys to use for default layouts, but any text may be used as a key and will be formatted with the generic structured data layout. Keys must be separated from their values with a colon, and values must be terminated with a semicolon (as such they may not contain semicolons within them).
+					Within the parentheses, data must be split into keys and values. Newseful&rsquo;s annotation module looks for certain keys to use for default layouts, but any text may be used as a key and will be formatted with the generic structured data layout. Keys must be separated from their values with a colon, and values must be terminated with a semicolon (as such they may not contain semicolons within them).
 				</p>
 
 				<p class='panel__annotation-syntax-spec'>
@@ -136,13 +136,13 @@ var annotations = new NFAnnotations(opts);</code></pre>
 
 			<div class="panel__section" id='maps'>
 				<h2 class="panel__title">Maps</h2>
-				<p class="panel__text">Newseful's annotation module also allows for the easy addition of contextual maps to a story, as seen to the right. However, in order to implement the maps feature, you will need to provide an API key for the <a href='http://mapbox.com/plans' class='panel__link'>Mapbox API</a></p>
+				<p class="panel__text">Newseful&rsquo;s annotation module also allows for the easy addition of contextual maps to a story, as seen to the right. However, in order to implement the maps feature, you will need to provide an API key for the <a href='http://mapbox.com/plans' class='panel__link'>Mapbox API</a></p>
 
 				<p class="panel__text">To initialize the annotations module with your Mapbox API key, use the following code:</p>
 
 				<pre class="panel__code-block"><code class='panel__code'>var opts = {
-	textElement : document.querySelector('YOUR SELECTOR'),
-	apiKey : 'YOUR API KEY'
+	textElement : document.querySelector(&lsquo;YOUR SELECTOR&rsquo;),
+	apiKey : &lsquo;YOUR API KEY&rsquo;
 } 
 
 var annotations = new NFAnnotations(opts);</code></pre>

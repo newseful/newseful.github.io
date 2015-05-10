@@ -41,7 +41,7 @@
 				</div>
 
 				<p class='panel__text'>
-					Newseful's fact tracking module provides an extremely simple syntax for adding visual weight to key points in a story, and visual distinction between facts that are independently confirmed, reported by other sources, or categorically false.
+					Newseful&rsquo;s fact tracking module provides an extremely simple syntax for adding visual weight to key points in a story, and visual distinction between facts that are independently confirmed, reported by other sources, or categorically false.
 				</p>
 
 				<p class="panel__text">
@@ -56,16 +56,16 @@
 					Fact tracking requires no external dependencies, so setup is as simple as including the script and the newseful css file, and then initializing via the code provided below.
 				</p>
 
-				<pre class='panel__code-block'><code class='panel__code'>&lt;script src='cdn.cloudflare.com/newseful/newseful-fact-tracking.js'&gt;&lt;/script&gt;
-				&lt;link rel='stylesheet' href='cdn.cloudflare.com/newseful/newseful.css'&gt;</code></pre>
+				<pre class='panel__code-block'><code class='panel__code'>&lt;script src=&lsquo;cdn.cloudflare.com/newseful/newseful-fact-tracking.js&rsquo;&gt;&lt;/script&gt;
+				&lt;link rel=&lsquo;stylesheet&rsquo; href=&lsquo;cdn.cloudflare.com/newseful/newseful.css&rsquo;&gt;</code></pre>
 
 				<p class='panel__text'>
-					You'll need to initialize the fact tracker as such:
+					You&rsquo;ll need to initialize the fact tracker as such:
 				</p>
 
 				<pre class="panel__code-block"><code class='panel__code'>var opts = {
 		showList : true,
-		textElement : document.querySelector('.content')
+		textElement : document.querySelector(&lsquo;.content&rsquo;)
 	}
 	var factCheck = new NFFactCheck(opts);</code></pre>
 
@@ -85,7 +85,7 @@
 				</p>
 
 				<p class="panel__text">
-					Newseful recognizes two keywords: <span class='panel__code-inline'>confirmed</span> and <span class='panel__code-inline'>false</span>. <span class='panel__code-inline'>Confirmed</span> appears green, <span class='panel__code-inline'>false</span> red, and any unrecognized keyword will be presented as yellow. In this way, the yellow color can be used with generic terms like "unconfirmed," or with specific attributions like "Reuters".
+					Newseful recognizes two keywords: <span class='panel__code-inline'>confirmed</span> and <span class='panel__code-inline'>false</span>. <span class='panel__code-inline'>Confirmed</span> appears green, <span class='panel__code-inline'>false</span> red, and any unrecognized keyword will be presented as yellow. In this way, the yellow color can be used with generic terms like &ldquo;unconfirmed,&rdquo; or with specific attributions like &ldquo;Reuters&rdquo;.
 				</p>
 			</div>
 		</div>
