@@ -529,21 +529,22 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
+  vertical-align: top;
 }
 
-/* line 15, ../scss/footer.scss */
+/* line 16, ../scss/footer.scss */
 .site-footer__list-header {
   color: #53646B;
   margin-top: 0;
 }
 
-/* line 23, ../scss/footer.scss */
+/* line 24, ../scss/footer.scss */
 .site-footer__list-link {
   color: #53646B;
   text-decoration: none;
 }
 
-/* line 31, ../scss/footer.scss */
+/* line 32, ../scss/footer.scss */
 .site-footer__cp {
   color: #53646B;
   float: right;
