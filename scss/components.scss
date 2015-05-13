@@ -48,6 +48,10 @@
 	margin-right: 5rem;
 }
 
+.timeline__img {
+	margin-top: 3rem;
+}
+
 .timeline__info {
 	@extend .component-container;
 	left: $wide_margin;

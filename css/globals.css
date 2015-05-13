@@ -14,62 +14,70 @@
   font-style: normal;
   font-stretch: normal;
 }
-/* line 64, ../scss/globals.scss */
+@font-face {
+  font-family: 'Inconsolata';
+  src: url("../assets/fonts/inconsolata.eot");
+  src: url("../assets/fonts/inconsolata.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inconsolata.woff") format("woff"), url("../assets/fonts/inconsolata.ttf") format("truetype"), url("../assets/fonts/inconsolata.svg#inconsolatamedium") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+/* line 76, ../scss/globals.scss */
 .text_large {
   font-size: 1.6875rem;
   line-height: 1.704;
 }
 
-/* line 69, ../scss/globals.scss */
+/* line 81, ../scss/globals.scss */
 .text_medium {
   font-size: 1.5rem;
   line-height: 1.704;
 }
 
-/* line 74, ../scss/globals.scss */
+/* line 86, ../scss/globals.scss */
 .text_secondary {
   font-size: 1.2rem;
   line-height: 1.704;
 }
 
-/* line 79, ../scss/globals.scss */
+/* line 91, ../scss/globals.scss */
 .text_standard {
   font-size: 1.3125rem;
   line-height: 1.523;
 }
 
-/* line 84, ../scss/globals.scss */
+/* line 96, ../scss/globals.scss */
 .text_button {
   font-size: 1rem;
   line-height: 1;
 }
 
-/* line 89, ../scss/globals.scss */
+/* line 101, ../scss/globals.scss */
 .text_small {
   font-size: 1rem;
   line-height: 1.523;
 }
 
-/* line 94, ../scss/globals.scss */
+/* line 106, ../scss/globals.scss */
 .border-box {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 98, ../scss/globals.scss */
+/* line 110, ../scss/globals.scss */
 .serif {
   font-family: "Lyon Text Web", serif;
   font-weight: 400;
 }
 
-/* line 103, ../scss/globals.scss */
+/* line 115, ../scss/globals.scss */
 .sans {
   font-family: "Atlas Grotesk Web", sans-serif;
   font-weight: 400;
 }
 
-/* line 108, ../scss/globals.scss */
+/* line 120, ../scss/globals.scss */
 .mono {
   font-family: "Inconsolata", monospace;
   font-weight: 400;

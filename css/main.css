@@ -14,62 +14,70 @@
   font-style: normal;
   font-stretch: normal;
 }
-/* line 64, ../scss/globals.scss */
+@font-face {
+  font-family: 'Inconsolata';
+  src: url("../assets/fonts/inconsolata.eot");
+  src: url("../assets/fonts/inconsolata.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/inconsolata.woff") format("woff"), url("../assets/fonts/inconsolata.ttf") format("truetype"), url("../assets/fonts/inconsolata.svg#inconsolatamedium") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+/* line 76, ../scss/globals.scss */
 .text_large, .hero__intro-text, .component-title, .timeline__heading, .tracking__heading, .annotations__heading, .panel__title {
   font-size: 1.6875rem;
   line-height: 1.704;
 }
 
-/* line 69, ../scss/globals.scss */
+/* line 81, ../scss/globals.scss */
 .text_medium, .announcement__text, .example__title, .slide-control, .slide-info__heading {
   font-size: 1.5rem;
   line-height: 1.704;
 }
 
-/* line 74, ../scss/globals.scss */
+/* line 86, ../scss/globals.scss */
 .text_secondary, .panel__subtitle {
   font-size: 1.2rem;
   line-height: 1.704;
 }
 
-/* line 79, ../scss/globals.scss */
+/* line 91, ../scss/globals.scss */
 .text_standard, .component-info, .timeline__description, .tracking__description, .annotations__description, .panel__code-inline, .panel__source-box, .panel__text, .panel__annotation-syntax-spec, .panel__tracker-syntax-spec, .example__subtitle, .site-footer__list-link, .slide-info__body {
   font-size: 1.3125rem;
   line-height: 1.523;
 }
 
-/* line 84, ../scss/globals.scss */
+/* line 96, ../scss/globals.scss */
 .text_button, .button, .site-header__logo, .site-header__nav-list-item, .modules-overview__module-link, .panel__navigation-link, .panel__code-block, .panel__static-input, .site-footer__list-header, .site-footer__cp {
   font-size: 1rem;
   line-height: 1;
 }
 
-/* line 89, ../scss/globals.scss */
+/* line 101, ../scss/globals.scss */
 .text_small, .example__text, .example__quote, .example__attribution {
   font-size: 1rem;
   line-height: 1.523;
 }
 
-/* line 94, ../scss/globals.scss */
+/* line 106, ../scss/globals.scss */
 .border-box, .site-header, .modules-overview__module-link {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 98, ../scss/globals.scss */
+/* line 110, ../scss/globals.scss */
 .serif, .site-header__logo, .hero__intro-text, .announcement__text, .component-info, .timeline__description, .tracking__description, .annotations__description, .panel__text, .panel__annotation-syntax-spec, .panel__tracker-syntax-spec, .example__text, .example__quote, .site-footer__list-link, .slide-info__body {
   font-family: "Lyon Text Web", serif;
   font-weight: 400;
 }
 
-/* line 103, ../scss/globals.scss */
+/* line 115, ../scss/globals.scss */
 .sans, .button, .site-header__nav-list-item, .modules-overview__module-link, .component-title, .timeline__heading, .tracking__heading, .annotations__heading, .panel__navigation-link, .panel__title, .panel__subtitle, .example__title, .example__subtitle, .example__attribution, .site-footer__list-header, .site-footer__cp, .slide-control, .slide-info__heading {
   font-family: "Atlas Grotesk Web", sans-serif;
   font-weight: 400;
 }
 
-/* line 108, ../scss/globals.scss */
+/* line 120, ../scss/globals.scss */
 .mono, .panel__code-inline, .panel__code, .panel__code-block, .panel__source-box, .panel__static-input {
   font-family: "Inconsolata", monospace;
   font-weight: 400;
@@ -153,7 +161,7 @@
 
 /* line 5, ../scss/hero.scss */
 .hero__intro {
-  width: 60%;
+  width: 50%;
   margin: auto;
 }
 
@@ -217,7 +225,7 @@
 
 /* line 9, ../scss/announcement.scss */
 .announcement__text {
-  width: 60%;
+  width: 50%;
   margin: auto;
   color: #404E54;
 }
@@ -269,36 +277,41 @@
 }
 
 /* line 51, ../scss/components.scss */
+.timeline__img {
+  margin-top: 3rem;
+}
+
+/* line 55, ../scss/components.scss */
 .timeline__info {
   left: 10%;
 }
 
-/* line 56, ../scss/components.scss */
+/* line 60, ../scss/components.scss */
 .annotations__info {
   right: 10%;
 }
 
-/* line 61, ../scss/components.scss */
+/* line 65, ../scss/components.scss */
 .tracking__info {
   left: 10%;
 }
 
 @media all and (max-width: 1000px) {
-  /* line 67, ../scss/components.scss */
+  /* line 71, ../scss/components.scss */
   .component-container, .timeline__info, .annotations__info, .tracking__info {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
-    width: 60%;
+    width: 50%;
     margin: auto;
     position: static;
   }
 
-  /* line 76, ../scss/components.scss */
+  /* line 80, ../scss/components.scss */
   .section--annotations, .section--tracking, .section--timeline {
     text-align: center;
   }
 
-  /* line 80, ../scss/components.scss */
+  /* line 84, ../scss/components.scss */
   .timeline__img, .tracking__img, .annotations__img {
     float: none;
     display: inline-block;
@@ -337,7 +350,7 @@
 .right-panel {
   float: left;
   left: 50%;
-  padding: 1rem 5rem 2rem 5rem;
+  padding: 1rem 8% 2rem 8%;
 }
 
 /* line 29, ../scss/panels.scss */

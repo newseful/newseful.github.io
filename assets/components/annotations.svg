@@ -3,27 +3,27 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="800px" height="500px" viewBox="0 0 800 500" enable-background="new 0 0 800 500" xml:space="preserve">
-<path fill="#D3E6ED" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" d="M598.561,122H205.344
+<path fill="#D3E6ED" stroke="#83AFBA" stroke-width="3" stroke-miterlimit="10" d="M598.561,122H205.344
 	C198.64,122,193,127.015,193,133.719v235.445c0,6.703,5.64,11.836,12.344,11.836h182.45l14.158,24.521L416.11,381H598.56
 	c6.704,0,12.439-5.133,12.439-11.836V133.719C611,127.015,605.265,122,598.561,122z"/>
 <g>
-	<path fill="#FFFFFF" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" d="M489,187.291c0,5.362-4.347,9.709-9.709,9.709
+	<path fill="#FFFFFF" stroke="#83AFBA" stroke-width="3" stroke-miterlimit="10" d="M489,187.291c0,5.362-4.347,9.709-9.709,9.709
 		H236.709c-5.362,0-9.709-4.347-9.709-9.709v-21.582c0-5.362,4.347-9.709,9.709-9.709h242.582c5.362,0,9.709,4.347,9.709,9.709
 		V187.291z"/>
 </g>
 <g>
-	<path fill="#FFFFFF" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" d="M547,250.291c0,5.361-4.347,9.709-9.709,9.709
+	<path fill="#FFFFFF" stroke="#83AFBA" stroke-width="3" stroke-miterlimit="10" d="M547,250.291c0,5.361-4.347,9.709-9.709,9.709
 		H236.709c-5.362,0-9.709-4.348-9.709-9.709v-7.582c0-5.362,4.347-9.709,9.709-9.709h300.582c5.362,0,9.709,4.347,9.709,9.709
 		V250.291z"/>
 </g>
 <g>
-	<path fill="#FFFFFF" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" d="M518,294.291c0,5.361-4.347,9.709-9.709,9.709
+	<path fill="#FFFFFF" stroke="#83AFBA" stroke-width="3" stroke-miterlimit="10" d="M518,294.291c0,5.361-4.347,9.709-9.709,9.709
 		H236.709c-5.362,0-9.709-4.348-9.709-9.709v-7.582c0-5.361,4.347-9.709,9.709-9.709h271.582c5.362,0,9.709,4.348,9.709,9.709
 		V294.291z"/>
 </g>
 <g>
-	<path fill="#FFFFFF" stroke="#83AFBA" stroke-width="4" stroke-miterlimit="10" d="M547,338.291c0,5.362-4.347,9.709-9.709,9.709
-		H236.709c-5.362,0-9.709-4.347-9.709-9.709v-7.582c0-5.362,4.347-9.709,9.709-9.709h300.582c5.362,0,9.709,4.347,9.709,9.709
+	<path fill="#FFFFFF" stroke="#83AFBA" stroke-width="3" stroke-miterlimit="10" d="M547,338.291c0,5.361-4.347,9.709-9.709,9.709
+		H236.709c-5.362,0-9.709-4.348-9.709-9.709v-7.582c0-5.361,4.347-9.709,9.709-9.709h300.582c5.362,0,9.709,4.348,9.709,9.709
 		V338.291z"/>
 </g>
 </svg>

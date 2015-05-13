@@ -25,6 +25,18 @@
 	font-stretch: normal;
 }
 
+@font-face {
+	font-family: 'Inconsolata';
+	src: url('../assets/fonts/inconsolata.eot');
+	src: url('../assets/fonts/inconsolata.eot?#iefix') format('embedded-opentype'),
+	url('../assets/fonts/inconsolata.woff') format('woff'),
+	url('../assets/fonts/inconsolata.ttf') format('truetype'),
+	url('../assets/fonts/inconsolata.svg#inconsolatamedium') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+}
+
 // COLORS
 
 $green : #42C678;
@@ -52,8 +64,8 @@ $yellow_lighter : #F2E7B8;
 $wide_width : 80%;
 $wide_margin : 10%;
 
-$narrow_width : 60%;
-$narrow_margin : 20%;
+$narrow_width : 50%;
+$narrow_margin : 25%;
 
 // FONTS
 
