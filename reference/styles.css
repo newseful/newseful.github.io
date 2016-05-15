@@ -47,6 +47,42 @@ table {
 	border-spacing: 0;
 }
 
+@font-face {
+	font-family: 'Lyon Text Web';
+	src: url('../assets/fonts/LyonText-RegularNo2-Web.eot');
+	src: url('../assets/fonts/LyonText-RegularNo2-Web.eot?#iefix') format('embedded-opentype'),
+	url('../assets/fonts/LyonText-RegularNo2-Web.woff') format('woff'),
+	url('../assets/fonts/LyonText-RegularNo2-Web.ttf') format('truetype'),
+	url('../assets/fonts/LyonText-RegularNo2-Web.svg#Lyon Text Web') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Atlas Grotesk Web';
+	src: url('../assets/fonts/AtlasGrotesk-Regular-Web.eot');
+	src: url('../assets/fonts/AtlasGrotesk-Regular-Web.eot?#iefix') format('embedded-opentype'),
+	url('../assets/fonts/AtlasGrotesk-Regular-Web.woff') format('woff'),
+	url('../assets/fonts/AtlasGrotesk-Regular-Web.ttf') format('truetype'),
+	url('../assets/fonts/AtlasGrotesk-Regular-Web.svg#AtlasGrotesk-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Inconsolata';
+	src: url('../assets/fonts/inconsolata.eot');
+	src: url('../assets/fonts/inconsolata.eot?#iefix') format('embedded-opentype'),
+	url('../assets/fonts/inconsolata.woff') format('woff'),
+	url('../assets/fonts/inconsolata.ttf') format('truetype'),
+	url('../assets/fonts/inconsolata.svg#inconsolatamedium') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+}
+
 /************** NAVIGATOR STYLES ***************/
 
 #navigator {
